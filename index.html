@@ -6,13 +6,13 @@
   <meta name="description" content="Selected design projects by Marawan.">
   <meta name="theme-color" content="#000000">
   <title>Marawan — Selected Work</title>
-  <link rel="stylesheet" href="styles.css?v=brochure">
+  <link rel="stylesheet" href="styles.css?v=billboards">
   <link rel="stylesheet" href="arrange.css?v=layout">
   <script src="artwork-order.js" defer></script>
   <script src="editor-files.js" defer></script>
-  <script src="catalog.js?v=brochure" defer></script>
-  <script src="arrange.js?v=layout" defer></script>
-  <script src="script.js?v=brochure" defer></script>
+  <script src="catalog.js?v=billboards" defer></script>
+  <script src="arrange.js?v=billboards" defer></script>
+  <script src="script.js?v=billboards" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -173,9 +173,12 @@
       <section class="collection brochure-gallery" id="gardens-gallery" role="tabpanel" aria-labelledby="gardens-tab" tabindex="0" hidden>
         <header class="brochure-header">
           <h2>To Settle</h2>
-          <p>Perla Gardens Brochure</p>
+          <div class="brochure-meta">
+            <p>Perla Gardens Brochure</p>
+            <a class="gallery-jump" href="#billboards">Billboards ↓</a>
+          </div>
         </header>
-        <div class="image-grid">
+        <div class="image-grid brochure-grid">
           <button type="button" class="poster" data-artwork-id="brochure-01" aria-label="View brochure image 1, To Settle">
             <picture class="poster-image">
               <img src="assets/perla-gardens/brochure-01-wide.webp" srcset="assets/perla-gardens/brochure-01-preview.webp 640w, assets/perla-gardens/brochure-01-wide.webp 1120w, assets/perla-gardens/brochure-01.webp 1752w"
@@ -240,6 +243,48 @@
             </span>
           </button>
         </div>
+        <section class="billboard-gallery" id="billboards" aria-labelledby="billboards-title">
+          <header class="billboard-header">
+            <h2 id="billboards-title">Billboards</h2>
+          </header>
+          <div class="image-grid billboard-grid" data-gallery-id="billboards" aria-labelledby="billboards-title">
+            <button type="button" class="poster" data-artwork-id="calm-living-mockup" aria-label="View Calm Living in Hadayek October — Billboard mockup">
+              <picture class="poster-image">
+                <img src="assets/perla-gardens/billboards/calm-living-mockup-wide.webp" srcset="assets/perla-gardens/billboards/calm-living-mockup-preview.webp 768w, assets/perla-gardens/billboards/calm-living-mockup-wide.webp 1600w"
+                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/calm-living-mockup.webp" width="5120" height="3584" alt="Blue and green Perla Gardens campaign on a rooftop billboard against a clear sky." decoding="async" loading="lazy">
+              </picture>
+              <span class="poster-caption"><span class="poster-title">Calm Living in Hadayek October</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button type="button" class="poster" data-artwork-id="every-legacy-mockup" aria-label="View Every Legacy Has a Perla — Billboard mockup">
+              <picture class="poster-image">
+                <img src="assets/perla-gardens/billboards/every-legacy-mockup-wide.webp" srcset="assets/perla-gardens/billboards/every-legacy-mockup-preview.webp 768w, assets/perla-gardens/billboards/every-legacy-mockup-wide.webp 1600w"
+                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/every-legacy-mockup.webp" width="5120" height="3584" alt="Gold Perla campaign design shown on a rooftop billboard in the late afternoon." decoding="async" loading="lazy">
+              </picture>
+              <span class="poster-caption"><span class="poster-title">Every Legacy Has a Perla — Mockup</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button type="button" class="poster" data-artwork-id="every-legacy-artwork" aria-label="View Every Legacy Has a Perla — Billboard artwork">
+              <picture class="poster-image">
+                <img src="assets/perla-gardens/billboards/every-legacy-artwork-wide.webp" srcset="assets/perla-gardens/billboards/every-legacy-artwork-preview.webp 768w, assets/perla-gardens/billboards/every-legacy-artwork-wide.webp 1600w, assets/perla-gardens/billboards/every-legacy-artwork.webp 2520w"
+                  sizes="auto, 95vw" data-full="assets/perla-gardens/billboards/every-legacy-artwork.webp" width="2520" height="1260" alt="Flat gold billboard artwork with red serif typography, a shell motif and embossed pearl textures." decoding="async" loading="lazy">
+              </picture>
+              <span class="poster-caption"><span class="poster-title">Every Legacy Has a Perla — Artwork</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button type="button" class="poster" data-artwork-id="where-hearts-feel-home-roses" aria-label="View Where Hearts Feel Home — Billboard artwork">
+              <picture class="poster-image">
+                <img src="assets/perla-gardens/billboards/where-hearts-feel-home-roses-wide.webp" srcset="assets/perla-gardens/billboards/where-hearts-feel-home-roses-preview.webp 768w, assets/perla-gardens/billboards/where-hearts-feel-home-roses-wide.webp 1600w"
+                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/where-hearts-feel-home-roses.webp" width="2520" height="1260" alt="Perla Gardens billboard artwork with a bouquet of roses passed between two hands and yellow Arabic lettering." decoding="async" loading="lazy">
+              </picture>
+              <span class="poster-caption"><span class="poster-title">Where Hearts Feel Home — Roses</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button type="button" class="poster" data-artwork-id="where-hearts-feel-home-family" aria-label="View Where Hearts Feel Home — Billboard artwork">
+              <picture class="poster-image">
+                <img src="assets/perla-gardens/billboards/where-hearts-feel-home-family-wide.webp" srcset="assets/perla-gardens/billboards/where-hearts-feel-home-family-preview.webp 768w, assets/perla-gardens/billboards/where-hearts-feel-home-family-wide.webp 1600w"
+                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/where-hearts-feel-home-family.webp" width="2520" height="1260" alt="Perla Gardens billboard artwork with a baby holding an adult hand beneath yellow Arabic lettering." decoding="async" loading="lazy">
+              </picture>
+              <span class="poster-caption"><span class="poster-title">Where Hearts Feel Home — Family</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
+            </button>
+          </div>
+        </section>
       </section>
     </section>
 

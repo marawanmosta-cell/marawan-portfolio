@@ -257,8 +257,8 @@ window.portfolioCatalogReady = (async () => {
     form.querySelector(".editor-file").hidden = !options.image;
     form.querySelector(".editor-alt").hidden = !options.poster;
     form.querySelector(".editor-file-label").textContent = options.poster ? "Replace image (optional)" : "Images";
-    form.querySelector(".editor-preview-help").textContent = options.brochure
-      ? "Gallery previews show the entire brochure image. Open it in the portfolio for a larger view."
+    form.querySelector(".editor-preview-help").textContent = options.landscape
+      ? "Gallery previews show the entire image. Open it in the portfolio for a larger view."
       : "Gallery previews fill a 3:4 frame. Open the image in the portfolio to see its full composition.";
     nameInput.value = options.name || "";
     nameInput.required = !options.multiple;
@@ -326,7 +326,7 @@ window.portfolioCatalogReady = (async () => {
       name: poster?.querySelector(".poster-title").textContent,
       alt: picture?.alt,
       image: true,
-      brochure: document.getElementById(galleryId)?.classList.contains("brochure-gallery"),
+      landscape: document.getElementById(galleryId)?.matches(".brochure-gallery, .billboard-gallery"),
       multiple: !poster,
       poster,
       async change(next, name, blobs) {

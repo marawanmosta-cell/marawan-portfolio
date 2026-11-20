@@ -19,6 +19,7 @@ window.portfolioCatalogReady.then(() => {
     modeUrl.searchParams.set("brand", brand);
     if (section) modeUrl.searchParams.set("section", section);
     else modeUrl.searchParams.delete("section");
+    modeUrl.hash = location.hash === "#billboards" && section !== "gardens-gallery" ? "" : location.hash;
     modeLink.href = modeUrl.href;
   }
 
@@ -90,6 +91,7 @@ window.portfolioCatalogReady.then(() => {
   setupTabs(header.querySelector('[role="tablist"]'), true);
   document.querySelectorAll(".collection-tabs").forEach(tablist => setupTabs(tablist));
   updateModeLink();
+  window.addEventListener("hashchange", updateModeLink);
 
   const viewer = document.querySelector(".viewer");
   const image = viewer.querySelector(".viewer-image");
@@ -120,10 +122,12 @@ window.portfolioCatalogReady.then(() => {
   document.querySelector(".project-stack").addEventListener("click", event => {
     const poster = event.target.closest(".poster");
     if (!poster || poster.draggable) return;
-    const gallery = poster.closest('[role="tabpanel"]');
-    const name = document.getElementById(gallery.getAttribute("aria-labelledby")).textContent;
+    const gallery = poster.closest(".image-grid");
+    const panel = gallery.closest('[role="tabpanel"]');
+    const label = gallery.getAttribute("aria-labelledby") || panel.getAttribute("aria-labelledby");
+    const name = document.getElementById(label).textContent;
     posters = [...gallery.querySelectorAll(".poster")];
-    viewer.classList.toggle("viewer-brochure", gallery.classList.contains("brochure-gallery"));
+    viewer.classList.toggle("viewer-brochure", panel.classList.contains("brochure-gallery"));
     viewer.setAttribute("aria-label", name + " artwork");
     showArtwork(posters.indexOf(poster));
     viewer.showModal();

@@ -254,7 +254,7 @@ window.portfolioCatalogReady.then(() => {
 
     toolbar.querySelector(".add-artwork").addEventListener("click", () => editor.editArtwork(id));
     const section = grid.closest(".collection");
-    if (section) {
+    if (section === grid.parentElement) {
       const rename = document.createElement("button");
       rename.type = "button";
       rename.textContent = "Rename section";
