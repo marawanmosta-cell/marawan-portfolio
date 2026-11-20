@@ -6,11 +6,13 @@
   <meta name="description" content="Selected design projects by Marawan.">
   <meta name="theme-color" content="#000000">
   <title>Marawan — Selected Work</title>
-  <link rel="stylesheet" href="styles.css?v=trash">
-  <link rel="stylesheet" href="arrange.css?v=trash">
+  <link rel="stylesheet" href="styles.css?v=editor">
+  <link rel="stylesheet" href="arrange.css?v=editor">
   <script src="artwork-order.js" defer></script>
-  <script src="arrange.js?v=trash" defer></script>
-  <script src="script.js?v=sharp" defer></script>
+  <script src="editor-files.js" defer></script>
+  <script src="catalog.js" defer></script>
+  <script src="arrange.js?v=editor" defer></script>
+  <script src="script.js?v=editor" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -22,6 +24,16 @@
       </div>
     </nav>
   </header>
+
+  <section class="editor-bar" aria-label="Portfolio editor" hidden>
+    <div class="editor-bar-actions">
+      <button type="button" data-editor-action="brand">Add brand</button>
+      <button type="button" data-editor-action="site">Rename portfolio</button>
+      <button type="button" data-editor-action="download">Download GitHub update</button>
+      <a href="https://github.com/marawanmosta-cell/marawan-portfolio/upload/main" target="_blank" rel="noopener">Open GitHub upload ↗</a>
+    </div>
+    <p class="editor-status" role="status"></p>
+  </section>
 
   <main id="work" class="project-stack">
     <section class="project" id="perla-project" role="tabpanel" aria-labelledby="perla-tab" tabindex="0">
@@ -267,6 +279,7 @@
       <div class="arrangement-toolbar">
         <p>Drag an artwork onto another to swap them, or select them in turn.</p>
         <div class="arrangement-actions">
+          <button type="button" class="add-artwork">Add images</button>
           <button type="button" class="copy-order">Copy changes for GitHub</button>
           <a href="https://github.com/marawanmosta-cell/marawan-portfolio/edit/main/artwork-order.js" target="_blank" rel="noopener">Open order file ↗</a>
         </div>
@@ -280,6 +293,20 @@
       <textarea class="arrangement-copy" aria-label="Order to paste into GitHub" readonly hidden></textarea>
     </div>
   </template>
+
+  <dialog class="editor-dialog" aria-labelledby="editor-title">
+    <form class="editor-form">
+      <h2 id="editor-title"></h2>
+      <label class="editor-name">Name <input name="name" type="text" maxlength="90"></label>
+      <label class="editor-file"><span class="editor-file-label">Images</span><input name="files" type="file" accept="image/jpeg,image/png,image/webp"></label>
+      <label class="editor-alt">Image description <input name="alt" type="text" maxlength="180"></label>
+      <p class="editor-message" role="status"></p>
+      <div class="editor-dialog-actions">
+        <button type="button" class="editor-cancel">Cancel</button>
+        <button type="submit" class="editor-save">Save draft</button>
+      </div>
+    </form>
+  </dialog>
 
   <dialog class="viewer" aria-label="Project artwork">
     <div class="viewer-bar">

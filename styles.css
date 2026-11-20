@@ -35,6 +35,10 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   border-bottom: 1px solid var(--line);
 }
 .wordmark {
+  max-width: 35%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: clamp(.82rem, 1.6vw, 1.05rem);
   font-weight: 750;
   letter-spacing: .1em;
@@ -107,6 +111,7 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   font-weight: 680;
   line-height: .95;
   letter-spacing: -.075em;
+  overflow-wrap: anywhere;
 }
 .project-meta {
   color: var(--muted);

@@ -1,4 +1,4 @@
-(() => {
+window.portfolioCatalogReady.then(() => {
   const header = document.querySelector(".site-header");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -28,8 +28,10 @@
       appearance?.cancel();
       const animate = byPointer && !reducedMotion.matches;
       const nearTop = window.scrollY < header.offsetHeight;
+      const panel = panels[tabs.indexOf(tab)];
 
-      if (animate && isProjectList && nearTop && document.startViewTransition) {
+      if (animate && isProjectList && nearTop && document.startViewTransition &&
+          getComputedStyle(panel).viewTransitionName !== "none") {
         transition = document.startViewTransition(() => {
           if (selected === tab) showPanel(tab);
         });
@@ -39,7 +41,6 @@
       showPanel(tab);
       if (isProjectList && !nearTop) window.scrollTo({ top: 0, behavior: "instant" });
       if (animate) {
-        const panel = panels[tabs.indexOf(tab)];
         appearance = panel.animate(
           [{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }],
           { duration: 210, easing: "cubic-bezier(.23, 1, .32, 1)" }
@@ -111,4 +112,4 @@
     if (event.key === "ArrowLeft") showArtwork(current - 1);
     if (event.key === "ArrowRight") showArtwork(current + 1);
   });
-})();
+});

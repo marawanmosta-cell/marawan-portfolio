@@ -1,12 +1,9 @@
-(() => {
+window.portfolioCatalogReady.then(() => {
   const editMode = new URLSearchParams(window.location.search).get("arrange") === "1";
   const published = window.portfolioOrder || {};
   const template = document.getElementById("arrangement-controls");
-
-  function posterId(poster) {
-    const url = new URL(poster.querySelector("img").dataset.full, document.baseURI);
-    return url.pathname.split("/").at(-1).replace(/\.webp$/, "");
-  }
+  const editor = window.portfolioEditor;
+  const posterId = editor.artworkId;
 
   function normalize(items, value) {
     const order = Array.isArray(value) ? value : value?.order;
@@ -21,15 +18,16 @@
   const galleries = [...document.querySelectorAll(".image-grid")].map(grid => {
     const panel = grid.closest('[role="tabpanel"]');
     const items = new Map([...grid.children].map(poster => [posterId(poster), poster]));
+    const id = grid.dataset.galleryId || panel.id;
     const empty = document.createElement("p");
     empty.className = "empty-gallery";
-    empty.textContent = editMode ? "All artworks are in Trash." : "Artwork coming soon.";
+    empty.textContent = editMode && items.size ? "All artworks are in Trash." : "Artwork coming soon.";
     grid.after(empty);
     return {
-      id: panel.id,
+      id,
       grid,
       items,
-      state: normalize(items, published[panel.id]),
+      state: normalize(items, published[id]),
       count: panel.querySelector(".project-meta"),
       empty
     };
@@ -46,10 +44,7 @@
     if (count) count.textContent = visible.length + (visible.length === 1 ? " artwork" : " artworks");
   }
 
-  function copyText() {
-    const configuration = Object.fromEntries(galleries.map(({ id, state }) => [id, state]));
-    return "window.portfolioOrder = " + JSON.stringify(configuration, null, 2) + ";\n";
-  }
+  editor.galleryState = () => Object.fromEntries(galleries.map(({ id, state }) => [id, state]));
 
   function enableEditing(gallery) {
     const { grid, id, items } = gallery;
@@ -61,8 +56,10 @@
     const trashEmpty = toolbar.querySelector(".trash-empty");
     const trashSummary = toolbar.querySelector(".gallery-trash summary");
     const storageKey = "marawan-portfolio-order:" + id;
-    const base = JSON.stringify(gallery.state);
-    const legacyBase = gallery.state.trashed.length === 0 ? JSON.stringify(gallery.state.order) : null;
+    const sourceItems = new Map([...items].filter(([, poster]) => !poster.dataset.draftArtwork));
+    const source = normalize(sourceItems, published[id]);
+    const base = JSON.stringify(source);
+    const legacyBase = source.trashed.length === 0 ? JSON.stringify(source.order) : null;
     let dragged;
     let target;
     let picked;
@@ -92,7 +89,16 @@
       remove.textContent = "Move to Trash";
       remove.setAttribute("aria-label", "Move " + titleOf(poster) + " to Trash");
       remove.addEventListener("click", () => trashArtwork(artworkId));
-      card.append(poster, remove);
+      const edit = document.createElement("button");
+      edit.type = "button";
+      edit.className = "trash-artwork edit-artwork";
+      edit.textContent = "Edit / Replace";
+      edit.setAttribute("aria-label", "Edit or replace " + titleOf(poster));
+      edit.addEventListener("click", () => editor.editArtwork(id, poster));
+      const actions = document.createElement("div");
+      actions.className = "card-actions";
+      actions.append(edit, remove);
+      card.append(poster, actions);
       cards.set(artworkId, card);
     }
 
@@ -143,7 +149,7 @@
       refresh();
       save(titleOf(items.get(artworkId)) + " moved to Trash.");
       const neighbor = grid.children[Math.min(position, grid.children.length - 1)];
-      (neighbor?.querySelector(".trash-artwork") || trashSummary).focus({ preventScroll: true });
+      (neighbor?.querySelector(".trash-artwork:not(.edit-artwork)") || trashSummary).focus({ preventScroll: true });
     }
 
     function setPicked(poster) {
@@ -221,7 +227,11 @@
     });
 
     toolbar.querySelector(".copy-order").addEventListener("click", async () => {
-      const config = copyText();
+      if (editor.pendingImages()) {
+        status.textContent = "Download GitHub update to include your new image files.";
+        return;
+      }
+      const config = editor.textFor(editor.galleryState());
       try {
         await navigator.clipboard.writeText(config);
         status.textContent = "Changes copied. Paste into the order file and commit on GitHub.";
@@ -233,6 +243,15 @@
       }
     });
 
+    toolbar.querySelector(".add-artwork").addEventListener("click", () => editor.editArtwork(id));
+    const section = grid.closest(".collection");
+    if (section) {
+      const rename = document.createElement("button");
+      rename.type = "button";
+      rename.textContent = "Rename section";
+      rename.addEventListener("click", () => editor.renameSection(section));
+      toolbar.querySelector(".arrangement-actions").append(rename);
+    }
     grid.before(toolbar);
     refresh();
   }
@@ -241,4 +260,4 @@
     if (editMode) enableEditing(gallery);
     else renderGrid(gallery);
   }
-})();
+});

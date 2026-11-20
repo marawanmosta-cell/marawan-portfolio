@@ -2,17 +2,17 @@
 
 A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` in a browser to preview it locally.
 
-## Add your work
+## Edit the portfolio
 
-- Edit and reorder artwork inside each project's `.image-grid` in `index.html`. The artwork viewer follows the same order.
-- Store each project's artwork under `assets/<project>/`. Use 480px, 900px, and full-size WebPs in the mobile picture source, and 900px and full-size WebPs in the desktop image. Point `data-full` to the full-size WebP used when the viewer opens.
-- Perla has separate Properties and Gardens collections. To fill Gardens, replace its empty message with an image grid using the same caption and alt text markup as Properties.
+Open the portfolio with `?arrange=1`.
 
-## Arrange artworks
+- **Add brand** creates a project. **Add section** creates a gallery inside the active project. You can rename projects, sections, and the portfolio title in the editor.
+- **Add images** accepts multiple JPG, PNG, or WebP files. **Edit / Replace** updates the artwork's caption, image description, or image in its current slot.
+- Drag one artwork onto another to swap them. **Move to Trash** removes an artwork from the draft gallery. **Restore** puts the artwork back in its saved slot.
 
-Open the portfolio with `?arrange=1` to swap artworks within a gallery. Drag an artwork onto another, or select two artworks in turn. **Move to Trash** hides the artwork from the draft gallery. **Restore** in the gallery's Trash puts the artwork back in its saved slot. Drafts are stored in your browser.
+The editor stores drafts and uploaded images in the browser. To publish, choose **Download GitHub update**, extract the ZIP, then choose **Open GitHub upload**. Drag the extracted `artwork-order.js` and, if present, the entire `assets` folder onto the upload page. Commit the files to `main` together.
 
-To publish the arrangement and Trash state, select **Copy changes for GitHub**, then **Open order file**. Replace the contents of `artwork-order.js` with the copied text and commit the change to `main`.
+For changes without new image files, **Copy changes for GitHub** can update just `artwork-order.js`.
 
 ## GitHub Pages
 
