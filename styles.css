@@ -313,3 +313,32 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
 @media (max-width: 700px) {
   .campaign-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+.imported-grid .poster-image { aspect-ratio: 4 / 5; }
+.imported-grid .poster-image img { object-fit: contain; }
+.imported-grid > .import-wide,
+.imported-grid > .arrangement-card:has(.import-wide) { grid-column: 1 / -1; }
+.imported-grid .import-wide .poster-image {
+  aspect-ratio: auto;
+  max-height: 65vh;
+  display: grid;
+  place-items: center;
+}
+.imported-grid .import-wide .poster-image img {
+  position: static;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 65vh;
+}
+@media (min-width: 1024px) {
+  #abu-se3da .imported-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+@media (max-width: 850px) {
+  .site-header { flex-wrap: wrap; column-gap: 12px; row-gap: 0; }
+  .site-header .project-index { order: 1; flex-basis: 100%; margin-inline-start: 0; }
+  .project-index .project-tabs [role="tab"] { min-block-size: 44px; }
+  .site-header > .wordmark, .site-header > .portfolio-mode { margin-top: 4px; }
+  .billboard-gallery, .campaign-gallery { scroll-margin-top: 106px; }
+}
