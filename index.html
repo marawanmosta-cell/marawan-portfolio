@@ -1,103 +1,69 @@
 <!doctype html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Marawan’s visual design portfolio covering identity, typography, motion, and digital design.">
-  <meta name="theme-color" content="#f7f7f4">
-  <title>Marawan — Visual Design Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Selected design projects by Marawan.">
+  <title>Marawan — Selected Work</title>
+    <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header class="shell header">
-    <a href="#top" class="wordmark">MARAWAN<span>.</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
 
-  <main id="main">
-    <section class="shell hero" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <p class="eyebrow">Visual design portfolio</p>
-        <h1 id="hero-title">Marawan<span>.</span></h1>
-        <p class="intro">Identity, typography, and motion.</p>
-        <a class="action" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="ring"></div>
-      </div>
-    </section>
-
-    <section class="shell work section" id="work" aria-labelledby="work-title">
-      <div class="section-heading">
-        <h2 id="work-title">Selected work</h2>
-        <p>Sample projects</p>
-      </div>
-      <div class="work-grid">
-        <article class="project">
-          <div class="art art-form" role="img" aria-label="Offset black and gray discs on a cream identity mockup">
-            <div class="disc"></div>
-            <span aria-hidden="true">FORM<br>STUDIES</span>
+<main id="marawan-projects" aria-label="Marawan’s design portfolio">
+  <header class="masthead">MARAWAN</header>
+  <div class="layout">
+    <div class="intro">
+      <h1>Selected<br> work.</h1>
+      <nav class="project-index" aria-label="Project index">
+        <button type="button" data-project-link="forsan" aria-controls="forsan-gallery" aria-pressed="true">AL FORSAN</button>
+        <button type="button" data-project-link="segments" aria-controls="segments-gallery" aria-pressed="false">Segments</button>
+      </nav>
+    </div>
+    <div class="project-stack">
+      <section class="project" data-project="forsan">
+        <h2><button type="button" class="project-toggle" id="forsan-button" aria-controls="forsan-gallery" aria-expanded="true">
+          <span class="project-name">AL FORSAN</span><span class="project-meta">9 artworks</span><span class="state-icon" aria-hidden="true"></span>
+        </button></h2>
+        <div class="project-gallery" id="forsan-gallery" role="region" aria-labelledby="forsan-button">
+          <div class="image-grid">
+            <button type="button" class="poster" data-caption="New Form, Same Force" aria-label="View New Form, Same Force"><img src="assets/al-forsan/new-form-preview.webp" data-full="assets/al-forsan/new-form.webp" width="1080" height="1440" alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark"></button>
+            <button type="button" class="poster" data-caption="Zero-Risk Execution" aria-label="View Zero-Risk Execution"><img src="assets/al-forsan/zero-risk-preview.webp" data-full="assets/al-forsan/zero-risk.webp" width="1080" height="1440" alt="A hand holding a horse-head cane beside a red hard hat"></button>
+            <button type="button" class="poster" data-caption="Field Mastery" aria-label="View Field Mastery"><img src="assets/al-forsan/field-mastery-preview.webp" data-full="assets/al-forsan/field-mastery.webp" width="1080" height="1440" alt="People casting long shadows across a grid above a red block of typography"></button>
+            <button type="button" class="poster" data-caption="Laguna Mall — Endless Connection" aria-label="View Laguna Mall, Endless Connection"><img src="assets/al-forsan/laguna-architecture-preview.webp" data-full="assets/al-forsan/laguna-architecture.webp" width="1080" height="1440" alt="Lit windows in a curved Laguna Mall facade with red light trails"></button>
+            <button type="button" class="poster" data-caption="Laguna Mall — Sheikh Zaid" aria-label="View Laguna Mall, Sheikh Zaid"><img src="assets/al-forsan/laguna-cafe-preview.webp" data-full="assets/al-forsan/laguna-cafe.webp" width="1080" height="1440" alt="A person holding a cup in a café framed by soft red reflections"></button>
+            <button type="button" class="poster" data-caption="Laguna Mall — Flow and Discovery" aria-label="View Laguna Mall, Flow and Discovery"><img src="assets/al-forsan/laguna-stairs-preview.webp" data-full="assets/al-forsan/laguna-stairs.webp" width="1080" height="1440" alt="Blurred shoppers in motion on a vivid red staircase"></button>
+            <button type="button" class="poster" data-caption="Laguna Mall — Service Meets Lifestyle" aria-label="View Laguna Mall, Service Meets Lifestyle"><img src="assets/al-forsan/laguna-lifestyle-preview.webp" data-full="assets/al-forsan/laguna-lifestyle.webp" width="1080" height="1440" alt="A woman in red sitting in a shopping cart in a dark car park"></button>
+            <button type="button" class="poster" data-caption="Plot 14 — The Arena of Dominance" aria-label="View Plot 14, The Arena of Dominance"><img src="assets/al-forsan/plot-14-arena-preview.webp" data-full="assets/al-forsan/plot-14-arena.webp" width="1080" height="1440" alt="A silhouetted figure on a stairway beside a sweeping red wall"></button>
+            <button type="button" class="poster" data-caption="Plot 14 — On the Axis" aria-label="View Plot 14, On the Axis"><img src="assets/al-forsan/plot-14-courtyard-preview.webp" data-full="assets/al-forsan/plot-14-courtyard.webp" width="1080" height="1440" alt="A landscaped retail courtyard with glass façades under a blue sky"></button>
           </div>
-          <div class="project-header"><h3>Form Studies</h3><span>Identity</span></div>
-          <p>A visual identity study built around a simple geometric mark.</p>
-        </article>
-        <article class="project">
-          <div class="art art-type" role="img" aria-label="High-contrast black and white poster reading Type in Space">
-            <span aria-hidden="true">Type in<br><em>Space.</em></span>
-          </div>
-          <div class="project-header"><h3>Type in Space</h3><span>Editorial</span></div>
-          <p>A poster study using scale and spacing to create a reading order.</p>
-        </article>
-        <article class="project">
-          <div class="art art-phase" role="img" aria-label="Overlapping luminous monochrome ellipses on charcoal">
-            <div class="ellipse"></div>
-          </div>
-          <div class="project-header"><h3>Phase</h3><span>Motion</span></div>
-          <p>A set of style frames exploring light, repetition, and rhythm.</p>
-        </article>
-        <article class="project">
-          <div class="art art-index" role="img" aria-label="Grayscale interface mockup with a sidebar and modular content grid">
-            <div class="mockup"><span>INDEX.</span><div></div><div></div><div></div></div>
-          </div>
-          <div class="project-header"><h3>Index</h3><span>Digital</span></div>
-          <p>A modular web layout for browsing a visual collection.</p>
-        </article>
+        </div>
+      </section>
+      <section class="project" data-project="segments">
+        <h2><button type="button" class="project-toggle" id="segments-button" aria-controls="segments-gallery" aria-expanded="false">
+          <span class="project-name">Segments</span><span class="project-meta">Awaiting artwork</span><span class="state-icon" aria-hidden="true"></span>
+        </button></h2>
+        <div class="project-gallery" id="segments-gallery" role="region" aria-labelledby="segments-button" hidden>
+          <p class="empty-gallery">Segments artwork goes here.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <dialog class="viewer" aria-label="Project artwork">
+    <div class="viewer-bar">
+      <span class="viewer-position" aria-live="polite"></span>
+      <div class="viewer-actions">
+        <button type="button" data-step="-1" aria-label="Previous artwork">←</button>
+        <button type="button" data-step="1" aria-label="Next artwork">→</button>
+        <form method="dialog"><button type="submit" aria-label="Close artwork" autofocus>✕</button></form>
       </div>
-    </section>
+    </div>
+    <figure>
+      <img class="viewer-image" alt="">
+      <figcaption class="viewer-caption"></figcaption>
+    </figure>
+  </dialog>
+</main>
 
-    <section class="shell section split" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p class="statement">I’m Marawan, a designer interested in how typography, composition, and motion shape a visual idea.</p>
-    </section>
-
-    <section class="shell section split" id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Design focus</h2>
-      <ul class="skills">
-        <li>Visual identity</li>
-        <li>Typography &amp; layout</li>
-        <li>Motion design</li>
-        <li>Digital design</li>
-      </ul>
-    </section>
-
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="shell contact-inner">
-        <h2 id="contact-title">Get in touch.</h2>
-        <!-- Replace this line with a link to Marawan’s preferred contact channel. -->
-        <p>Contact details coming soon.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="shell footer">
-    <span>Marawan</span>
-    <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
-  </footer>
 </body>
 </html>

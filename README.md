@@ -4,9 +4,9 @@ A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` 
 
 ## Add your work
 
-- Each sample project is a `.project` article in `index.html`. Replace its illustration, title, category, and description with work you want to show.
-- Put project images in an `assets` folder and use relative URLs such as `assets/project.webp`. Give each image descriptive alt text and use `loading="lazy"` for images below the first screen.
-- Update the About and Design focus sections with your own wording. Replace the Contact placeholder with a link to your preferred contact channel.
+- Edit and reorder artwork inside each project's `.image-grid` in `index.html`. The artwork viewer follows the same order.
+- Store each project's files under `assets/<project>/`. Use a small WebP as the image's `src`, point `data-full` to the higher-resolution WebP, and give the poster a descriptive caption and alt text.
+- To fill Segments, replace its empty message with an image grid and update the artwork count in the project header.
 
 ## GitHub Pages
 
