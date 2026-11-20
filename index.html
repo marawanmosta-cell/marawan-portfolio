@@ -6,8 +6,8 @@
   <meta name="description" content="Selected design projects by Marawan.">
   <meta name="theme-color" content="#000000">
   <title>Marawan — Selected Work</title>
-  <link rel="stylesheet" href="styles.css?v=editor">
-  <link rel="stylesheet" href="arrange.css?v=editor">
+  <link rel="stylesheet" href="styles.css?v=uniform">
+  <link rel="stylesheet" href="arrange.css?v=uniform">
   <script src="artwork-order.js" defer></script>
   <script src="editor-files.js" defer></script>
   <script src="catalog.js" defer></script>
@@ -298,7 +298,11 @@
     <form class="editor-form">
       <h2 id="editor-title"></h2>
       <label class="editor-name">Name <input name="name" type="text" maxlength="90"></label>
-      <label class="editor-file"><span class="editor-file-label">Images</span><input name="files" type="file" accept="image/jpeg,image/png,image/webp"></label>
+      <label class="editor-file">
+        <span class="editor-file-label">Images</span>
+        <input name="files" type="file" accept="image/jpeg,image/png,image/webp">
+        <small>Gallery previews fill a 3:4 frame. Open the image in the portfolio to see its full composition.</small>
+      </label>
       <label class="editor-alt">Image description <input name="alt" type="text" maxlength="180"></label>
       <p class="editor-message" role="status"></p>
       <div class="editor-dialog-actions">

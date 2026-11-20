@@ -127,16 +127,28 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
 }
 .poster {
   display: block;
+  width: 100%;
   min-width: 0;
   text-align: start;
   align-self: start;
 }
 .poster-image {
   display: block;
+  position: relative;
+  width: 100%;
   aspect-ratio: 3 / 4;
+  overflow: hidden;
   background: var(--background);
 }
-.poster-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.poster-image img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 .poster-caption {
   display: flex;
   justify-content: space-between;

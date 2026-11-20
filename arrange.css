@@ -53,7 +53,6 @@
 }
 .trash-list button { min-height: 36px; text-decoration: underline; text-underline-offset: .22em; }
 .arrangement-card { min-width: 0; }
-.arrangement-card .poster { width: 100%; }
 .trash-artwork {
   min-height: 36px;
   color: var(--muted);
@@ -103,6 +102,7 @@
 .editor-form { display: grid; gap: 16px; }
 .editor-form h2 { margin: 0; font-size: 1.4rem; }
 .editor-form label { display: grid; gap: 6px; color: var(--muted); }
+.editor-file small { color: var(--muted); font-size: .8rem; }
 .editor-form input {
   width: 100%;
   min-width: 0;
