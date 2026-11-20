@@ -31,6 +31,37 @@
   border: 1px solid var(--line);
   color: var(--text);
 }
+.gallery-trash { border-bottom: 1px solid var(--line); }
+.gallery-trash summary {
+  width: max-content;
+  padding-block: 10px;
+  color: var(--text);
+  cursor: pointer;
+}
+.trash-count, .trash-empty { color: var(--muted); }
+.trash-empty { padding-block: 4px 12px; font-size: .875rem; }
+.trash-list { list-style: none; margin: 0; padding: 0; }
+.trash-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding-block: 5px;
+  border-top: 1px solid var(--line);
+  font-size: .875rem;
+}
+.trash-list button { min-height: 36px; text-decoration: underline; text-underline-offset: .22em; }
+.arrangement-card { min-width: 0; }
+.arrangement-card .poster { width: 100%; }
+.trash-artwork {
+  min-height: 36px;
+  color: var(--muted);
+  font-size: .8rem;
+  text-decoration: underline;
+  text-underline-offset: .24em;
+}
+.trash-artwork:hover, .trash-list button:hover { color: var(--red); }
 .poster[draggable="true"] { cursor: grab; }
 .poster.is-dragged { opacity: .48; cursor: grabbing; }
 .poster:is(.is-drop-target, [aria-pressed="true"]) { outline: 2px solid var(--red); outline-offset: 3px; }

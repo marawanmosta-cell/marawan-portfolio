@@ -10,9 +10,9 @@ A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` 
 
 ## Arrange artworks
 
-Open the portfolio with `?arrange=1` to swap artworks within a gallery. Drag an artwork onto another, or select two artworks in turn. Drafts are stored in your browser.
+Open the portfolio with `?arrange=1` to swap artworks within a gallery. Drag an artwork onto another, or select two artworks in turn. **Move to Trash** hides the artwork from the draft gallery. **Restore** in the gallery's Trash puts the artwork back in its saved slot. Drafts are stored in your browser.
 
-To publish your arrangement, select **Copy order for GitHub**, then **Open order file**. Replace the contents of `artwork-order.js` with the copied text and commit the change to `main`.
+To publish the arrangement and Trash state, select **Copy changes for GitHub**, then **Open order file**. Replace the contents of `artwork-order.js` with the copied text and commit the change to `main`.
 
 ## GitHub Pages
 

@@ -6,10 +6,10 @@
   <meta name="description" content="Selected design projects by Marawan.">
   <meta name="theme-color" content="#000000">
   <title>Marawan — Selected Work</title>
-  <link rel="stylesheet" href="styles.css?v=sharp">
-  <link rel="stylesheet" href="arrange.css">
+  <link rel="stylesheet" href="styles.css?v=trash">
+  <link rel="stylesheet" href="arrange.css?v=trash">
   <script src="artwork-order.js" defer></script>
-  <script src="arrange.js" defer></script>
+  <script src="arrange.js?v=trash" defer></script>
   <script src="script.js?v=sharp" defer></script>
 </head>
 <body>
@@ -267,10 +267,15 @@
       <div class="arrangement-toolbar">
         <p>Drag an artwork onto another to swap them, or select them in turn.</p>
         <div class="arrangement-actions">
-          <button type="button" class="copy-order">Copy order for GitHub</button>
+          <button type="button" class="copy-order">Copy changes for GitHub</button>
           <a href="https://github.com/marawanmosta-cell/marawan-portfolio/edit/main/artwork-order.js" target="_blank" rel="noopener">Open order file ↗</a>
         </div>
       </div>
+      <details class="gallery-trash">
+        <summary>Trash <span class="trash-count">(0)</span></summary>
+        <p class="trash-empty">Trash is empty.</p>
+        <ul class="trash-list" hidden></ul>
+      </details>
       <p class="arrangement-status" role="status"></p>
       <textarea class="arrangement-copy" aria-label="Order to paste into GitHub" readonly hidden></textarea>
     </div>

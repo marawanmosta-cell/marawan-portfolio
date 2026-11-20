@@ -4,8 +4,8 @@
   --text: #f3f1ee;
   --muted: #afadab;
   --line: #383635;
-  --red: #ee4a55;
-  --red-shade: #9b2637;
+  --red: #ff4b65;
+  --red-shade: #8d0b27;
   --gutter: clamp(14px, 2.35vw, 44px);
   --column-gap: clamp(10px, 1.25vw, 22px);
   --ease-out: cubic-bezier(.23, 1, .32, 1);
@@ -57,13 +57,17 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   white-space: nowrap;
 }
 .project-index [role="tab"]:focus-visible { outline-offset: -3px; }
-.project-tabs [aria-selected="true"] { color: var(--text); }
+.project-tabs [aria-selected="true"] {
+  color: var(--text);
+  background: radial-gradient(ellipse at 50% 100%, #a8092a52, transparent 73%);
+}
 .project-tabs::after {
   position: absolute;
   inset: auto auto 0 0;
   width: calc(100% / var(--tab-count, 2));
   height: 2px;
-  background: linear-gradient(90deg, var(--red-shade), var(--red));
+  background: linear-gradient(90deg, var(--red-shade), var(--red) 52%, var(--red-shade));
+  box-shadow: 0 -2px 9px #ec244a75;
   content: "";
   pointer-events: none;
   transform: translateX(calc(var(--active-tab, 0) * 100%));
@@ -86,7 +90,9 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
 .project {
   padding-inline: var(--gutter);
   padding-bottom: clamp(26px, 4vw, 64px);
-  background: radial-gradient(ellipse clamp(180px, 45vw, 680px) 145px at 100% 0%, #a9253429, transparent);
+  background:
+    radial-gradient(ellipse clamp(275px, 66vw, 980px) 255px at 16% 0%, #a8072a85, #5b001d61 35%, transparent 76%),
+    radial-gradient(ellipse clamp(150px, 32vw, 440px) 160px at 100% 0%, #5c001d57, transparent 78%);
 }
 .project-header {
   display: flex;
