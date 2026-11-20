@@ -1,210 +1,187 @@
-body { margin: 0; padding: clamp(12px, 3vw, 50px); background: #ececea; }
-#marawan-projects { margin-inline: auto; max-width: 1160px; }
-
-#marawan-projects {
-  --black: #101010;
-  --white: #f4f3ef;
-  --secondary: #acaaa5;
-  --rule: #353533;
-  --ease-out: cubic-bezier(.23, 1, .32, 1);
-  box-sizing: border-box;
-  padding: clamp(16px, 3.2vw, 40px);
-  border-radius: 16px;
-  background: var(--black);
-  color: var(--white);
-  font: 400 14px/1.5 "Aptos", "Helvetica Neue", Helvetica, sans-serif;
+:root {
   color-scheme: dark;
+  --background: #121212;
+  --text: #f3f1ee;
+  --muted: #afadab;
+  --line: #383635;
+  --red: #ee4a55;
+  --red-shade: #9b2637;
+  --gutter: clamp(14px, 2.35vw, 44px);
+  --column-gap: clamp(10px, 1.25vw, 22px);
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --mono: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+  font-family: "Aptos", "Helvetica Neue", Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
 }
-#marawan-projects *, #marawan-projects *::before, #marawan-projects *::after { box-sizing: border-box; }
-#marawan-projects :is(h1, h2, p, figure) { margin: 0; }
-#marawan-projects [hidden] { display: none !important; }
-#marawan-projects button {
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  padding: 0;
-  cursor: pointer;
-}
-#marawan-projects button:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
-#marawan-projects .masthead {
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--rule);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .2em;
-}
-#marawan-projects .layout {
-  display: grid;
-  grid-template-columns: minmax(160px, .82fr) minmax(0, 2.55fr);
-  gap: clamp(20px, 4vw, 58px);
-  padding-top: clamp(20px, 4vw, 46px);
-}
-#marawan-projects h1 {
-  font-size: clamp(2.65rem, 5.5vw, 5.1rem);
-  line-height: .88;
-  font-weight: 650;
-  letter-spacing: -.09em;
-}
-#marawan-projects .project-index {
-  display: grid;
-  justify-items: start;
-  margin-top: clamp(18px, 4vw, 56px);
-}
-#marawan-projects .project-index button {
-  min-height: 44px;
-  display: inline-flex;
+
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, p, figure { margin: 0; }
+button { font: inherit; color: inherit; background: transparent; border: 0; padding: 0; cursor: pointer; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--secondary);
-  text-align: start;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 60px;
+  padding-inline: var(--gutter);
+  background: var(--background);
+  border-bottom: 1px solid var(--line);
 }
-#marawan-projects .project-index button::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border: 1px solid currentColor;
-  border-radius: 50%;
+.wordmark {
+  font-size: clamp(.82rem, 1.6vw, 1.05rem);
+  font-weight: 750;
+  letter-spacing: .1em;
 }
-#marawan-projects .project-index button[aria-pressed="true"] { color: var(--white); }
-#marawan-projects .project-index button[aria-pressed="true"]::before { background: currentColor; }
-#marawan-projects .project-stack { min-width: 0; overflow-anchor: none; border-top: 1px solid var(--rule); }
-#marawan-projects .project { border-bottom: 1px solid var(--rule); }
-#marawan-projects .project h2 { font-size: inherit; }
-#marawan-projects .project-toggle {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto 26px;
-  gap: clamp(8px, 2vw, 20px);
-  align-items: center;
-  width: 100%;
-  min-height: 65px;
-  padding: 10px 4px;
-  text-align: start;
-}
-#marawan-projects .project-name {
-  font-size: clamp(1.35rem, 2.8vw, 2.35rem);
-  font-weight: 650;
-  line-height: 1.05;
-  letter-spacing: -.06em;
-}
-#marawan-projects .project-meta { color: var(--secondary); font-size: 12px; }
-#marawan-projects .state-icon {
-  display: grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border: 1px solid var(--rule);
-  border-radius: 50%;
-  font-size: 16px;
-  line-height: 1;
-}
-#marawan-projects .state-icon::before { content: "+"; }
-#marawan-projects [aria-expanded="true"] .state-icon::before { content: "−"; }
-#marawan-projects [aria-expanded="true"] .state-icon { background: var(--white); border-color: var(--white); color: var(--black); }
-#marawan-projects .project-gallery { padding-bottom: 16px; }
-#marawan-projects .image-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(5px, .85vw, 11px);
-}
-#marawan-projects .poster {
-  display: block;
+.project-tabs {
   position: relative;
-  min-width: 0;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  border-radius: 3px;
-  background: #171717;
-}
-#marawan-projects .poster:first-child { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; }
-#marawan-projects .poster img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform 200ms var(--ease-out);
-}
-#marawan-projects .empty-gallery {
-  min-height: clamp(180px, 32vw, 380px);
   display: grid;
-  place-items: center;
-  padding: 20px;
-  border: 1px dashed var(--rule);
-  border-radius: 3px;
-  color: var(--secondary);
-  text-align: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-#marawan-projects .viewer {
-  width: min(92%, 780px);
-  max-height: 94%;
+.project-tabs [role="tab"] {
+  min-block-size: 59px;
+  padding-inline: clamp(9px, 2vw, 26px);
+  color: var(--muted);
+  font: 500 clamp(.68rem, 1.15vw, .81rem)/1.3 var(--mono);
+  white-space: nowrap;
+}
+.project-tabs [aria-selected="true"] { color: var(--text); }
+.project-tabs::after {
+  position: absolute;
+  inset: auto auto -1px 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red-shade), var(--red));
+  content: "";
+  pointer-events: none;
+  transition: transform 220ms var(--ease-out);
+}
+.project-tabs:has(#segments-tab[aria-selected="true"])::after { transform: translateX(100%); }
+
+.project-stack { min-height: calc(100vh - 60px); }
+.project {
+  padding-inline: var(--gutter);
+  padding-bottom: clamp(26px, 4vw, 64px);
+  background: radial-gradient(ellipse clamp(180px, 45vw, 680px) 145px at 100% 0%, #a9253429, transparent);
+}
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-block: clamp(24px, 4vw, 62px) clamp(16px, 2vw, 32px);
+}
+.project-header h1 {
+  font-size: clamp(2.3rem, 6vw, 5.5rem);
+  font-weight: 680;
+  line-height: .95;
+  letter-spacing: -.075em;
+}
+.project-meta {
+  color: var(--muted);
+  font: 500 .75rem/1.3 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .055em;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2.3vw, 38px) var(--column-gap);
+}
+.poster {
+  display: block;
+  min-width: 0;
+  text-align: start;
+  align-self: start;
+}
+.poster-image {
+  display: block;
+  aspect-ratio: 3 / 4;
+  background: #1a1919;
+}
+.poster-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.poster-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  padding-block: 9px 1px;
+  color: var(--muted);
+  font-size: clamp(.76rem, 1.25vw, .94rem);
+  line-height: 1.35;
+}
+.poster-arrow {
+  color: var(--text);
+  font-size: .95em;
+  line-height: 1.45;
+  transition: transform 150ms var(--ease-out);
+}
+.empty-gallery {
+  min-height: 52vh;
+  padding-block: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.viewer {
+  width: min(94%, 860px);
+  max-height: 94dvh;
   padding: 0;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  background: var(--black);
-  color: var(--white);
+  border: 1px solid var(--line);
+  background: var(--background);
+  color: var(--text);
 }
-#marawan-projects .viewer::backdrop { background: #000d; }
-#marawan-projects .viewer-bar {
+.viewer::backdrop { background: #080808ee; }
+.viewer-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  padding: 4px 12px;
-  border-bottom: 1px solid var(--rule);
+  padding-inline: 14px 4px;
+  border-bottom: 1px solid var(--line);
 }
-#marawan-projects .viewer-actions { display: flex; gap: 4px; }
-#marawan-projects .viewer-actions button { min-height: 44px; min-width: 44px; }
-#marawan-projects .viewer-image {
-  display: block;
-  width: 100%;
-  height: min(65dvh, 900px);
-  min-height: 0;
-  object-fit: contain;
-}
-#marawan-projects .viewer-caption { padding: 9px 12px; color: var(--secondary); text-align: center; }
+.viewer-position, .viewer-caption { font: 500 .75rem/1.4 var(--mono); color: var(--muted); }
+.viewer-actions { display: flex; gap: 2px; }
+.viewer-actions button { min-height: 44px; min-width: 44px; }
+.viewer-image { display: block; width: 100%; height: min(76dvh, 1080px); object-fit: contain; }
+.viewer-caption { padding: 10px 14px; text-align: center; }
+
 @media (hover: hover) and (pointer: fine) {
-  #marawan-projects .project-index button:hover { color: var(--white); }
-  #marawan-projects .project-toggle:hover .project-name { text-decoration: underline; text-underline-offset: .14em; }
-  #marawan-projects .poster:hover img { transform: scale(1.025); }
+  .project-tabs [role="tab"]:hover, .poster:hover .poster-caption { color: var(--text); }
+  .poster:hover .poster-arrow { color: var(--red); transform: translate(2px, -2px); }
+  .viewer-actions button:hover { color: var(--red); }
 }
-@media (max-width: 680px) {
-  #marawan-projects .layout { grid-template-columns: minmax(0, 1fr); }
-  #marawan-projects h1 br { display: none; }
-  #marawan-projects .project-index { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 10px; }
-}
-@media (max-width: 470px) {
-  #marawan-projects .image-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  #marawan-projects .project-toggle { min-height: 57px; gap: 8px; }
+@media (max-width: 640px) {
+  .image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-header { padding-top: 30px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  #marawan-projects .poster img { transition: none; }
-  #marawan-projects .poster:hover img { transform: none; }
+  .project-tabs::after, .poster-arrow { transition: none; }
+  .poster:hover .poster-arrow { transform: none; }
 }
-
 @media (prefers-reduced-motion: no-preference) {
   :root { view-transition-name: none; }
-  #forsan-button { view-transition-name: forsan-title; }
-  #segments-button { view-transition-name: segments-title; }
-  #forsan-gallery { view-transition-name: forsan-artwork; }
-  #segments-gallery { view-transition-name: segments-artwork; }
+  #forsan-gallery { view-transition-name: forsan; }
+  #segments-gallery { view-transition-name: segments; }
 
-  ::view-transition-group(*) {
-    animation-duration: 280ms;
-    animation-timing-function: cubic-bezier(.23, 1, .32, 1);
-  }
-  ::view-transition-group(forsan-title),
-  ::view-transition-group(segments-title) { z-index: 1; }
-  ::view-transition-old(forsan-artwork),
-  ::view-transition-old(segments-artwork) { animation: artwork-out 130ms cubic-bezier(.23, 1, .32, 1) both; }
-  ::view-transition-new(forsan-artwork),
-  ::view-transition-new(segments-artwork) { animation: artwork-in 230ms 45ms cubic-bezier(.23, 1, .32, 1) both; }
+  ::view-transition { pointer-events: none; }
+  ::view-transition-group(forsan), ::view-transition-group(segments) { animation-duration: 260ms; }
+  ::view-transition-old(forsan), ::view-transition-old(segments) { animation: project-exit 130ms var(--ease-out) both; }
+  ::view-transition-new(forsan), ::view-transition-new(segments) { animation: project-enter 215ms 35ms var(--ease-out) both; }
+  .viewer[open] { animation: project-enter 180ms var(--ease-out) both; }
 
-  @keyframes artwork-out {
-    to { opacity: 0; transform: translateY(-8px); }
+  @keyframes project-exit {
+    to { opacity: 0; transform: translateY(-6px); }
   }
-  @keyframes artwork-in {
-    from { opacity: 0; transform: translateY(12px); }
+  @keyframes project-enter {
+    from { opacity: 0; transform: translateY(8px); }
   }
 }

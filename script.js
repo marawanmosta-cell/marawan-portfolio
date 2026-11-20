@@ -1,68 +1,64 @@
 (() => {
-  const frame = document.getElementById("marawan-projects");
-  const stack = frame.querySelector(".project-stack");
-  const index = [...frame.querySelectorAll("[data-project-link]")];
-  const projects = [...stack.children].map(section => ({
-    section,
-    toggle: section.querySelector(".project-toggle"),
-    gallery: section.querySelector(".project-gallery")
-  }));
+  const header = document.querySelector(".site-header");
+  const tablist = header.querySelector('[role="tablist"]');
+  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
+  const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let active = projects[0];
-  let selected = active;
+  let selected = tabs[0];
   let transition;
 
-  function updateProject(project, source) {
-    const restoreFocus = document.activeElement === source && source === project.toggle;
-    active = project;
-
-    for (const item of projects) {
-      const expanded = item === project;
-      item.toggle.setAttribute("aria-expanded", String(expanded));
-      item.gallery.hidden = !expanded;
-    }
-    for (const link of index) {
-      link.setAttribute("aria-pressed", String(link.dataset.projectLink === project.section.dataset.project));
-    }
-    stack.prepend(project.section);
-    if (restoreFocus) source.focus({ preventScroll: true });
-    if (project.toggle.getBoundingClientRect().top < 0) {
-      project.toggle.scrollIntoView({ block: "start", behavior: "instant" });
-    }
+  function showProject(tab) {
+    tabs.forEach((item, i) => {
+      const active = item === tab;
+      item.setAttribute("aria-selected", String(active));
+      item.tabIndex = active ? 0 : -1;
+      panels[i].hidden = !active;
+    });
   }
 
-  function selectProject(project, event) {
-    if (selected === project) return;
-    selected = project;
-    const source = event.currentTarget;
+  function selectProject(tab, byPointer) {
+    if (tab === selected) return;
+    selected = tab;
     transition?.skipTransition();
+    const animate = byPointer && !reducedMotion.matches;
+    const nearTop = window.scrollY < header.offsetHeight;
 
-    const move = event.detail > 0 && !reducedMotion.matches;
-    if (move && document.startViewTransition && stack.getBoundingClientRect().top >= 0) {
+    if (animate && nearTop && document.startViewTransition) {
       transition = document.startViewTransition(() => {
-        if (selected === project && active !== project) updateProject(project, source);
+        if (selected === tab) showProject(tab);
       });
       return;
     }
 
-    updateProject(project, source);
-    if (move && project.gallery.animate) {
-      project.gallery.animate(
-        [{ opacity: 0, transform: "translateY(10px)" }, { opacity: 1, transform: "none" }],
-        { duration: 240, easing: "cubic-bezier(.23, 1, .32, 1)" }
+    showProject(tab);
+    if (!nearTop) window.scrollTo({ top: 0, behavior: "instant" });
+    if (animate) {
+      const panel = panels[tabs.indexOf(tab)];
+      panel.animate(
+        [{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }],
+        { duration: 210, easing: "cubic-bezier(.23, 1, .32, 1)" }
       );
     }
   }
 
-  for (const project of projects) {
-    project.toggle.addEventListener("click", event => selectProject(project, event));
-  }
-  for (const link of index) {
-    const project = projects.find(item => item.section.dataset.project === link.dataset.projectLink);
-    link.addEventListener("click", event => selectProject(project, event));
-  }
+  tabs.forEach(tab => tab.addEventListener("click", event => selectProject(tab, event.detail > 0)));
+  tablist.addEventListener("keydown", event => {
+    const focusedIndex = tabs.indexOf(event.target);
+    if (focusedIndex < 0) return;
+    const targets = {
+      ArrowLeft: (focusedIndex + tabs.length - 1) % tabs.length,
+      ArrowRight: (focusedIndex + 1) % tabs.length,
+      Home: 0,
+      End: tabs.length - 1
+    };
+    if (!Object.hasOwn(targets, event.key)) return;
+    event.preventDefault();
+    const next = tabs[targets[event.key]];
+    selectProject(next, false);
+    next.focus();
+  });
 
-  const viewer = frame.querySelector(".viewer");
+  const viewer = document.querySelector(".viewer");
   const image = viewer.querySelector(".viewer-image");
   const caption = viewer.querySelector(".viewer-caption");
   const position = viewer.querySelector(".viewer-position");
@@ -74,12 +70,13 @@
     current = (i + posters.length) % posters.length;
     const poster = posters[current];
     const thumbnail = poster.querySelector("img");
-    image.src = thumbnail.src;
+    image.src = thumbnail.currentSrc || thumbnail.src;
     image.alt = thumbnail.alt;
-    caption.textContent = poster.dataset.caption;
-    position.textContent = `${current + 1} / ${posters.length}`;
+    caption.textContent = poster.querySelector(".poster-title").textContent;
+    position.textContent = (current + 1) + " / " + posters.length;
 
     const request = ++imageRequest;
+    if (!thumbnail.dataset.full) return;
     const full = new Image();
     full.src = thumbnail.dataset.full;
     full.decode().then(() => {
@@ -87,12 +84,12 @@
     }).catch(() => {});
   }
 
-  stack.addEventListener("click", event => {
+  document.querySelector(".project-stack").addEventListener("click", event => {
     const poster = event.target.closest(".poster");
     if (!poster) return;
-    posters = [...poster.closest(".project-gallery").querySelectorAll(".poster")];
-    const name = poster.closest(".project").querySelector(".project-name").textContent;
-    viewer.setAttribute("aria-label", `${name} artwork`);
+    const project = poster.closest(".project");
+    posters = [...project.querySelectorAll(".poster")];
+    viewer.setAttribute("aria-label", project.querySelector("h1").textContent + " artwork");
     showArtwork(posters.indexOf(poster));
     viewer.showModal();
   });

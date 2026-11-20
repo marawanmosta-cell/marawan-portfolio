@@ -4,51 +4,112 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Selected design projects by Marawan.">
+  <meta name="theme-color" content="#121212">
   <title>Marawan — Selected Work</title>
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="site-header">
+    <span class="wordmark">MARAWAN</span>
+    <nav class="project-index" aria-label="Projects">
+      <div class="project-tabs" role="tablist" aria-label="Selected work">
+        <button type="button" role="tab" id="forsan-tab" aria-controls="forsan-gallery" aria-selected="true">AL FORSAN</button>
+        <button type="button" role="tab" id="segments-tab" aria-controls="segments-gallery" aria-selected="false" tabindex="-1">Segments</button>
+      </div>
+    </nav>
+  </header>
 
-<main id="marawan-projects" aria-label="Marawan’s design portfolio">
-  <header class="masthead">MARAWAN</header>
-  <div class="layout">
-    <div class="intro">
-      <h1>Selected<br> work.</h1>
-      <nav class="project-index" aria-label="Project index">
-        <button type="button" data-project-link="forsan" aria-controls="forsan-gallery" aria-pressed="true">AL FORSAN</button>
-        <button type="button" data-project-link="segments" aria-controls="segments-gallery" aria-pressed="false">Segments</button>
-      </nav>
-    </div>
-    <div class="project-stack">
-      <section class="project" data-project="forsan">
-        <h2><button type="button" class="project-toggle" id="forsan-button" aria-controls="forsan-gallery" aria-expanded="true">
-          <span class="project-name">AL FORSAN</span><span class="project-meta">9 artworks</span><span class="state-icon" aria-hidden="true"></span>
-        </button></h2>
-        <div class="project-gallery" id="forsan-gallery" role="region" aria-labelledby="forsan-button">
-          <div class="image-grid">
-            <button type="button" class="poster" data-caption="New Form, Same Force" aria-label="View New Form, Same Force"><img src="assets/al-forsan/new-form-preview.webp" data-full="assets/al-forsan/new-form.webp" width="1080" height="1440" alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark"></button>
-            <button type="button" class="poster" data-caption="Zero-Risk Execution" aria-label="View Zero-Risk Execution"><img src="assets/al-forsan/zero-risk-preview.webp" data-full="assets/al-forsan/zero-risk.webp" width="1080" height="1440" alt="A hand holding a horse-head cane beside a red hard hat"></button>
-            <button type="button" class="poster" data-caption="Field Mastery" aria-label="View Field Mastery"><img src="assets/al-forsan/field-mastery-preview.webp" data-full="assets/al-forsan/field-mastery.webp" width="1080" height="1440" alt="People casting long shadows across a grid above a red block of typography"></button>
-            <button type="button" class="poster" data-caption="Laguna Mall — Endless Connection" aria-label="View Laguna Mall, Endless Connection"><img src="assets/al-forsan/laguna-architecture-preview.webp" data-full="assets/al-forsan/laguna-architecture.webp" width="1080" height="1440" alt="Lit windows in a curved Laguna Mall facade with red light trails"></button>
-            <button type="button" class="poster" data-caption="Laguna Mall — Sheikh Zaid" aria-label="View Laguna Mall, Sheikh Zaid"><img src="assets/al-forsan/laguna-cafe-preview.webp" data-full="assets/al-forsan/laguna-cafe.webp" width="1080" height="1440" alt="A person holding a cup in a café framed by soft red reflections"></button>
-            <button type="button" class="poster" data-caption="Laguna Mall — Flow and Discovery" aria-label="View Laguna Mall, Flow and Discovery"><img src="assets/al-forsan/laguna-stairs-preview.webp" data-full="assets/al-forsan/laguna-stairs.webp" width="1080" height="1440" alt="Blurred shoppers in motion on a vivid red staircase"></button>
-            <button type="button" class="poster" data-caption="Laguna Mall — Service Meets Lifestyle" aria-label="View Laguna Mall, Service Meets Lifestyle"><img src="assets/al-forsan/laguna-lifestyle-preview.webp" data-full="assets/al-forsan/laguna-lifestyle.webp" width="1080" height="1440" alt="A woman in red sitting in a shopping cart in a dark car park"></button>
-            <button type="button" class="poster" data-caption="Plot 14 — The Arena of Dominance" aria-label="View Plot 14, The Arena of Dominance"><img src="assets/al-forsan/plot-14-arena-preview.webp" data-full="assets/al-forsan/plot-14-arena.webp" width="1080" height="1440" alt="A silhouetted figure on a stairway beside a sweeping red wall"></button>
-            <button type="button" class="poster" data-caption="Plot 14 — On the Axis" aria-label="View Plot 14, On the Axis"><img src="assets/al-forsan/plot-14-courtyard-preview.webp" data-full="assets/al-forsan/plot-14-courtyard.webp" width="1080" height="1440" alt="A landscaped retail courtyard with glass façades under a blue sky"></button>
-          </div>
-        </div>
-      </section>
-      <section class="project" data-project="segments">
-        <h2><button type="button" class="project-toggle" id="segments-button" aria-controls="segments-gallery" aria-expanded="false">
-          <span class="project-name">Segments</span><span class="project-meta">Awaiting artwork</span><span class="state-icon" aria-hidden="true"></span>
-        </button></h2>
-        <div class="project-gallery" id="segments-gallery" role="region" aria-labelledby="segments-button" hidden>
-          <p class="empty-gallery">Segments artwork goes here.</p>
-        </div>
-      </section>
-    </div>
-  </div>
+  <main id="work" class="project-stack">
+    <section class="project" id="forsan-gallery" role="tabpanel" aria-labelledby="forsan-tab" tabindex="0">
+      <div class="project-header">
+        <h1>AL FORSAN</h1>
+        <span class="project-meta">9 artworks</span>
+      </div>
+      <div class="image-grid">
+        <button type="button" class="poster" aria-label="View New Form, Same Force">
+          <span class="poster-image">
+            <img src="assets/al-forsan/new-form-preview.webp" srcset="assets/al-forsan/new-form-preview.webp 400w, assets/al-forsan/new-form-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/new-form.webp" width="1080" height="1440" alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark" decoding="async" fetchpriority="high">
+          </span>
+          <span class="poster-caption"><span class="poster-title">New Form, Same Force</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Zero-Risk Execution">
+          <span class="poster-image">
+            <img src="assets/al-forsan/zero-risk-preview.webp" srcset="assets/al-forsan/zero-risk-preview.webp 400w, assets/al-forsan/zero-risk-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/zero-risk.webp" width="1080" height="1440" alt="A hand holding a horse-head cane beside a red hard hat" decoding="async">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Zero-Risk Execution</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Field Mastery">
+          <span class="poster-image">
+            <img src="assets/al-forsan/field-mastery-preview.webp" srcset="assets/al-forsan/field-mastery-preview.webp 400w, assets/al-forsan/field-mastery-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/field-mastery.webp" width="1080" height="1440" alt="People casting long shadows across a grid above a red block of typography" decoding="async">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Field Mastery</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Laguna Mall, Endless Connection">
+          <span class="poster-image">
+            <img src="assets/al-forsan/laguna-architecture-preview.webp" srcset="assets/al-forsan/laguna-architecture-preview.webp 400w, assets/al-forsan/laguna-architecture-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/laguna-architecture.webp" width="1080" height="1440" alt="Lit windows in a curved Laguna Mall facade with red light trails" decoding="async" loading="lazy">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Laguna Mall — Endless Connection</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Laguna Mall, Sheikh Zaid">
+          <span class="poster-image">
+            <img src="assets/al-forsan/laguna-cafe-preview.webp" srcset="assets/al-forsan/laguna-cafe-preview.webp 400w, assets/al-forsan/laguna-cafe-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/laguna-cafe.webp" width="1080" height="1440" alt="A person holding a cup in a café framed by soft red reflections" decoding="async" loading="lazy">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Laguna Mall — Sheikh Zaid</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Laguna Mall, Flow and Discovery">
+          <span class="poster-image">
+            <img src="assets/al-forsan/laguna-stairs-preview.webp" srcset="assets/al-forsan/laguna-stairs-preview.webp 400w, assets/al-forsan/laguna-stairs-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/laguna-stairs.webp" width="1080" height="1440" alt="Blurred shoppers in motion on a vivid red staircase" decoding="async" loading="lazy">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Laguna Mall — Flow and Discovery</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Laguna Mall, Service Meets Lifestyle">
+          <span class="poster-image">
+            <img src="assets/al-forsan/laguna-lifestyle-preview.webp" srcset="assets/al-forsan/laguna-lifestyle-preview.webp 400w, assets/al-forsan/laguna-lifestyle-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/laguna-lifestyle.webp" width="1080" height="1440" alt="A woman in red sitting in a shopping cart in a dark car park" decoding="async" loading="lazy">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Laguna Mall — Service Meets Lifestyle</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Plot 14, The Arena of Dominance">
+          <span class="poster-image">
+            <img src="assets/al-forsan/plot-14-arena-preview.webp" srcset="assets/al-forsan/plot-14-arena-preview.webp 400w, assets/al-forsan/plot-14-arena-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/plot-14-arena.webp" width="1080" height="1440" alt="A silhouetted figure on a stairway beside a sweeping red wall" decoding="async" loading="lazy">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Plot 14 — The Arena of Dominance</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+        <button type="button" class="poster" aria-label="View Plot 14, On the Axis">
+          <span class="poster-image">
+            <img src="assets/al-forsan/plot-14-courtyard-preview.webp" srcset="assets/al-forsan/plot-14-courtyard-preview.webp 400w, assets/al-forsan/plot-14-courtyard-wide.webp 720w"
+              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
+              data-full="assets/al-forsan/plot-14-courtyard.webp" width="1080" height="1440" alt="A landscaped retail courtyard with glass façades under a blue sky" decoding="async" loading="lazy">
+          </span>
+          <span class="poster-caption"><span class="poster-title">Plot 14 — On the Axis</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="project" id="segments-gallery" role="tabpanel" aria-labelledby="segments-tab" tabindex="0" hidden>
+      <div class="project-header">
+        <h1>Segments</h1>
+      </div>
+      <p class="empty-gallery">Artwork coming soon.</p>
+    </section>
+  </main>
+
   <dialog class="viewer" aria-label="Project artwork">
     <div class="viewer-bar">
       <span class="viewer-position" aria-live="polite"></span>
@@ -63,7 +124,5 @@
       <figcaption class="viewer-caption"></figcaption>
     </figure>
   </dialog>
-</main>
-
 </body>
 </html>
