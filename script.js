@@ -1,6 +1,26 @@
 window.portfolioCatalogReady.then(() => {
   const header = document.querySelector(".site-header");
+  const modeLink = header.querySelector(".portfolio-mode");
+  const modeUrl = new URL(location.href);
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (modeUrl.searchParams.get("arrange") === "1") {
+    modeUrl.searchParams.delete("arrange");
+    modeLink.textContent = "View live";
+    modeLink.removeAttribute("aria-label");
+  } else {
+    modeUrl.searchParams.set("arrange", "1");
+  }
+
+  function updateModeLink() {
+    const active = '[role="tab"][aria-selected="true"]';
+    const brand = header.querySelector(active).getAttribute("aria-controls");
+    const section = document.getElementById(brand).querySelector(active)?.getAttribute("aria-controls");
+    modeUrl.searchParams.set("brand", brand);
+    if (section) modeUrl.searchParams.set("section", section);
+    else modeUrl.searchParams.delete("section");
+    modeLink.href = modeUrl.href;
+  }
 
   function setupTabs(tablist, isProjectList = false) {
     const tabs = [...tablist.children];
@@ -19,6 +39,7 @@ window.portfolioCatalogReady.then(() => {
         item.tabIndex = active ? 0 : -1;
         panels[i].hidden = !active;
       });
+      updateModeLink();
     }
 
     function selectTab(tab, byPointer) {
@@ -68,6 +89,7 @@ window.portfolioCatalogReady.then(() => {
 
   setupTabs(header.querySelector('[role="tablist"]'), true);
   document.querySelectorAll(".collection-tabs").forEach(tablist => setupTabs(tablist));
+  updateModeLink();
 
   const viewer = document.querySelector(".viewer");
   const image = viewer.querySelector(".viewer-image");

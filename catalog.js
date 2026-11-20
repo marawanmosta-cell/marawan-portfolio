@@ -122,9 +122,9 @@ window.portfolioCatalogReady = (async () => {
     }
   }
 
-  selectInitial(projectTabs, editing && params.get("brand"));
+  selectInitial(projectTabs, params.get("brand"));
   for (const list of main.querySelectorAll(".collection-tabs")) {
-    selectInitial(list, editing && params.get("section"));
+    selectInitial(list, params.get("section"));
     if (list.children.length > 2) {
       const strip = element("div", "collection-tab-strip");
       list.before(strip);

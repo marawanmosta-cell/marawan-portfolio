@@ -4,7 +4,7 @@ A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` 
 
 ## Edit the portfolio
 
-Open the portfolio with `?arrange=1`.
+Choose **Edit portfolio** in the header, or open the portfolio with `?arrange=1`. Choose **View live** to return to the published gallery.
 
 - **Add brand** creates a project. **Add section** creates a gallery inside the active project. You can rename projects, sections, and the portfolio title in the editor.
 - **Add images** accepts multiple JPG, PNG, or WebP files. **Edit / Replace** updates the artwork's caption, image description, or image in its current slot.
