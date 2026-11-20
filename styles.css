@@ -62,7 +62,15 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   pointer-events: none;
   transition: transform 220ms var(--ease-out);
 }
-.project-tabs:has(#segments-tab[aria-selected="true"])::after { transform: translateX(100%); }
+.project-tabs:has(> [aria-selected="true"]:nth-child(2))::after { transform: translateX(100%); }
+
+.collection-tabs {
+  width: max-content;
+  max-width: 100%;
+  margin-bottom: clamp(16px, 2vw, 26px);
+  border-bottom: 1px solid var(--line);
+}
+.collection-tabs [role="tab"] { min-block-size: 44px; }
 
 .project-stack { min-height: calc(100vh - 60px); }
 .project {
@@ -170,12 +178,12 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
 @media (prefers-reduced-motion: no-preference) {
   :root { view-transition-name: none; }
   #forsan-gallery { view-transition-name: forsan; }
-  #segments-gallery { view-transition-name: segments; }
+  #perla-project { view-transition-name: perla; }
 
   ::view-transition { pointer-events: none; }
-  ::view-transition-group(forsan), ::view-transition-group(segments) { animation-duration: 260ms; }
-  ::view-transition-old(forsan), ::view-transition-old(segments) { animation: project-exit 130ms var(--ease-out) both; }
-  ::view-transition-new(forsan), ::view-transition-new(segments) { animation: project-enter 215ms 35ms var(--ease-out) both; }
+  ::view-transition-group(forsan), ::view-transition-group(perla) { animation-duration: 260ms; }
+  ::view-transition-old(forsan), ::view-transition-old(perla) { animation: project-exit 130ms var(--ease-out) both; }
+  ::view-transition-new(forsan), ::view-transition-new(perla) { animation: project-enter 215ms 35ms var(--ease-out) both; }
   .viewer[open] { animation: project-enter 180ms var(--ease-out) both; }
 
   @keyframes project-exit {

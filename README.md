@@ -6,7 +6,7 @@ A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` 
 
 - Edit and reorder artwork inside each project's `.image-grid` in `index.html`. The artwork viewer follows the same order.
 - Store each project's artwork under `assets/<project>/`. Add the 400px and 720px gallery images to `srcset`, and point `data-full` to the full-size WebP used when the viewer opens.
-- To fill Segments, replace its empty message with an image grid using the same caption and alt text markup as AL FORSAN.
+- Perla has separate Properties and Gardens collections. To fill Gardens, replace its empty message with an image grid using the same caption and alt text markup as Properties.
 
 ## GitHub Pages
 

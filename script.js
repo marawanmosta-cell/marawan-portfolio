@@ -1,62 +1,69 @@
 (() => {
   const header = document.querySelector(".site-header");
-  const tablist = header.querySelector('[role="tablist"]');
-  const tabs = [...tablist.querySelectorAll('[role="tab"]')];
-  const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  let selected = tabs[0];
-  let transition;
 
-  function showProject(tab) {
-    tabs.forEach((item, i) => {
-      const active = item === tab;
-      item.setAttribute("aria-selected", String(active));
-      item.tabIndex = active ? 0 : -1;
-      panels[i].hidden = !active;
+  function setupTabs(tablist, isProjectList = false) {
+    const tabs = [...tablist.children];
+    const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
+    let selected = tabs.find(tab => tab.getAttribute("aria-selected") === "true");
+    let transition;
+    let appearance;
+
+    function showPanel(tab) {
+      tabs.forEach((item, i) => {
+        const active = item === tab;
+        item.setAttribute("aria-selected", String(active));
+        item.tabIndex = active ? 0 : -1;
+        panels[i].hidden = !active;
+      });
+    }
+
+    function selectTab(tab, byPointer) {
+      if (tab === selected) return;
+      selected = tab;
+      transition?.skipTransition();
+      appearance?.cancel();
+      const animate = byPointer && !reducedMotion.matches;
+      const nearTop = window.scrollY < header.offsetHeight;
+
+      if (animate && isProjectList && nearTop && document.startViewTransition) {
+        transition = document.startViewTransition(() => {
+          if (selected === tab) showPanel(tab);
+        });
+        return;
+      }
+
+      showPanel(tab);
+      if (isProjectList && !nearTop) window.scrollTo({ top: 0, behavior: "instant" });
+      if (animate) {
+        const panel = panels[tabs.indexOf(tab)];
+        appearance = panel.animate(
+          [{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }],
+          { duration: 210, easing: "cubic-bezier(.23, 1, .32, 1)" }
+        );
+      }
+    }
+
+    tabs.forEach(tab => tab.addEventListener("click", event => selectTab(tab, event.detail > 0)));
+    tablist.addEventListener("keydown", event => {
+      const focusedIndex = tabs.indexOf(event.target);
+      if (focusedIndex < 0) return;
+      const targets = {
+        ArrowLeft: (focusedIndex + tabs.length - 1) % tabs.length,
+        ArrowRight: (focusedIndex + 1) % tabs.length,
+        Home: 0,
+        End: tabs.length - 1
+      };
+      if (!Object.hasOwn(targets, event.key)) return;
+      event.preventDefault();
+      const next = tabs[targets[event.key]];
+      selectTab(next, false);
+      next.focus();
     });
   }
 
-  function selectProject(tab, byPointer) {
-    if (tab === selected) return;
-    selected = tab;
-    transition?.skipTransition();
-    const animate = byPointer && !reducedMotion.matches;
-    const nearTop = window.scrollY < header.offsetHeight;
-
-    if (animate && nearTop && document.startViewTransition) {
-      transition = document.startViewTransition(() => {
-        if (selected === tab) showProject(tab);
-      });
-      return;
-    }
-
-    showProject(tab);
-    if (!nearTop) window.scrollTo({ top: 0, behavior: "instant" });
-    if (animate) {
-      const panel = panels[tabs.indexOf(tab)];
-      panel.animate(
-        [{ opacity: 0, transform: "translateY(8px)" }, { opacity: 1, transform: "none" }],
-        { duration: 210, easing: "cubic-bezier(.23, 1, .32, 1)" }
-      );
-    }
-  }
-
-  tabs.forEach(tab => tab.addEventListener("click", event => selectProject(tab, event.detail > 0)));
-  tablist.addEventListener("keydown", event => {
-    const focusedIndex = tabs.indexOf(event.target);
-    if (focusedIndex < 0) return;
-    const targets = {
-      ArrowLeft: (focusedIndex + tabs.length - 1) % tabs.length,
-      ArrowRight: (focusedIndex + 1) % tabs.length,
-      Home: 0,
-      End: tabs.length - 1
-    };
-    if (!Object.hasOwn(targets, event.key)) return;
-    event.preventDefault();
-    const next = tabs[targets[event.key]];
-    selectProject(next, false);
-    next.focus();
-  });
+  setupTabs(header.querySelector('[role="tablist"]'), true);
+  document.querySelectorAll(".collection-tabs").forEach(tablist => setupTabs(tablist));
 
   const viewer = document.querySelector(".viewer");
   const image = viewer.querySelector(".viewer-image");
@@ -87,9 +94,10 @@
   document.querySelector(".project-stack").addEventListener("click", event => {
     const poster = event.target.closest(".poster");
     if (!poster) return;
-    const project = poster.closest(".project");
-    posters = [...project.querySelectorAll(".poster")];
-    viewer.setAttribute("aria-label", project.querySelector("h1").textContent + " artwork");
+    const gallery = poster.closest('[role="tabpanel"]');
+    const name = document.getElementById(gallery.getAttribute("aria-labelledby")).textContent;
+    posters = [...gallery.querySelectorAll(".poster")];
+    viewer.setAttribute("aria-label", name + " artwork");
     showArtwork(posters.indexOf(poster));
     viewer.showModal();
   });
