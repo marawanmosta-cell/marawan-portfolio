@@ -123,6 +123,7 @@ window.portfolioCatalogReady.then(() => {
     const gallery = poster.closest('[role="tabpanel"]');
     const name = document.getElementById(gallery.getAttribute("aria-labelledby")).textContent;
     posters = [...gallery.querySelectorAll(".poster")];
+    viewer.classList.toggle("viewer-brochure", gallery.classList.contains("brochure-gallery"));
     viewer.setAttribute("aria-label", name + " artwork");
     showArtwork(posters.indexOf(poster));
     viewer.showModal();

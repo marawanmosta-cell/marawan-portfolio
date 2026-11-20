@@ -179,6 +179,40 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   line-height: 1.45;
   transition: transform 150ms var(--ease-out);
 }
+.brochure-header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 20px;
+  padding-block: clamp(12px, 2vw, 28px) 18px;
+  border-top: 1px solid var(--line);
+}
+.brochure-header h2 {
+  margin: 0;
+  color: #eee5d1;
+  font: 400 clamp(2rem, 4.2vw, 4rem)/1 Georgia, serif;
+  letter-spacing: -.045em;
+}
+.brochure-header p, .poster-number {
+  color: #c5b288;
+  font: 500 .75rem/1.35 var(--mono);
+}
+.brochure-gallery .image-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  row-gap: clamp(20px, 3.5vw, 56px);
+}
+.brochure-gallery .image-grid > :first-child { grid-column: 1 / -1; }
+.brochure-gallery .poster-image { aspect-ratio: 3 / 2; background: #09100d; }
+.brochure-gallery .image-grid > :first-child .poster-image { aspect-ratio: 1752 / 897; }
+.brochure-gallery .poster-image img { object-fit: contain; }
+.brochure-gallery .poster-caption {
+  justify-content: flex-start;
+  align-items: baseline;
+  padding-block: 12px 1px;
+  color: var(--text);
+}
+.brochure-gallery .poster-arrow { margin-inline-start: auto; }
 .empty-gallery {
   min-height: 52vh;
   padding-block: 18px;
@@ -208,6 +242,7 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
 .viewer-actions button { min-height: 44px; min-width: 44px; }
 .viewer-image { display: block; width: 100%; height: min(76dvh, 1080px); object-fit: contain; }
 .viewer-caption { padding: 10px 14px; text-align: center; }
+.viewer-brochure { width: min(96%, 1660px); }
 
 @media (hover: hover) and (pointer: fine) {
   .project-tabs [role="tab"]:hover, .poster:hover .poster-caption { color: var(--text); }
@@ -218,6 +253,9 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   .image-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-header { padding-top: 30px; }
   .project-index .project-tabs { grid-auto-columns: max-content; }
+}
+@media (max-width: 700px) {
+  .brochure-gallery .image-grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 375px) {
   .site-header { gap: 4px; padding-inline: 8px; }

@@ -68,6 +68,10 @@ window.portfolioCatalogReady.then(() => {
       const draft = JSON.parse(localStorage.getItem(storageKey));
       if (draft && (draft.base === base || draft.base === legacyBase)) {
         gallery.state = normalize(items, draft.state || draft.order);
+      } else if (draft && !published[id] && (draft.base === '{"order":[],"trashed":[]}' || draft.base === "[]")) {
+        // Keep local artwork and Trash when published artwork fills a previously empty gallery.
+        const previous = draft.state || { order: draft.order };
+        gallery.state = normalize(items, { ...previous, order: [...source.order, ...(previous.order || [])] });
       }
     } catch {
       // Editing still works for the current session without storage.
@@ -80,6 +84,11 @@ window.portfolioCatalogReady.then(() => {
       poster.draggable = true;
       poster.querySelector("img").draggable = false;
       poster.setAttribute("aria-pressed", "false");
+      const dragLabel = document.createElement("span");
+      dragLabel.className = "artwork-drag-label";
+      dragLabel.textContent = "Drag to move";
+      dragLabel.setAttribute("aria-hidden", "true");
+      poster.append(dragLabel);
 
       const card = document.createElement("div");
       card.className = "arrangement-card";
@@ -188,17 +197,17 @@ window.portfolioCatalogReady.then(() => {
       event.dataTransfer.setData("text/plain", posterId(dragged));
     });
     grid.addEventListener("dragover", event => {
-      const poster = event.target.closest(".poster");
+      const poster = event.target.closest(".arrangement-card")?.querySelector(".poster");
       if (!dragged || !poster || poster === dragged) return;
       event.preventDefault();
       event.dataTransfer.dropEffect = "move";
       if (poster !== target) setTarget(poster);
     });
     grid.addEventListener("dragleave", event => {
-      if (!target?.contains(event.relatedTarget)) setTarget();
+      if (!target?.closest(".arrangement-card").contains(event.relatedTarget)) setTarget();
     });
     grid.addEventListener("drop", event => {
-      const poster = event.target.closest(".poster");
+      const poster = event.target.closest(".arrangement-card")?.querySelector(".poster");
       if (!dragged || !poster || poster === dragged) return;
       event.preventDefault();
       const source = dragged;
