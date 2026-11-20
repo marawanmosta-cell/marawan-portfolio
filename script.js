@@ -19,7 +19,7 @@ window.portfolioCatalogReady.then(() => {
     modeUrl.searchParams.set("brand", brand);
     if (section) modeUrl.searchParams.set("section", section);
     else modeUrl.searchParams.delete("section");
-    modeUrl.hash = location.hash === "#billboards" && section !== "gardens-gallery" ? "" : location.hash;
+    modeUrl.hash = ["#billboards", "#gardens-campaign"].includes(location.hash) && section !== "gardens-gallery" ? "" : location.hash;
     for (const link of modeLinks) {
       const mode = link.dataset.portfolioMode;
       if (mode === "live") modeUrl.searchParams.delete("arrange");

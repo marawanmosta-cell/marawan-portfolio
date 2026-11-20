@@ -217,10 +217,10 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: clamp(20px, 3.5vw, 56px);
 }
-.brochure-grid > :first-child, .billboard-grid > :nth-child(3) { grid-column: 1 / -1; }
+.brochure-grid > :first-child { grid-column: 1 / -1; }
 .brochure-grid .poster-image { aspect-ratio: 3 / 2; background: #09100d; }
 .brochure-grid > :first-child .poster-image { aspect-ratio: 1752 / 897; }
-.billboard-gallery {
+.billboard-gallery, .campaign-gallery {
   margin-top: clamp(42px, 7vw, 110px);
   scroll-margin-top: 74px;
 }
@@ -307,4 +307,9 @@ button { font: inherit; color: inherit; background: transparent; border: 0; padd
   @keyframes project-enter {
     from { opacity: 0; transform: translateY(8px); }
   }
+}
+
+.campaign-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) {
+  .campaign-grid { grid-template-columns: minmax(0, 1fr); }
 }

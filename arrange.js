@@ -57,6 +57,22 @@ window.portfolioCatalogReady.then(() => {
       const draft = JSON.parse(localStorage.getItem(storageKey));
       if (draft && (draft.base === base || draft.base === legacyBase)) {
         gallery.state = normalize(items, draft.state || draft.order);
+      } else if (id === "billboards" && draft && !published[id]) {
+        const previousBillboards = [
+          "calm-living-mockup", "every-legacy-mockup", "every-legacy-artwork",
+          "where-hearts-feel-home-roses", "where-hearts-feel-home-family"
+        ];
+        const previousBase = JSON.stringify({ order: previousBillboards, trashed: [] });
+        if (draft.base === previousBase || draft.base === JSON.stringify(previousBillboards)) {
+          const previous = draft.state || { order: draft.order };
+          const previousIds = new Set(previousBillboards);
+          const arranged = previous.order || [];
+          const builtInOrder = arranged.filter(artworkId => previousIds.has(artworkId));
+          const order = JSON.stringify(builtInOrder) === JSON.stringify(previousBillboards)
+            ? [...source.order, ...arranged]
+            : arranged.map(artworkId => artworkId === "calm-living-mockup" ? "sunset-mockup" : artworkId);
+          gallery.state = normalize(items, { order, trashed: previous.trashed });
+        }
       } else if (draft && !published[id] && (draft.base === '{"order":[],"trashed":[]}' || draft.base === "[]")) {
         // Keep local artwork and Trash when published artwork fills a previously empty gallery.
         const previous = draft.state || { order: draft.order };
