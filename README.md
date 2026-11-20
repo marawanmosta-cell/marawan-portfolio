@@ -5,8 +5,14 @@ A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` 
 ## Add your work
 
 - Edit and reorder artwork inside each project's `.image-grid` in `index.html`. The artwork viewer follows the same order.
-- Store each project's artwork under `assets/<project>/`. Add the 400px and 720px gallery images to `srcset`, and point `data-full` to the full-size WebP used when the viewer opens.
+- Store each project's artwork under `assets/<project>/`. Use 480px, 900px, and full-size WebPs in the mobile picture source, and 900px and full-size WebPs in the desktop image. Point `data-full` to the full-size WebP used when the viewer opens.
 - Perla has separate Properties and Gardens collections. To fill Gardens, replace its empty message with an image grid using the same caption and alt text markup as Properties.
+
+## Arrange artworks
+
+Open the portfolio with `?arrange=1` to swap artworks within a gallery. Drag an artwork onto another, or select two artworks in turn. Drafts are stored in your browser.
+
+To publish your arrangement, select **Copy order for GitHub**, then **Open order file**. Replace the contents of `artwork-order.js` with the copied text and commit the change to `main`.
 
 ## GitHub Pages
 

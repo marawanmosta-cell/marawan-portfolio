@@ -4,10 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Selected design projects by Marawan.">
-  <meta name="theme-color" content="#121212">
+  <meta name="theme-color" content="#000000">
   <title>Marawan — Selected Work</title>
-  <link rel="stylesheet" href="styles.css?v=perla">
-  <script src="script.js?v=perla" defer></script>
+  <link rel="stylesheet" href="styles.css?v=sharp">
+  <link rel="stylesheet" href="arrange.css">
+  <script src="artwork-order.js" defer></script>
+  <script src="arrange.js" defer></script>
+  <script src="script.js?v=sharp" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -32,99 +35,123 @@
       <section class="collection" id="properties-gallery" role="tabpanel" aria-labelledby="properties-tab" tabindex="0">
         <div class="image-grid">
           <button type="button" class="poster" aria-label="View Experience Leaves Its Signature">
-            <span class="poster-image">
-              <img src="assets/perla-properties/beyond-experience-preview.webp" srcset="assets/perla-properties/beyond-experience-preview.webp 400w, assets/perla-properties/beyond-experience-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/beyond-experience.webp" width="1080" height="1440" alt="A suited figure walks past a fan of gold light on a dark stone façade." decoding="async" fetchpriority="high">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/beyond-experience-preview.webp?v=sharp 480w, assets/perla-properties/beyond-experience-wide.webp?v=sharp 900w, assets/perla-properties/beyond-experience.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/beyond-experience-wide.webp?v=sharp" srcset="assets/perla-properties/beyond-experience-wide.webp?v=sharp 900w, assets/perla-properties/beyond-experience.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/beyond-experience.webp?v=sharp" width="1080" height="1440" alt="A suited figure walks past a fan of gold light on a dark stone façade." decoding="async" fetchpriority="high">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Experience Leaves Its Signature</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Vision Shapes What Comes Next">
-            <span class="poster-image">
-              <img src="assets/perla-properties/beyond-vision-preview.webp" srcset="assets/perla-properties/beyond-vision-preview.webp 400w, assets/perla-properties/beyond-vision-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/beyond-vision.webp" width="1080" height="1440" alt="A portrait with a fan of amber light across one eye and a strand of pearls." decoding="async">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/beyond-vision-preview.webp?v=sharp 480w, assets/perla-properties/beyond-vision-wide.webp?v=sharp 900w, assets/perla-properties/beyond-vision.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/beyond-vision-wide.webp?v=sharp" srcset="assets/perla-properties/beyond-vision-wide.webp?v=sharp 900w, assets/perla-properties/beyond-vision.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/beyond-vision.webp?v=sharp" width="1080" height="1440" alt="A portrait with a fan of amber light across one eye and a strand of pearls." decoding="async">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Vision Shapes What Comes Next</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Success Demands More — Vision">
-            <span class="poster-image">
-              <img src="assets/perla-properties/success-vision-preview.webp" srcset="assets/perla-properties/success-vision-preview.webp 400w, assets/perla-properties/success-vision-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/success-vision.webp" width="1080" height="1440" alt="A figure walks across a triangular shaft of sunlight against a concrete wall." decoding="async">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/success-vision-preview.webp?v=sharp 480w, assets/perla-properties/success-vision-wide.webp?v=sharp 900w, assets/perla-properties/success-vision.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/success-vision-wide.webp?v=sharp" srcset="assets/perla-properties/success-vision-wide.webp?v=sharp 900w, assets/perla-properties/success-vision.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/success-vision.webp?v=sharp" width="1080" height="1440" alt="A figure walks across a triangular shaft of sunlight against a concrete wall." decoding="async">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Success Demands More — Vision</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Success Demands More — Partnership">
-            <span class="poster-image">
-              <img src="assets/perla-properties/success-partnership-preview.webp" srcset="assets/perla-properties/success-partnership-preview.webp 400w, assets/perla-properties/success-partnership-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/success-partnership.webp" width="1080" height="1440" alt="Two figures cast long shadows on tiled pavement beside orange vertical typography." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/success-partnership-preview.webp?v=sharp 480w, assets/perla-properties/success-partnership-wide.webp?v=sharp 900w, assets/perla-properties/success-partnership.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/success-partnership-wide.webp?v=sharp" srcset="assets/perla-properties/success-partnership-wide.webp?v=sharp 900w, assets/perla-properties/success-partnership.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/success-partnership.webp?v=sharp" width="1080" height="1440" alt="Two figures cast long shadows on tiled pavement beside orange vertical typography." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Success Demands More — Partnership</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Success Demands More — Commitment">
-            <span class="poster-image">
-              <img src="assets/perla-properties/success-commitment-preview.webp" srcset="assets/perla-properties/success-commitment-preview.webp 400w, assets/perla-properties/success-commitment-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/success-commitment.webp" width="1080" height="1440" alt="Exposed structural beams against a dark blue sky with orange lettering." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/success-commitment-preview.webp?v=sharp 480w, assets/perla-properties/success-commitment-wide.webp?v=sharp 900w, assets/perla-properties/success-commitment.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/success-commitment-wide.webp?v=sharp" srcset="assets/perla-properties/success-commitment-wide.webp?v=sharp 900w, assets/perla-properties/success-commitment.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/success-commitment.webp?v=sharp" width="1080" height="1440" alt="Exposed structural beams against a dark blue sky with orange lettering." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Success Demands More — Commitment</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Success Demands More — Leadership">
-            <span class="poster-image">
-              <img src="assets/perla-properties/success-leadership-preview.webp" srcset="assets/perla-properties/success-leadership-preview.webp 400w, assets/perla-properties/success-leadership-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/success-leadership.webp" width="1080" height="1440" alt="A portrait in front of a dark wall with the illuminated PERLA emblem." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/success-leadership-preview.webp?v=sharp 480w, assets/perla-properties/success-leadership-wide.webp?v=sharp 900w, assets/perla-properties/success-leadership.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/success-leadership-wide.webp?v=sharp" srcset="assets/perla-properties/success-leadership-wide.webp?v=sharp 900w, assets/perla-properties/success-leadership.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/success-leadership.webp?v=sharp" width="1080" height="1440" alt="A portrait in front of a dark wall with the illuminated PERLA emblem." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Success Demands More — Leadership</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View A Location With Purpose">
-            <span class="poster-image">
-              <img src="assets/perla-properties/location-with-purpose-preview.webp" srcset="assets/perla-properties/location-with-purpose-preview.webp 400w, assets/perla-properties/location-with-purpose-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/location-with-purpose.webp" width="1080" height="1440" alt="A dark map with Sharqia and Hadayek October marked, above a gold seal." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/location-with-purpose-preview.webp?v=sharp 480w, assets/perla-properties/location-with-purpose-wide.webp?v=sharp 900w, assets/perla-properties/location-with-purpose.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/location-with-purpose-wide.webp?v=sharp" srcset="assets/perla-properties/location-with-purpose-wide.webp?v=sharp 900w, assets/perla-properties/location-with-purpose.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/location-with-purpose.webp?v=sharp" width="1080" height="1440" alt="A dark map with Sharqia and Hadayek October marked, above a gold seal." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">A Location With Purpose</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Quality Without Compromise">
-            <span class="poster-image">
-              <img src="assets/perla-properties/quality-without-compromise-preview.webp" srcset="assets/perla-properties/quality-without-compromise-preview.webp 400w, assets/perla-properties/quality-without-compromise-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/quality-without-compromise.webp" width="1080" height="1440" alt="A black-and-white façade cuts diagonally across a flat gold field." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/quality-without-compromise-preview.webp?v=sharp 480w, assets/perla-properties/quality-without-compromise-wide.webp?v=sharp 900w, assets/perla-properties/quality-without-compromise.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/quality-without-compromise-wide.webp?v=sharp" srcset="assets/perla-properties/quality-without-compromise-wide.webp?v=sharp 900w, assets/perla-properties/quality-without-compromise.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/quality-without-compromise.webp?v=sharp" width="1080" height="1440" alt="A black-and-white façade cuts diagonally across a flat gold field." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Quality Without Compromise</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View More Than a Place">
-            <span class="poster-image">
-              <img src="assets/perla-properties/more-than-a-place-preview.webp" srcset="assets/perla-properties/more-than-a-place-preview.webp 400w, assets/perla-properties/more-than-a-place-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/more-than-a-place.webp" width="1080" height="1440" alt="A softly backlit silhouette raises her hand against warm gold light." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/more-than-a-place-preview.webp?v=sharp 480w, assets/perla-properties/more-than-a-place-wide.webp?v=sharp 900w, assets/perla-properties/more-than-a-place.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/more-than-a-place-wide.webp?v=sharp" srcset="assets/perla-properties/more-than-a-place-wide.webp?v=sharp 900w, assets/perla-properties/more-than-a-place.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/more-than-a-place.webp?v=sharp" width="1080" height="1440" alt="A softly backlit silhouette raises her hand against warm gold light." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">More Than a Place</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Design With Intent">
-            <span class="poster-image">
-              <img src="assets/perla-properties/design-with-intent-preview.webp" srcset="assets/perla-properties/design-with-intent-preview.webp 400w, assets/perla-properties/design-with-intent-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/design-with-intent.webp" width="1080" height="1440" alt="A suited figure seen through a sunlit arch next to vertical gold typography." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/design-with-intent-preview.webp?v=sharp 480w, assets/perla-properties/design-with-intent-wide.webp?v=sharp 900w, assets/perla-properties/design-with-intent.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/design-with-intent-wide.webp?v=sharp" srcset="assets/perla-properties/design-with-intent-wide.webp?v=sharp 900w, assets/perla-properties/design-with-intent.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/design-with-intent.webp?v=sharp" width="1080" height="1440" alt="A suited figure seen through a sunlit arch next to vertical gold typography." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Design With Intent</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Quality Has Its Standards">
-            <span class="poster-image">
-              <img src="assets/perla-properties/quality-has-standards-preview.webp" srcset="assets/perla-properties/quality-has-standards-preview.webp 400w, assets/perla-properties/quality-has-standards-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/quality-has-standards.webp" width="1080" height="1440" alt="A figure crosses a dark hall lined with illuminated gold fins." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/quality-has-standards-preview.webp?v=sharp 480w, assets/perla-properties/quality-has-standards-wide.webp?v=sharp 900w, assets/perla-properties/quality-has-standards.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/quality-has-standards-wide.webp?v=sharp" srcset="assets/perla-properties/quality-has-standards-wide.webp?v=sharp 900w, assets/perla-properties/quality-has-standards.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/quality-has-standards.webp?v=sharp" width="1080" height="1440" alt="A figure crosses a dark hall lined with illuminated gold fins." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Quality Has Its Standards</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
           <button type="button" class="poster" aria-label="View Experience Beyond One Perspective">
-            <span class="poster-image">
-              <img src="assets/perla-properties/experience-beyond-perspective-preview.webp" srcset="assets/perla-properties/experience-beyond-perspective-preview.webp 400w, assets/perla-properties/experience-beyond-perspective-wide.webp 720w"
-                sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-                data-full="assets/perla-properties/experience-beyond-perspective.webp" width="1080" height="1440" alt="Blurred figures cross the top and bottom of a black composition with gold typography." decoding="async" loading="lazy">
-            </span>
+            <picture class="poster-image">
+              <source media="(max-width: 640px)"
+                srcset="assets/perla-properties/experience-beyond-perspective-preview.webp?v=sharp 480w, assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp 900w, assets/perla-properties/experience-beyond-perspective.webp?v=sharp 1080w"
+                sizes="calc((100vw - 36px) / 2)">
+              <img src="assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp" srcset="assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp 900w, assets/perla-properties/experience-beyond-perspective.webp?v=sharp 1080w" sizes="32vw"
+                data-full="assets/perla-properties/experience-beyond-perspective.webp?v=sharp" width="1080" height="1440" alt="Blurred figures cross the top and bottom of a black composition with gold typography." decoding="async" loading="lazy">
+            </picture>
             <span class="poster-caption"><span class="poster-title">Experience Beyond One Perspective</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
           </button>
         </div>
@@ -141,81 +168,113 @@
       </div>
       <div class="image-grid">
         <button type="button" class="poster" aria-label="View New Form, Same Force">
-          <span class="poster-image">
-            <img src="assets/al-forsan/new-form-preview.webp" srcset="assets/al-forsan/new-form-preview.webp 400w, assets/al-forsan/new-form-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/new-form.webp" width="1080" height="1440" alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/new-form-preview.webp?v=sharp 480w, assets/al-forsan/new-form-wide.webp?v=sharp 900w, assets/al-forsan/new-form.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/new-form-wide.webp?v=sharp" srcset="assets/al-forsan/new-form-wide.webp?v=sharp 900w, assets/al-forsan/new-form.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/new-form.webp?v=sharp" width="1080" height="1440" alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">New Form, Same Force</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Zero-Risk Execution">
-          <span class="poster-image">
-            <img src="assets/al-forsan/zero-risk-preview.webp" srcset="assets/al-forsan/zero-risk-preview.webp 400w, assets/al-forsan/zero-risk-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/zero-risk.webp" width="1080" height="1440" alt="A hand holding a horse-head cane beside a red hard hat" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/zero-risk-preview.webp?v=sharp 480w, assets/al-forsan/zero-risk-wide.webp?v=sharp 900w, assets/al-forsan/zero-risk.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/zero-risk-wide.webp?v=sharp" srcset="assets/al-forsan/zero-risk-wide.webp?v=sharp 900w, assets/al-forsan/zero-risk.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/zero-risk.webp?v=sharp" width="1080" height="1440" alt="A hand holding a horse-head cane beside a red hard hat" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Zero-Risk Execution</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Field Mastery">
-          <span class="poster-image">
-            <img src="assets/al-forsan/field-mastery-preview.webp" srcset="assets/al-forsan/field-mastery-preview.webp 400w, assets/al-forsan/field-mastery-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/field-mastery.webp" width="1080" height="1440" alt="People casting long shadows across a grid above a red block of typography" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/field-mastery-preview.webp?v=sharp 480w, assets/al-forsan/field-mastery-wide.webp?v=sharp 900w, assets/al-forsan/field-mastery.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/field-mastery-wide.webp?v=sharp" srcset="assets/al-forsan/field-mastery-wide.webp?v=sharp 900w, assets/al-forsan/field-mastery.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/field-mastery.webp?v=sharp" width="1080" height="1440" alt="People casting long shadows across a grid above a red block of typography" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Field Mastery</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Laguna Mall, Endless Connection">
-          <span class="poster-image">
-            <img src="assets/al-forsan/laguna-architecture-preview.webp" srcset="assets/al-forsan/laguna-architecture-preview.webp 400w, assets/al-forsan/laguna-architecture-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/laguna-architecture.webp" width="1080" height="1440" alt="Lit windows in a curved Laguna Mall facade with red light trails" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/laguna-architecture-preview.webp?v=sharp 480w, assets/al-forsan/laguna-architecture-wide.webp?v=sharp 900w, assets/al-forsan/laguna-architecture.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/laguna-architecture-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-architecture-wide.webp?v=sharp 900w, assets/al-forsan/laguna-architecture.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/laguna-architecture.webp?v=sharp" width="1080" height="1440" alt="Lit windows in a curved Laguna Mall facade with red light trails" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Laguna Mall — Endless Connection</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Laguna Mall, Sheikh Zaid">
-          <span class="poster-image">
-            <img src="assets/al-forsan/laguna-cafe-preview.webp" srcset="assets/al-forsan/laguna-cafe-preview.webp 400w, assets/al-forsan/laguna-cafe-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/laguna-cafe.webp" width="1080" height="1440" alt="A person holding a cup in a café framed by soft red reflections" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/laguna-cafe-preview.webp?v=sharp 480w, assets/al-forsan/laguna-cafe-wide.webp?v=sharp 900w, assets/al-forsan/laguna-cafe.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/laguna-cafe-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-cafe-wide.webp?v=sharp 900w, assets/al-forsan/laguna-cafe.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/laguna-cafe.webp?v=sharp" width="1080" height="1440" alt="A person holding a cup in a café framed by soft red reflections" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Laguna Mall — Sheikh Zaid</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Laguna Mall, Flow and Discovery">
-          <span class="poster-image">
-            <img src="assets/al-forsan/laguna-stairs-preview.webp" srcset="assets/al-forsan/laguna-stairs-preview.webp 400w, assets/al-forsan/laguna-stairs-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/laguna-stairs.webp" width="1080" height="1440" alt="Blurred shoppers in motion on a vivid red staircase" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/laguna-stairs-preview.webp?v=sharp 480w, assets/al-forsan/laguna-stairs-wide.webp?v=sharp 900w, assets/al-forsan/laguna-stairs.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/laguna-stairs-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-stairs-wide.webp?v=sharp 900w, assets/al-forsan/laguna-stairs.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/laguna-stairs.webp?v=sharp" width="1080" height="1440" alt="Blurred shoppers in motion on a vivid red staircase" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Laguna Mall — Flow and Discovery</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Laguna Mall, Service Meets Lifestyle">
-          <span class="poster-image">
-            <img src="assets/al-forsan/laguna-lifestyle-preview.webp" srcset="assets/al-forsan/laguna-lifestyle-preview.webp 400w, assets/al-forsan/laguna-lifestyle-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/laguna-lifestyle.webp" width="1080" height="1440" alt="A woman in red sitting in a shopping cart in a dark car park" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/laguna-lifestyle-preview.webp?v=sharp 480w, assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp 900w, assets/al-forsan/laguna-lifestyle.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp 900w, assets/al-forsan/laguna-lifestyle.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/laguna-lifestyle.webp?v=sharp" width="1080" height="1440" alt="A woman in red sitting in a shopping cart in a dark car park" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Laguna Mall — Service Meets Lifestyle</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Plot 14, The Arena of Dominance">
-          <span class="poster-image">
-            <img src="assets/al-forsan/plot-14-arena-preview.webp" srcset="assets/al-forsan/plot-14-arena-preview.webp 400w, assets/al-forsan/plot-14-arena-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/plot-14-arena.webp" width="1080" height="1440" alt="A silhouetted figure on a stairway beside a sweeping red wall" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/plot-14-arena-preview.webp?v=sharp 480w, assets/al-forsan/plot-14-arena-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-arena.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/plot-14-arena-wide.webp?v=sharp" srcset="assets/al-forsan/plot-14-arena-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-arena.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/plot-14-arena.webp?v=sharp" width="1080" height="1440" alt="A silhouetted figure on a stairway beside a sweeping red wall" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Plot 14 — The Arena of Dominance</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
         <button type="button" class="poster" aria-label="View Plot 14, On the Axis">
-          <span class="poster-image">
-            <img src="assets/al-forsan/plot-14-courtyard-preview.webp" srcset="assets/al-forsan/plot-14-courtyard-preview.webp 400w, assets/al-forsan/plot-14-courtyard-wide.webp 720w"
-              sizes="(max-width: 640px) calc((100vw - 36px) / 2), 32vw"
-              data-full="assets/al-forsan/plot-14-courtyard.webp" width="1080" height="1440" alt="A landscaped retail courtyard with glass façades under a blue sky" decoding="async" loading="lazy">
-          </span>
+          <picture class="poster-image">
+            <source media="(max-width: 640px)"
+              srcset="assets/al-forsan/plot-14-courtyard-preview.webp?v=sharp 480w, assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-courtyard.webp?v=sharp 1080w"
+              sizes="calc((100vw - 36px) / 2)">
+            <img src="assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp" srcset="assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-courtyard.webp?v=sharp 1080w" sizes="32vw"
+              data-full="assets/al-forsan/plot-14-courtyard.webp?v=sharp" width="1080" height="1440" alt="A landscaped retail courtyard with glass façades under a blue sky" decoding="async" loading="lazy">
+          </picture>
           <span class="poster-caption"><span class="poster-title">Plot 14 — On the Axis</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
         </button>
       </div>
     </section>
 
   </main>
+
+  <template id="arrangement-controls">
+    <div class="arrangement-controls">
+      <div class="arrangement-toolbar">
+        <p>Drag an artwork onto another to swap them, or select them in turn.</p>
+        <div class="arrangement-actions">
+          <button type="button" class="copy-order">Copy order for GitHub</button>
+          <a href="https://github.com/marawanmosta-cell/marawan-portfolio/edit/main/artwork-order.js" target="_blank" rel="noopener">Open order file ↗</a>
+        </div>
+      </div>
+      <p class="arrangement-status" role="status"></p>
+      <textarea class="arrangement-copy" aria-label="Order to paste into GitHub" readonly hidden></textarea>
+    </div>
+  </template>
 
   <dialog class="viewer" aria-label="Project artwork">
     <div class="viewer-bar">

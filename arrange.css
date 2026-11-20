@@ -1,0 +1,36 @@
+.arrangement-controls { margin-bottom: 16px; }
+.arrangement-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-block: 8px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .875rem;
+}
+.arrangement-actions { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.arrangement-actions :is(button, a) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+.arrangement-status { margin-block: 8px 0; color: var(--muted); font-size: .875rem; }
+.arrangement-status:empty { margin: 0; }
+.arrangement-copy {
+  width: 100%;
+  min-height: 96px;
+  margin-top: 8px;
+  padding: 8px;
+  background: var(--background);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.poster[draggable="true"] { cursor: grab; }
+.poster.is-dragged { opacity: .48; cursor: grabbing; }
+.poster:is(.is-drop-target, [aria-pressed="true"]) { outline: 2px solid var(--red); outline-offset: 3px; }

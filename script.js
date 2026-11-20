@@ -6,10 +6,13 @@
     const tabs = [...tablist.children];
     const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
     let selected = tabs.find(tab => tab.getAttribute("aria-selected") === "true");
+    tablist.style.setProperty("--tab-count", tabs.length);
+    tablist.style.setProperty("--active-tab", tabs.indexOf(selected));
     let transition;
     let appearance;
 
     function showPanel(tab) {
+      tablist.style.setProperty("--active-tab", tabs.indexOf(tab));
       tabs.forEach((item, i) => {
         const active = item === tab;
         item.setAttribute("aria-selected", String(active));
@@ -93,7 +96,7 @@
 
   document.querySelector(".project-stack").addEventListener("click", event => {
     const poster = event.target.closest(".poster");
-    if (!poster) return;
+    if (!poster || poster.draggable) return;
     const gallery = poster.closest('[role="tabpanel"]');
     const name = document.getElementById(gallery.getAttribute("aria-labelledby")).textContent;
     posters = [...gallery.querySelectorAll(".poster")];
