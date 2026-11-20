@@ -91,12 +91,18 @@
   font-size: .875rem;
   text-decoration: none;
 }
-.editor-bar-actions [data-editor-action="download"], .editor-dialog-actions .editor-save {
+.editor-bar-actions [data-editor-action="publish"], .editor-dialog-actions .editor-save {
   background: #37111b;
   border-color: #7c2339;
 }
 .editor-draft-note, .editor-status, .editor-message { color: var(--muted); font-size: .875rem; }
 .editor-draft-note, .editor-status:not(:empty) { margin-top: 8px; }
+.publish-guide { margin-top: 12px; padding-block: 12px 4px; border-top: 1px solid var(--line); }
+.publish-guide ol { margin: 0 0 12px; padding-inline-start: 1.4rem; color: var(--muted); font-size: .875rem; line-height: 1.6; }
+.draft-preview-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 16px; }
+.draft-preview-bar p { color: var(--muted); font-size: .875rem; }
+.draft-preview-bar strong, .draft-preview-bar a { color: var(--text); }
+.draft-preview-bar a { display: inline-flex; align-items: center; min-height: 36px; font-size: .875rem; text-underline-offset: .22em; }
 .brand-editor { margin-bottom: 16px; }
 .collection-tab-strip { overflow-x: auto; }
 .collection-tab-strip .collection-tabs { max-width: none; }

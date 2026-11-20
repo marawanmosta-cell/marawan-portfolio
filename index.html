@@ -7,12 +7,12 @@
   <meta name="theme-color" content="#000000">
   <title>Marawan — Selected Work</title>
   <link rel="stylesheet" href="styles.css?v=billboards">
-  <link rel="stylesheet" href="arrange.css?v=layout">
+  <link rel="stylesheet" href="arrange.css?v=draft-preview">
   <script src="artwork-order.js" defer></script>
   <script src="editor-files.js" defer></script>
-  <script src="catalog.js?v=billboards" defer></script>
-  <script src="arrange.js?v=billboards" defer></script>
-  <script src="script.js?v=billboards" defer></script>
+  <script src="catalog.js?v=draft-preview" defer></script>
+  <script src="arrange.js?v=draft-preview" defer></script>
+  <script src="script.js?v=draft-preview" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -30,11 +30,27 @@
     <div class="editor-bar-actions">
       <button type="button" data-editor-action="brand">Add brand</button>
       <button type="button" data-editor-action="site">Rename portfolio</button>
-      <button type="button" data-editor-action="download">Download GitHub update</button>
-      <a href="https://github.com/marawanmosta-cell/marawan-portfolio/upload/main" target="_blank" rel="noopener">Open GitHub upload ↗</a>
+      <a href="?arrange=preview" data-portfolio-mode="preview">Preview draft</a>
+      <button type="button" data-editor-action="publish" aria-expanded="false" aria-controls="publish-guide">Publish changes</button>
     </div>
-    <p class="editor-draft-note">Drafts are saved in this browser. Download the GitHub update to publish your changes.</p>
+    <p class="editor-draft-note">Draft changes stay in this browser until you publish them on GitHub.</p>
     <p class="editor-status" role="status"></p>
+    <div class="publish-guide" id="publish-guide" hidden>
+      <ol>
+        <li>Download the update and extract the ZIP.</li>
+        <li>Open GitHub upload, add <code>artwork-order.js</code> and the <code>assets</code> folder if included, then select <strong>Commit changes</strong>.</li>
+      </ol>
+      <div class="editor-bar-actions">
+        <button type="button" data-editor-action="download">Download GitHub update</button>
+        <a href="https://github.com/marawanmosta-cell/marawan-portfolio/upload/main" target="_blank" rel="noopener">Open GitHub upload ↗</a>
+      </div>
+      <p class="editor-status publish-status" role="status"></p>
+    </div>
+  </section>
+
+  <section class="editor-bar draft-preview-bar" aria-label="Draft preview" hidden>
+    <p class="draft-preview-note"><strong>Draft preview</strong> · Only visible in this browser.</p>
+    <a href="?" data-portfolio-mode="live">View live site ↗</a>
   </section>
 
   <main id="work" class="project-stack">

@@ -2,15 +2,15 @@ window.portfolioCatalogReady.then(() => {
   const header = document.querySelector(".site-header");
   const modeLink = header.querySelector(".portfolio-mode");
   const modeUrl = new URL(location.href);
+  const { editing, previewing } = window.portfolioEditor;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  if (modeUrl.searchParams.get("arrange") === "1") {
-    modeUrl.searchParams.delete("arrange");
-    modeLink.textContent = "View live";
+  modeLink.dataset.portfolioMode = editing ? "live" : "1";
+  if (editing || previewing) {
+    modeLink.textContent = editing ? "View live" : "Back to edit";
     modeLink.removeAttribute("aria-label");
-  } else {
-    modeUrl.searchParams.set("arrange", "1");
   }
+  const modeLinks = document.querySelectorAll("[data-portfolio-mode]");
 
   function updateModeLink() {
     const active = '[role="tab"][aria-selected="true"]';
@@ -20,7 +20,12 @@ window.portfolioCatalogReady.then(() => {
     if (section) modeUrl.searchParams.set("section", section);
     else modeUrl.searchParams.delete("section");
     modeUrl.hash = location.hash === "#billboards" && section !== "gardens-gallery" ? "" : location.hash;
-    modeLink.href = modeUrl.href;
+    for (const link of modeLinks) {
+      const mode = link.dataset.portfolioMode;
+      if (mode === "live") modeUrl.searchParams.delete("arrange");
+      else modeUrl.searchParams.set("arrange", mode);
+      link.href = modeUrl.href;
+    }
   }
 
   function setupTabs(tablist, isProjectList = false) {

@@ -1,8 +1,8 @@
 window.portfolioCatalogReady.then(() => {
-  const editMode = new URLSearchParams(window.location.search).get("arrange") === "1";
   const published = window.portfolioOrder || {};
   const template = document.getElementById("arrangement-controls");
   const editor = window.portfolioEditor;
+  const { editing, usesDraft } = editor;
   const posterId = editor.artworkId;
 
   function normalize(items, value) {
@@ -21,7 +21,7 @@ window.portfolioCatalogReady.then(() => {
     const id = grid.dataset.galleryId || panel.id;
     const empty = document.createElement("p");
     empty.className = "empty-gallery";
-    empty.textContent = editMode && items.size ? "All artworks are in Trash." : "Artwork coming soon.";
+    empty.textContent = editing && items.size ? "All artworks are in Trash." : "Artwork coming soon.";
     grid.after(empty);
     return {
       id,
@@ -46,24 +46,13 @@ window.portfolioCatalogReady.then(() => {
 
   editor.galleryState = () => Object.fromEntries(galleries.map(({ id, state }) => [id, state]));
 
-  function enableEditing(gallery) {
-    const { grid, id, items } = gallery;
-    const toolbar = template.content.firstElementChild.cloneNode(true);
-    const status = toolbar.querySelector(".arrangement-status");
-    const output = toolbar.querySelector(".arrangement-copy");
-    const trashCount = toolbar.querySelector(".trash-count");
-    const trashList = toolbar.querySelector(".trash-list");
-    const trashEmpty = toolbar.querySelector(".trash-empty");
-    const trashSummary = toolbar.querySelector(".gallery-trash summary");
+  function loadLayoutDraft(gallery) {
+    const { id, items } = gallery;
     const storageKey = "marawan-portfolio-order:" + id;
     const sourceItems = new Map([...items].filter(([, poster]) => !poster.dataset.draftArtwork));
     const source = normalize(sourceItems, published[id]);
     const base = JSON.stringify(source);
     const legacyBase = source.trashed.length === 0 ? JSON.stringify(source.order) : null;
-    let dragged;
-    let target;
-    let picked;
-
     try {
       const draft = JSON.parse(localStorage.getItem(storageKey));
       if (draft && (draft.base === base || draft.base === legacyBase)) {
@@ -74,9 +63,23 @@ window.portfolioCatalogReady.then(() => {
         gallery.state = normalize(items, { ...previous, order: [...source.order, ...(previous.order || [])] });
       }
     } catch {
-      // Editing still works for the current session without storage.
+      // The published layout remains available if local storage fails.
     }
+    return { base, storageKey };
+  }
 
+  function enableEditing(gallery, { base, storageKey }) {
+    const { grid, id, items } = gallery;
+    const toolbar = template.content.firstElementChild.cloneNode(true);
+    const status = toolbar.querySelector(".arrangement-status");
+    const output = toolbar.querySelector(".arrangement-copy");
+    const trashCount = toolbar.querySelector(".trash-count");
+    const trashList = toolbar.querySelector(".trash-list");
+    const trashEmpty = toolbar.querySelector(".trash-empty");
+    const trashSummary = toolbar.querySelector(".gallery-trash summary");
+    let dragged;
+    let target;
+    let picked;
     const state = gallery.state;
     const titleOf = poster => poster.querySelector(".poster-title").textContent;
     const cards = new Map();
@@ -266,7 +269,8 @@ window.portfolioCatalogReady.then(() => {
   }
 
   for (const gallery of galleries) {
-    if (editMode) enableEditing(gallery);
+    const storage = usesDraft ? loadLayoutDraft(gallery) : null;
+    if (editing) enableEditing(gallery, storage);
     else renderGrid(gallery);
   }
 });

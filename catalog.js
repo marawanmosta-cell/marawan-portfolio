@@ -1,6 +1,8 @@
 window.portfolioCatalogReady = (async () => {
   const params = new URLSearchParams(location.search);
   const editing = params.get("arrange") === "1";
+  const previewing = params.get("arrange") === "preview";
+  const usesDraft = editing || previewing;
   const published = window.portfolioOrder?.$catalog || {};
   const files = window.portfolioFiles;
   const base = JSON.stringify(published);
@@ -8,15 +10,18 @@ window.portfolioCatalogReady = (async () => {
   const projectTabs = document.querySelector(".project-index .project-tabs");
   const editorBar = document.querySelector(".editor-bar");
   const status = editorBar.querySelector(".editor-status");
+  const previewBar = document.querySelector(".draft-preview-bar");
+  previewBar.hidden = !previewing;
   let draft;
   let revision = 0;
-  if (editing) {
+  if (usesDraft) {
     try {
       const saved = await files.readDraft();
       revision = saved?.revision || 0;
       if (saved?.base === base) draft = saved.catalog;
     } catch {
-      status.textContent = "This browser could not open draft storage.";
+      const notice = previewing ? previewBar.querySelector(".draft-preview-note") : status;
+      notice.textContent = "Draft storage is unavailable in this browser. Showing published content.";
     }
   }
   const catalog = structuredClone(draft || published);
@@ -234,7 +239,7 @@ window.portfolioCatalogReady = (async () => {
     ))].filter(filename => !publicImages.has(filename));
   }
 
-  window.portfolioEditor = { artworkId, textFor, pendingImages: () => pendingPaths().length };
+  window.portfolioEditor = { editing, previewing, usesDraft, artworkId, textFor, pendingImages: () => pendingPaths().length };
 
   if (!editing) return;
 
@@ -287,6 +292,10 @@ window.portfolioCatalogReady = (async () => {
   }
 
   try {
+    if (sessionStorage.getItem("portfolio-draft-just-saved") === "1") {
+      sessionStorage.removeItem("portfolio-draft-just-saved");
+      if (!status.textContent) status.textContent = "Draft saved. Preview your changes or publish them on GitHub.";
+    }
     const storedScroll = sessionStorage.getItem("portfolio-editor-scroll");
     if (storedScroll !== null) {
       sessionStorage.removeItem("portfolio-editor-scroll");
@@ -390,6 +399,7 @@ window.portfolioCatalogReady = (async () => {
       const blobs = new Map();
       const context = await job.change(next, name, blobs);
       await files.saveDraft({ base, catalog: next }, blobs, revision);
+      try { sessionStorage.setItem("portfolio-draft-just-saved", "1"); } catch {}
       visit(context?.brand, context?.section, context?.keepScroll);
     } catch (error) {
       message.textContent = "Could not save the draft. " + error.message;
@@ -400,10 +410,18 @@ window.portfolioCatalogReady = (async () => {
     }
   });
 
-  const exportButton = editorBar.querySelector('[data-editor-action="download"]');
+  const publishToggle = editorBar.querySelector('[data-editor-action="publish"]');
+  const publishGuide = editorBar.querySelector(".publish-guide");
+  const publishStatus = publishGuide.querySelector(".publish-status");
+  publishToggle.addEventListener("click", () => {
+    publishGuide.hidden = !publishGuide.hidden;
+    publishToggle.setAttribute("aria-expanded", String(!publishGuide.hidden));
+  });
+
+  const exportButton = publishGuide.querySelector('[data-editor-action="download"]');
   exportButton.addEventListener("click", async () => {
     exportButton.disabled = true;
-    status.textContent = "Preparing the GitHub update…";
+    publishStatus.textContent = "Preparing the GitHub update…";
     try {
       const entries = new Map([["artwork-order.js", new Blob([textFor(window.portfolioEditor.galleryState())])]]);
       for (const filename of pendingPaths()) {
@@ -412,9 +430,9 @@ window.portfolioCatalogReady = (async () => {
         entries.set(filename, blob);
       }
       files.download(await files.zip(entries), "portfolio-github-update.zip");
-      status.textContent = "Extract the ZIP and drop its contents into GitHub upload. Keep the assets folder intact.";
+      publishStatus.textContent = "Update downloaded. Extract it and commit the files on GitHub to publish.";
     } catch (error) {
-      status.textContent = "Could not export the update. " + error.message;
+      publishStatus.textContent = "Could not export the update. " + error.message;
     } finally {
       exportButton.disabled = false;
     }

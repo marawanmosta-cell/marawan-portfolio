@@ -4,13 +4,13 @@ A single-page portfolio with plain HTML, CSS, and JavaScript. Open `index.html` 
 
 ## Edit the portfolio
 
-Choose **Edit portfolio** in the header, or open the portfolio with `?arrange=1`. Choose **View live** to return to the published gallery.
+Choose **Edit portfolio** in the header, or open the portfolio with `?arrange=1`. **Preview draft** shows the saved draft as a gallery in your browser. **View live** opens the published gallery.
 
 - **Add brand** creates a project. **Add section** creates a gallery inside the active project. You can rename projects, sections, and the portfolio title in the editor.
 - **Add images** accepts multiple JPG, PNG, or WebP files. **Edit / Replace** updates the artwork's caption, image description, or image in its current slot.
 - Drag one artwork onto another to swap them. **Move to Trash** removes an artwork from the draft gallery. **Restore** puts the artwork back in its saved slot.
 
-The editor stores drafts and uploaded images in the browser. To publish, choose **Download GitHub update**, extract the ZIP, then choose **Open GitHub upload**. Drag the extracted `artwork-order.js` and, if present, the entire `assets` folder onto the upload page. Commit the files to `main` together.
+The editor stores drafts and uploaded images in the browser. To publish, choose **Publish changes**, then **Download GitHub update**. Extract the ZIP and choose **Open GitHub upload**. Drag the extracted `artwork-order.js` and, if present, the entire `assets` folder onto the upload page. Commit the files to `main` together.
 
 For changes without new image files, **Copy changes for GitHub** can update just `artwork-order.js`.
 
