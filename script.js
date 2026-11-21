@@ -1,32 +1,6 @@
 window.portfolioCatalogReady.then(() => {
   const header = document.querySelector(".site-header");
-  const modeLink = header.querySelector(".portfolio-mode");
-  const modeUrl = new URL(location.href);
-  const { editing, previewing } = window.portfolioEditor;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  modeLink.dataset.portfolioMode = editing ? "live" : "1";
-  if (editing || previewing) {
-    modeLink.textContent = editing ? "View live" : "Back to edit";
-    modeLink.removeAttribute("aria-label");
-  }
-  const modeLinks = document.querySelectorAll("[data-portfolio-mode]");
-
-  function updateModeLink() {
-    const active = '[role="tab"][aria-selected="true"]';
-    const brand = header.querySelector(active).getAttribute("aria-controls");
-    const section = document.getElementById(brand).querySelector(active)?.getAttribute("aria-controls");
-    modeUrl.searchParams.set("brand", brand);
-    if (section) modeUrl.searchParams.set("section", section);
-    else modeUrl.searchParams.delete("section");
-    modeUrl.hash = ["#billboards", "#gardens-campaign"].includes(location.hash) && section !== "gardens-gallery" ? "" : location.hash;
-    for (const link of modeLinks) {
-      const mode = link.dataset.portfolioMode;
-      if (mode === "live") modeUrl.searchParams.delete("arrange");
-      else modeUrl.searchParams.set("arrange", mode);
-      link.href = modeUrl.href;
-    }
-  }
 
   const brandThemes = {
     "forsan-gallery": "red", "abu-se3da": "blue", "medical-vol-2": "blue",
@@ -65,7 +39,6 @@ window.portfolioCatalogReady.then(() => {
         panels[i].hidden = !active;
       });
       if (isProjectList) applyBrandTheme(tab);
-      updateModeLink();
     }
 
     function selectTab(tab, byPointer) {
@@ -115,8 +88,6 @@ window.portfolioCatalogReady.then(() => {
 
   setupTabs(header.querySelector('[role="tablist"]'), true);
   document.querySelectorAll(".collection-tabs").forEach(tablist => setupTabs(tablist));
-  updateModeLink();
-  window.addEventListener("hashchange", updateModeLink);
 
   const viewer = document.querySelector(".viewer");
   const image = viewer.querySelector(".viewer-image");

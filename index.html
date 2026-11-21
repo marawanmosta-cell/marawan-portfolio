@@ -1,608 +1,1916 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Selected design projects by Marawan.">
-  <meta name="theme-color" content="#000000">
-  <title>Marawan — Selected Work</title>
-  <link rel="stylesheet" href="styles.css?v=brand-themes">
-  <link rel="stylesheet" href="arrange.css?v=brand-themes">
-  <script src="artwork-order.js" defer></script>
-  <script src="editor-files.js?v=brand-themes" defer></script>
-  <script src="catalog.js?v=brand-themes" defer></script>
-  <script src="arrange.js?v=brand-themes" defer></script>
-  <script src="script.js?v=brand-themes" defer></script>
-</head>
-<body>
-  <header class="site-header">
-    <span class="wordmark">MARAWAN</span>
-    <nav class="project-index" aria-label="Projects">
-      <div class="project-tabs" role="tablist" aria-label="Selected work">
-        <button type="button" role="tab" id="perla-tab" aria-controls="perla-project" aria-selected="true">Perla</button>
-        <button type="button" role="tab" id="forsan-tab" aria-controls="forsan-gallery" aria-selected="false" tabindex="-1">AL FORSAN</button>
-        <button type="button" role="tab" id="abu-se3da-tab" aria-controls="abu-se3da" aria-selected="false" tabindex="-1">Abu Se3da</button>
-        <button type="button" role="tab" id="medical-vol-2-tab" aria-controls="medical-vol-2" aria-selected="false" tabindex="-1">Medical Volume 2</button>
-        <button type="button" role="tab" id="segment-development-tab" aria-controls="segment-development" aria-selected="false" tabindex="-1">Segment Development</button>
-        <button type="button" role="tab" id="canton-development-tab" aria-controls="canton-development" aria-selected="false" tabindex="-1">Canton Development</button>
-        <button type="button" role="tab" id="automotive-tab" aria-controls="automotive" aria-selected="false" tabindex="-1">Automotive</button>
-      </div>
-    </nav>
-    <a class="portfolio-mode" href="?arrange=1" aria-label="Edit portfolio">Edit<span class="portfolio-mode-context">&nbsp;portfolio</span></a>
-  </header>
-
-  <section class="editor-bar" aria-label="Portfolio editor" hidden>
-    <div class="editor-bar-actions">
-      <button type="button" data-editor-action="brand">Add brand</button>
-      <button type="button" data-editor-action="site">Rename portfolio</button>
-      <a href="?arrange=preview" data-portfolio-mode="preview">Preview draft</a>
-      <button type="button" data-editor-action="publish" aria-expanded="false" aria-controls="publish-guide">Publish changes</button>
-    </div>
-    <p class="editor-draft-note">Draft changes stay in this browser until you publish them on GitHub.</p>
-    <p class="editor-status" role="status"></p>
-    <div class="publish-guide" id="publish-guide" hidden>
-      <ol>
-        <li>Download the update and extract the ZIP.</li>
-        <li>Open GitHub upload, add <code>artwork-order.js</code> and the <code>assets</code> folder if included, then select <strong>Commit changes</strong>.</li>
-      </ol>
-      <div class="editor-bar-actions">
-        <button type="button" data-editor-action="download">Download GitHub update</button>
-        <a href="https://github.com/marawanmosta-cell/marawan-portfolio/upload/main" target="_blank" rel="noopener">Open GitHub upload ↗</a>
-      </div>
-      <p class="editor-status publish-status" role="status"></p>
-    </div>
-  </section>
-
-  <section class="editor-bar draft-preview-bar" aria-label="Draft preview" hidden>
-    <p class="draft-preview-note"><strong>Draft preview</strong> · Only visible in this browser.</p>
-    <a href="?" data-portfolio-mode="live">View live site ↗</a>
-  </section>
-
-  <main id="work" class="project-stack">
-    <section class="project" id="perla-project" role="tabpanel" aria-labelledby="perla-tab" tabindex="0">
-      <div class="project-header">
-        <h1>Perla</h1>
-      </div>
-      <div class="project-tabs collection-tabs" role="tablist" aria-label="Perla collections">
-        <button type="button" role="tab" id="properties-tab" aria-controls="properties-gallery" aria-selected="true">Perla Properties</button>
-        <button type="button" role="tab" id="gardens-tab" aria-controls="gardens-gallery" aria-selected="false" tabindex="-1">Perla Gardens</button>
-      </div>
-      <section class="collection" id="properties-gallery" role="tabpanel" aria-labelledby="properties-tab" tabindex="0">
-        <div class="image-grid">
-          <button type="button" class="poster" aria-label="View Experience Leaves Its Signature">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/beyond-experience-preview.webp?v=sharp 480w, assets/perla-properties/beyond-experience-wide.webp?v=sharp 900w, assets/perla-properties/beyond-experience.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/beyond-experience-wide.webp?v=sharp" srcset="assets/perla-properties/beyond-experience-wide.webp?v=sharp 900w, assets/perla-properties/beyond-experience.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/beyond-experience.webp?v=sharp" width="1080" height="1440" alt="A suited figure walks past a fan of gold light on a dark stone façade." decoding="async" fetchpriority="high">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Experience Leaves Its Signature</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Vision Shapes What Comes Next">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/beyond-vision-preview.webp?v=sharp 480w, assets/perla-properties/beyond-vision-wide.webp?v=sharp 900w, assets/perla-properties/beyond-vision.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/beyond-vision-wide.webp?v=sharp" srcset="assets/perla-properties/beyond-vision-wide.webp?v=sharp 900w, assets/perla-properties/beyond-vision.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/beyond-vision.webp?v=sharp" width="1080" height="1440" alt="A portrait with a fan of amber light across one eye and a strand of pearls." decoding="async">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Vision Shapes What Comes Next</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Success Demands More — Vision">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/success-vision-preview.webp?v=sharp 480w, assets/perla-properties/success-vision-wide.webp?v=sharp 900w, assets/perla-properties/success-vision.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/success-vision-wide.webp?v=sharp" srcset="assets/perla-properties/success-vision-wide.webp?v=sharp 900w, assets/perla-properties/success-vision.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/success-vision.webp?v=sharp" width="1080" height="1440" alt="A figure walks across a triangular shaft of sunlight against a concrete wall." decoding="async">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Success Demands More — Vision</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Success Demands More — Partnership">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/success-partnership-preview.webp?v=sharp 480w, assets/perla-properties/success-partnership-wide.webp?v=sharp 900w, assets/perla-properties/success-partnership.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/success-partnership-wide.webp?v=sharp" srcset="assets/perla-properties/success-partnership-wide.webp?v=sharp 900w, assets/perla-properties/success-partnership.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/success-partnership.webp?v=sharp" width="1080" height="1440" alt="Two figures cast long shadows on tiled pavement beside orange vertical typography." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Success Demands More — Partnership</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Success Demands More — Commitment">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/success-commitment-preview.webp?v=sharp 480w, assets/perla-properties/success-commitment-wide.webp?v=sharp 900w, assets/perla-properties/success-commitment.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/success-commitment-wide.webp?v=sharp" srcset="assets/perla-properties/success-commitment-wide.webp?v=sharp 900w, assets/perla-properties/success-commitment.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/success-commitment.webp?v=sharp" width="1080" height="1440" alt="Exposed structural beams against a dark blue sky with orange lettering." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Success Demands More — Commitment</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Success Demands More — Leadership">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/success-leadership-preview.webp?v=sharp 480w, assets/perla-properties/success-leadership-wide.webp?v=sharp 900w, assets/perla-properties/success-leadership.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/success-leadership-wide.webp?v=sharp" srcset="assets/perla-properties/success-leadership-wide.webp?v=sharp 900w, assets/perla-properties/success-leadership.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/success-leadership.webp?v=sharp" width="1080" height="1440" alt="A portrait in front of a dark wall with the illuminated PERLA emblem." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Success Demands More — Leadership</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View A Location With Purpose">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/location-with-purpose-preview.webp?v=sharp 480w, assets/perla-properties/location-with-purpose-wide.webp?v=sharp 900w, assets/perla-properties/location-with-purpose.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/location-with-purpose-wide.webp?v=sharp" srcset="assets/perla-properties/location-with-purpose-wide.webp?v=sharp 900w, assets/perla-properties/location-with-purpose.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/location-with-purpose.webp?v=sharp" width="1080" height="1440" alt="A dark map with Sharqia and Hadayek October marked, above a gold seal." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">A Location With Purpose</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Quality Without Compromise">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/quality-without-compromise-preview.webp?v=sharp 480w, assets/perla-properties/quality-without-compromise-wide.webp?v=sharp 900w, assets/perla-properties/quality-without-compromise.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/quality-without-compromise-wide.webp?v=sharp" srcset="assets/perla-properties/quality-without-compromise-wide.webp?v=sharp 900w, assets/perla-properties/quality-without-compromise.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/quality-without-compromise.webp?v=sharp" width="1080" height="1440" alt="A black-and-white façade cuts diagonally across a flat gold field." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Quality Without Compromise</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View More Than a Place">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/more-than-a-place-preview.webp?v=sharp 480w, assets/perla-properties/more-than-a-place-wide.webp?v=sharp 900w, assets/perla-properties/more-than-a-place.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/more-than-a-place-wide.webp?v=sharp" srcset="assets/perla-properties/more-than-a-place-wide.webp?v=sharp 900w, assets/perla-properties/more-than-a-place.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/more-than-a-place.webp?v=sharp" width="1080" height="1440" alt="A softly backlit silhouette raises her hand against warm gold light." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">More Than a Place</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Design With Intent">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/design-with-intent-preview.webp?v=sharp 480w, assets/perla-properties/design-with-intent-wide.webp?v=sharp 900w, assets/perla-properties/design-with-intent.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/design-with-intent-wide.webp?v=sharp" srcset="assets/perla-properties/design-with-intent-wide.webp?v=sharp 900w, assets/perla-properties/design-with-intent.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/design-with-intent.webp?v=sharp" width="1080" height="1440" alt="A suited figure seen through a sunlit arch next to vertical gold typography." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Design With Intent</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Quality Has Its Standards">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/quality-has-standards-preview.webp?v=sharp 480w, assets/perla-properties/quality-has-standards-wide.webp?v=sharp 900w, assets/perla-properties/quality-has-standards.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/quality-has-standards-wide.webp?v=sharp" srcset="assets/perla-properties/quality-has-standards-wide.webp?v=sharp 900w, assets/perla-properties/quality-has-standards.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/quality-has-standards.webp?v=sharp" width="1080" height="1440" alt="A figure crosses a dark hall lined with illuminated gold fins." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Quality Has Its Standards</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-          <button type="button" class="poster" aria-label="View Experience Beyond One Perspective">
-            <picture class="poster-image">
-              <source media="(max-width: 640px)"
-                srcset="assets/perla-properties/experience-beyond-perspective-preview.webp?v=sharp 480w, assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp 900w, assets/perla-properties/experience-beyond-perspective.webp?v=sharp 1080w"
-                sizes="calc((100vw - 36px) / 2)">
-              <img src="assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp" srcset="assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp 900w, assets/perla-properties/experience-beyond-perspective.webp?v=sharp 1080w" sizes="32vw"
-                data-full="assets/perla-properties/experience-beyond-perspective.webp?v=sharp" width="1080" height="1440" alt="Blurred figures cross the top and bottom of a black composition with gold typography." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption"><span class="poster-title">Experience Beyond One Perspective</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-          </button>
-        </div>
-      </section>
-      <section class="collection brochure-gallery" id="gardens-gallery" role="tabpanel" aria-labelledby="gardens-tab" tabindex="0" hidden>
-        <header class="brochure-header">
-          <h2>To Settle</h2>
-          <div class="brochure-meta">
-            <p>Perla Gardens Brochure</p>
-            <a class="gallery-jump" href="#billboards">Billboards ↓</a>
-            <a class="gallery-jump" href="#gardens-campaign">Campaign ↓</a>
-          </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="Selected design projects by Marawan."
+        />
+        <meta name="theme-color" content="#000000" />
+        <title>Marawan — Selected Work</title>
+        <link rel="stylesheet" href="styles.css?v=brand-themes" />
+        <link rel="stylesheet" href="arrange.css?v=brand-themes" />
+        <script src="artwork-order.js" defer></script>
+        <script src="catalog.js?v=brand-themes" defer></script>
+        <script src="arrange.js?v=brand-themes" defer></script>
+        <script src="script.js?v=brand-themes" defer></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <span class="wordmark">MARAWAN</span>
+            <nav class="project-index" aria-label="Projects">
+                <div
+                    class="project-tabs"
+                    role="tablist"
+                    aria-label="Selected work"
+                >
+                    <button
+                        type="button"
+                        role="tab"
+                        id="perla-tab"
+                        aria-controls="perla-project"
+                        aria-selected="true"
+                    >
+                        Perla
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="forsan-tab"
+                        aria-controls="forsan-gallery"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        AL FORSAN
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="abu-se3da-tab"
+                        aria-controls="abu-se3da"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        Abu Se3da
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="medical-vol-2-tab"
+                        aria-controls="medical-vol-2"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        Medical Volume 2
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="segment-development-tab"
+                        aria-controls="segment-development"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        Segment Development
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="canton-development-tab"
+                        aria-controls="canton-development"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        Canton Development
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="automotive-tab"
+                        aria-controls="automotive"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        Automotive
+                    </button>
+                </div>
+            </nav>
         </header>
-        <div class="image-grid brochure-grid">
-          <button type="button" class="poster" data-artwork-id="brochure-01" aria-label="View brochure image 1, To Settle">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-01-wide.webp" srcset="assets/perla-gardens/brochure-01-preview.webp 640w, assets/perla-gardens/brochure-01-wide.webp 1120w, assets/perla-gardens/brochure-01.webp 1752w"
-                sizes="auto, 95vw" data-full="assets/perla-gardens/brochure-01.webp" width="1752" height="897" alt="Open Perla Gardens brochure cover with a twilight exterior on emerald upholstery." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">01</span><span class="poster-title">To Settle</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-          <button type="button" class="poster" data-artwork-id="brochure-02" aria-label="View brochure image 2, The Community">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-02-wide.webp" srcset="assets/perla-gardens/brochure-02-preview.webp 640w, assets/perla-gardens/brochure-02-wide.webp 1120w, assets/perla-gardens/brochure-02.webp 1488w"
-                sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/brochure-02.webp" width="1488" height="1057" alt="Open spread with a bilingual community introduction and a landscaped residential courtyard." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">02</span><span class="poster-title">The Community</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-          <button type="button" class="poster" data-artwork-id="brochure-03" aria-label="View brochure image 3, Project Features">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-03-wide.webp" srcset="assets/perla-gardens/brochure-03-preview.webp 640w, assets/perla-gardens/brochure-03-wide.webp 1120w, assets/perla-gardens/brochure-03.webp 1488w"
-                sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/brochure-03.webp" width="1488" height="1057" alt="Emerald brochure spread beside an aerial image of the development at night." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">03</span><span class="poster-title">Project Features</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-          <button type="button" class="poster" data-artwork-id="brochure-04" aria-label="View brochure image 4, Everyday Life">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-04-wide.webp" srcset="assets/perla-gardens/brochure-04-preview.webp 640w, assets/perla-gardens/brochure-04-wide.webp 1120w, assets/perla-gardens/brochure-04.webp 1680w"
-                sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/brochure-04.webp" width="1680" height="849" alt="Amenities spread with a bilingual list and the clubhouse pool at dusk." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">04</span><span class="poster-title">Everyday Life</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-          <button type="button" class="poster" data-artwork-id="brochure-05" aria-label="View brochure image 5, October Gardens">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-05-wide.webp" srcset="assets/perla-gardens/brochure-05-preview.webp 640w, assets/perla-gardens/brochure-05-wide.webp 1120w, assets/perla-gardens/brochure-05.webp 1536w"
-                sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/brochure-05.webp" width="1536" height="1024" alt="Emerald bilingual spread about the October Gardens neighborhood." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">05</span><span class="poster-title">October Gardens</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-          <button type="button" class="poster" data-artwork-id="brochure-06" aria-label="View brochure image 6, Perla Properties">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-06-wide.webp" srcset="assets/perla-gardens/brochure-06-preview.webp 640w, assets/perla-gardens/brochure-06-wide.webp 1120w, assets/perla-gardens/brochure-06.webp 1536w"
-                sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/brochure-06.webp" width="1536" height="1024" alt="Cream bilingual spread introducing the developer." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">06</span><span class="poster-title">Perla Properties</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-          <button type="button" class="poster" data-artwork-id="brochure-07" aria-label="View brochure image 7, The Cover">
-            <picture class="poster-image">
-              <img src="assets/perla-gardens/brochure-07-wide.webp" srcset="assets/perla-gardens/brochure-07-preview.webp 640w, assets/perla-gardens/brochure-07-wide.webp 1120w, assets/perla-gardens/brochure-07.webp 1254w"
-                sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/brochure-07.webp" width="1254" height="1254" alt="Perla Gardens front cover set upright against an emerald armchair." decoding="async" loading="lazy">
-            </picture>
-            <span class="poster-caption">
-              <span class="poster-number">07</span><span class="poster-title">The Cover</span><span class="poster-arrow" aria-hidden="true">&#8599;</span>
-            </span>
-          </button>
-        </div>
-        <section class="billboard-gallery" id="billboards" aria-labelledby="billboards-title">
-          <header class="billboard-header">
-            <h2 id="billboards-title">Billboards</h2>
-          </header>
-          <div class="image-grid billboard-grid" data-gallery-id="billboards" aria-labelledby="billboards-title">
-            <button type="button" class="poster" data-artwork-id="every-legacy-mockup" aria-label="View Every Legacy Has a Perla — Billboard mockup">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/billboards/every-legacy-mockup-wide.webp" srcset="assets/perla-gardens/billboards/every-legacy-mockup-preview.webp 768w, assets/perla-gardens/billboards/every-legacy-mockup-wide.webp 1600w"
-                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/every-legacy-mockup.webp" width="5120" height="3584" alt="Gold Perla campaign design shown on a rooftop billboard in the late afternoon." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Every Legacy Has a Perla — Mockup</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="sunset-mockup" aria-label="View Calm Living — Mockup">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/billboards/sunset-mockup-preview.webp" srcset="assets/perla-gardens/billboards/sunset-mockup-preview.webp 768w, assets/perla-gardens/billboards/sunset-mockup-wide.webp 1600w, assets/perla-gardens/billboards/sunset-mockup.webp 5120w" sizes="auto, (max-width: 700px) 95vw, 47vw"
-                  data-full="assets/perla-gardens/billboards/sunset-mockup.webp" width="5120" height="3584" alt="Sunset artwork on a rooftop billboard." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Calm Living — Mockup</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="every-legacy-artwork" aria-label="View Every Legacy Has a Perla — Billboard artwork">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/billboards/every-legacy-artwork-wide.webp" srcset="assets/perla-gardens/billboards/every-legacy-artwork-preview.webp 768w, assets/perla-gardens/billboards/every-legacy-artwork-wide.webp 1600w, assets/perla-gardens/billboards/every-legacy-artwork.webp 2520w"
-                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/every-legacy-artwork.webp" width="2520" height="1260" alt="Flat gold billboard artwork with red serif typography, a shell motif and embossed pearl textures." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Every Legacy Has a Perla — Artwork</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="sunset-artwork" aria-label="View Calm Living — Artwork">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/billboards/sunset-artwork-preview.webp" srcset="assets/perla-gardens/billboards/sunset-artwork-preview.webp 768w, assets/perla-gardens/billboards/sunset-artwork-wide.webp 1600w, assets/perla-gardens/billboards/sunset-artwork.webp 4342w" sizes="auto, (max-width: 700px) 95vw, 47vw"
-                  data-full="assets/perla-gardens/billboards/sunset-artwork.webp" width="4342" height="1805" alt="A girl in a sunlit meadow under an orange sky." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Calm Living — Artwork</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="where-hearts-feel-home-roses" aria-label="View Where Hearts Feel Home — Billboard artwork">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/billboards/where-hearts-feel-home-roses-wide.webp" srcset="assets/perla-gardens/billboards/where-hearts-feel-home-roses-preview.webp 768w, assets/perla-gardens/billboards/where-hearts-feel-home-roses-wide.webp 1600w"
-                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/where-hearts-feel-home-roses.webp" width="2520" height="1260" alt="Perla Gardens billboard artwork with a bouquet of roses passed between two hands and yellow Arabic lettering." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Where Hearts Feel Home — Roses</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="where-hearts-feel-home-family" aria-label="View Where Hearts Feel Home — Billboard artwork">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/billboards/where-hearts-feel-home-family-wide.webp" srcset="assets/perla-gardens/billboards/where-hearts-feel-home-family-preview.webp 768w, assets/perla-gardens/billboards/where-hearts-feel-home-family-wide.webp 1600w"
-                  sizes="auto, (max-width: 700px) 95vw, 47vw" data-full="assets/perla-gardens/billboards/where-hearts-feel-home-family.webp" width="2520" height="1260" alt="Perla Gardens billboard artwork with a baby holding an adult hand beneath yellow Arabic lettering." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Where Hearts Feel Home — Family</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-          </div>
-        </section>
-        <section class="campaign-gallery" id="gardens-campaign" aria-labelledby="campaign-title">
-          <header class="billboard-header"><h2 id="campaign-title">Campaign</h2></header>
-          <div class="image-grid campaign-grid" data-gallery-id="gardens-campaign" aria-labelledby="campaign-title">
-            <button type="button" class="poster" data-artwork-id="confidence" aria-label="View Confidence">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/campaign/confidence-preview.webp" srcset="assets/perla-gardens/campaign/confidence-preview.webp 768w, assets/perla-gardens/campaign/confidence.webp 1080w" sizes="auto, (max-width: 700px) 95vw, 47vw"
-                  data-full="assets/perla-gardens/campaign/confidence.webp" width="1080" height="1440" alt="A car at the Perla Gardens entrance." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Confidence</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="belonging" aria-label="View Belonging">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/campaign/belonging-preview.webp" srcset="assets/perla-gardens/campaign/belonging-preview.webp 768w, assets/perla-gardens/campaign/belonging.webp 1080w" sizes="auto, (max-width: 700px) 95vw, 47vw"
-                  data-full="assets/perla-gardens/campaign/belonging.webp" width="1080" height="1440" alt="A family sharing a meal in the garden." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Belonging</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="fulfillment" aria-label="View Fulfillment">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/campaign/fulfillment-preview.webp" srcset="assets/perla-gardens/campaign/fulfillment-preview.webp 768w, assets/perla-gardens/campaign/fulfillment.webp 1080w" sizes="auto, (max-width: 700px) 95vw, 47vw"
-                  data-full="assets/perla-gardens/campaign/fulfillment.webp" width="1080" height="1440" alt="Two players on the tennis court." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Fulfillment</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-            <button type="button" class="poster" data-artwork-id="calm" aria-label="View Calm">
-              <picture class="poster-image">
-                <img src="assets/perla-gardens/campaign/calm-preview.webp" srcset="assets/perla-gardens/campaign/calm-preview.webp 768w, assets/perla-gardens/campaign/calm.webp 1080w" sizes="auto, (max-width: 700px) 95vw, 47vw"
-                  data-full="assets/perla-gardens/campaign/calm.webp" width="1080" height="1440" alt="A pool surrounded by gardens and apartments." decoding="async" loading="lazy">
-              </picture>
-              <span class="poster-caption"><span class="poster-title">Calm</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-            </button>
-          </div>
-        </section>
-      </section>
-    </section>
 
-    <section class="project" id="forsan-gallery" role="tabpanel" aria-labelledby="forsan-tab" tabindex="0" hidden>
-      <div class="project-header">
-        <h1>AL FORSAN</h1>
-        <span class="project-meta">9 artworks</span>
-      </div>
-      <div class="image-grid">
-        <button type="button" class="poster" aria-label="View New Form, Same Force">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/new-form-preview.webp?v=sharp 480w, assets/al-forsan/new-form-wide.webp?v=sharp 900w, assets/al-forsan/new-form.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/new-form-wide.webp?v=sharp" srcset="assets/al-forsan/new-form-wide.webp?v=sharp 900w, assets/al-forsan/new-form.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/new-form.webp?v=sharp" width="1080" height="1440" alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">New Form, Same Force</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Zero-Risk Execution">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/zero-risk-preview.webp?v=sharp 480w, assets/al-forsan/zero-risk-wide.webp?v=sharp 900w, assets/al-forsan/zero-risk.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/zero-risk-wide.webp?v=sharp" srcset="assets/al-forsan/zero-risk-wide.webp?v=sharp 900w, assets/al-forsan/zero-risk.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/zero-risk.webp?v=sharp" width="1080" height="1440" alt="A hand holding a horse-head cane beside a red hard hat" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Zero-Risk Execution</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Field Mastery">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/field-mastery-preview.webp?v=sharp 480w, assets/al-forsan/field-mastery-wide.webp?v=sharp 900w, assets/al-forsan/field-mastery.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/field-mastery-wide.webp?v=sharp" srcset="assets/al-forsan/field-mastery-wide.webp?v=sharp 900w, assets/al-forsan/field-mastery.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/field-mastery.webp?v=sharp" width="1080" height="1440" alt="People casting long shadows across a grid above a red block of typography" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Field Mastery</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Laguna Mall, Endless Connection">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/laguna-architecture-preview.webp?v=sharp 480w, assets/al-forsan/laguna-architecture-wide.webp?v=sharp 900w, assets/al-forsan/laguna-architecture.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/laguna-architecture-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-architecture-wide.webp?v=sharp 900w, assets/al-forsan/laguna-architecture.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/laguna-architecture.webp?v=sharp" width="1080" height="1440" alt="Lit windows in a curved Laguna Mall facade with red light trails" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Laguna Mall — Endless Connection</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Laguna Mall, Sheikh Zaid">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/laguna-cafe-preview.webp?v=sharp 480w, assets/al-forsan/laguna-cafe-wide.webp?v=sharp 900w, assets/al-forsan/laguna-cafe.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/laguna-cafe-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-cafe-wide.webp?v=sharp 900w, assets/al-forsan/laguna-cafe.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/laguna-cafe.webp?v=sharp" width="1080" height="1440" alt="A person holding a cup in a café framed by soft red reflections" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Laguna Mall — Sheikh Zaid</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Laguna Mall, Flow and Discovery">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/laguna-stairs-preview.webp?v=sharp 480w, assets/al-forsan/laguna-stairs-wide.webp?v=sharp 900w, assets/al-forsan/laguna-stairs.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/laguna-stairs-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-stairs-wide.webp?v=sharp 900w, assets/al-forsan/laguna-stairs.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/laguna-stairs.webp?v=sharp" width="1080" height="1440" alt="Blurred shoppers in motion on a vivid red staircase" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Laguna Mall — Flow and Discovery</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Laguna Mall, Service Meets Lifestyle">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/laguna-lifestyle-preview.webp?v=sharp 480w, assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp 900w, assets/al-forsan/laguna-lifestyle.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp" srcset="assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp 900w, assets/al-forsan/laguna-lifestyle.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/laguna-lifestyle.webp?v=sharp" width="1080" height="1440" alt="A woman in red sitting in a shopping cart in a dark car park" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Laguna Mall — Service Meets Lifestyle</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Plot 14, The Arena of Dominance">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/plot-14-arena-preview.webp?v=sharp 480w, assets/al-forsan/plot-14-arena-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-arena.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/plot-14-arena-wide.webp?v=sharp" srcset="assets/al-forsan/plot-14-arena-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-arena.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/plot-14-arena.webp?v=sharp" width="1080" height="1440" alt="A silhouetted figure on a stairway beside a sweeping red wall" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Plot 14 — The Arena of Dominance</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-        <button type="button" class="poster" aria-label="View Plot 14, On the Axis">
-          <picture class="poster-image">
-            <source media="(max-width: 640px)"
-              srcset="assets/al-forsan/plot-14-courtyard-preview.webp?v=sharp 480w, assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-courtyard.webp?v=sharp 1080w"
-              sizes="calc((100vw - 36px) / 2)">
-            <img src="assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp" srcset="assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp 900w, assets/al-forsan/plot-14-courtyard.webp?v=sharp 1080w" sizes="32vw"
-              data-full="assets/al-forsan/plot-14-courtyard.webp?v=sharp" width="1080" height="1440" alt="A landscaped retail courtyard with glass façades under a blue sky" decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Plot 14 — On the Axis</span><span class="poster-arrow" aria-hidden="true">↗</span></span>
-        </button>
-      </div>
-    </section>
+        <main id="work" class="project-stack">
+            <section
+                class="project"
+                id="perla-project"
+                role="tabpanel"
+                aria-labelledby="perla-tab"
+                tabindex="0"
+            >
+                <div class="project-header">
+                    <h1>Perla</h1>
+                </div>
+                <div
+                    class="project-tabs collection-tabs"
+                    role="tablist"
+                    aria-label="Perla collections"
+                >
+                    <button
+                        type="button"
+                        role="tab"
+                        id="properties-tab"
+                        aria-controls="properties-gallery"
+                        aria-selected="true"
+                    >
+                        Perla Properties
+                    </button>
+                    <button
+                        type="button"
+                        role="tab"
+                        id="gardens-tab"
+                        aria-controls="gardens-gallery"
+                        aria-selected="false"
+                        tabindex="-1"
+                    >
+                        Perla Gardens
+                    </button>
+                </div>
+                <section
+                    class="collection"
+                    id="properties-gallery"
+                    role="tabpanel"
+                    aria-labelledby="properties-tab"
+                    tabindex="0"
+                >
+                    <div class="image-grid">
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Experience Leaves Its Signature"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/beyond-experience-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/beyond-experience-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/beyond-experience.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/beyond-experience-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/beyond-experience-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/beyond-experience.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/beyond-experience.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A suited figure walks past a fan of gold light on a dark stone façade."
+                                    decoding="async"
+                                    fetchpriority="high"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Experience Leaves Its Signature</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Vision Shapes What Comes Next"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/beyond-vision-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/beyond-vision-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/beyond-vision.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/beyond-vision-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/beyond-vision-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/beyond-vision.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/beyond-vision.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A portrait with a fan of amber light across one eye and a strand of pearls."
+                                    decoding="async"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Vision Shapes What Comes Next</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Success Demands More — Vision"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/success-vision-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/success-vision-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/success-vision.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/success-vision-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/success-vision-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/success-vision.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/success-vision.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A figure walks across a triangular shaft of sunlight against a concrete wall."
+                                    decoding="async"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Success Demands More — Vision</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Success Demands More — Partnership"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/success-partnership-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/success-partnership-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/success-partnership.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/success-partnership-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/success-partnership-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/success-partnership.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/success-partnership.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="Two figures cast long shadows on tiled pavement beside orange vertical typography."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Success Demands More — Partnership</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Success Demands More — Commitment"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/success-commitment-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/success-commitment-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/success-commitment.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/success-commitment-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/success-commitment-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/success-commitment.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/success-commitment.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="Exposed structural beams against a dark blue sky with orange lettering."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Success Demands More — Commitment</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Success Demands More — Leadership"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/success-leadership-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/success-leadership-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/success-leadership.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/success-leadership-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/success-leadership-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/success-leadership.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/success-leadership.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A portrait in front of a dark wall with the illuminated PERLA emblem."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Success Demands More — Leadership</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View A Location With Purpose"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/location-with-purpose-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/location-with-purpose-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/location-with-purpose.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/location-with-purpose-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/location-with-purpose-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/location-with-purpose.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/location-with-purpose.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A dark map with Sharqia and Hadayek October marked, above a gold seal."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >A Location With Purpose</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Quality Without Compromise"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/quality-without-compromise-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/quality-without-compromise-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/quality-without-compromise.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/quality-without-compromise-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/quality-without-compromise-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/quality-without-compromise.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/quality-without-compromise.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A black-and-white façade cuts diagonally across a flat gold field."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Quality Without Compromise</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View More Than a Place"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/more-than-a-place-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/more-than-a-place-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/more-than-a-place.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/more-than-a-place-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/more-than-a-place-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/more-than-a-place.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/more-than-a-place.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A softly backlit silhouette raises her hand against warm gold light."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >More Than a Place</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Design With Intent"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/design-with-intent-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/design-with-intent-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/design-with-intent.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/design-with-intent-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/design-with-intent-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/design-with-intent.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/design-with-intent.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A suited figure seen through a sunlit arch next to vertical gold typography."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Design With Intent</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Quality Has Its Standards"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/quality-has-standards-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/quality-has-standards-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/quality-has-standards.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/quality-has-standards-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/quality-has-standards-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/quality-has-standards.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/quality-has-standards.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="A figure crosses a dark hall lined with illuminated gold fins."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Quality Has Its Standards</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            aria-label="View Experience Beyond One Perspective"
+                        >
+                            <picture class="poster-image">
+                                <source
+                                    media="(max-width: 640px)"
+                                    srcset="
+                                        assets/perla-properties/experience-beyond-perspective-preview.webp?v=sharp  480w,
+                                        assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp     900w,
+                                        assets/perla-properties/experience-beyond-perspective.webp?v=sharp         1080w
+                                    "
+                                    sizes="calc((100vw - 36px) / 2)"
+                                />
+                                <img
+                                    src="assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp"
+                                    srcset="
+                                        assets/perla-properties/experience-beyond-perspective-wide.webp?v=sharp  900w,
+                                        assets/perla-properties/experience-beyond-perspective.webp?v=sharp      1080w
+                                    "
+                                    sizes="32vw"
+                                    data-full="assets/perla-properties/experience-beyond-perspective.webp?v=sharp"
+                                    width="1080"
+                                    height="1440"
+                                    alt="Blurred figures cross the top and bottom of a black composition with gold typography."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption"
+                                ><span class="poster-title"
+                                    >Experience Beyond One Perspective</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </button>
+                    </div>
+                </section>
+                <section
+                    class="collection brochure-gallery"
+                    id="gardens-gallery"
+                    role="tabpanel"
+                    aria-labelledby="gardens-tab"
+                    tabindex="0"
+                    hidden
+                >
+                    <header class="brochure-header">
+                        <h2>To Settle</h2>
+                        <div class="brochure-meta">
+                            <p>Perla Gardens Brochure</p>
+                            <a class="gallery-jump" href="#billboards"
+                                >Billboards ↓</a
+                            >
+                            <a class="gallery-jump" href="#gardens-campaign"
+                                >Campaign ↓</a
+                            >
+                        </div>
+                    </header>
+                    <div class="image-grid brochure-grid">
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-01"
+                            aria-label="View brochure image 1, To Settle"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-01-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-01-preview.webp  640w,
+                                        assets/perla-gardens/brochure-01-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-01.webp         1752w
+                                    "
+                                    sizes="auto, 95vw"
+                                    data-full="assets/perla-gardens/brochure-01.webp"
+                                    width="1752"
+                                    height="897"
+                                    alt="Open Perla Gardens brochure cover with a twilight exterior on emerald upholstery."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">01</span
+                                ><span class="poster-title">To Settle</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-02"
+                            aria-label="View brochure image 2, The Community"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-02-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-02-preview.webp  640w,
+                                        assets/perla-gardens/brochure-02-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-02.webp         1488w
+                                    "
+                                    sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                    data-full="assets/perla-gardens/brochure-02.webp"
+                                    width="1488"
+                                    height="1057"
+                                    alt="Open spread with a bilingual community introduction and a landscaped residential courtyard."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">02</span
+                                ><span class="poster-title">The Community</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-03"
+                            aria-label="View brochure image 3, Project Features"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-03-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-03-preview.webp  640w,
+                                        assets/perla-gardens/brochure-03-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-03.webp         1488w
+                                    "
+                                    sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                    data-full="assets/perla-gardens/brochure-03.webp"
+                                    width="1488"
+                                    height="1057"
+                                    alt="Emerald brochure spread beside an aerial image of the development at night."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">03</span
+                                ><span class="poster-title"
+                                    >Project Features</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-04"
+                            aria-label="View brochure image 4, Everyday Life"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-04-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-04-preview.webp  640w,
+                                        assets/perla-gardens/brochure-04-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-04.webp         1680w
+                                    "
+                                    sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                    data-full="assets/perla-gardens/brochure-04.webp"
+                                    width="1680"
+                                    height="849"
+                                    alt="Amenities spread with a bilingual list and the clubhouse pool at dusk."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">04</span
+                                ><span class="poster-title">Everyday Life</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-05"
+                            aria-label="View brochure image 5, October Gardens"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-05-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-05-preview.webp  640w,
+                                        assets/perla-gardens/brochure-05-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-05.webp         1536w
+                                    "
+                                    sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                    data-full="assets/perla-gardens/brochure-05.webp"
+                                    width="1536"
+                                    height="1024"
+                                    alt="Emerald bilingual spread about the October Gardens neighborhood."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">05</span
+                                ><span class="poster-title"
+                                    >October Gardens</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-06"
+                            aria-label="View brochure image 6, Perla Properties"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-06-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-06-preview.webp  640w,
+                                        assets/perla-gardens/brochure-06-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-06.webp         1536w
+                                    "
+                                    sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                    data-full="assets/perla-gardens/brochure-06.webp"
+                                    width="1536"
+                                    height="1024"
+                                    alt="Cream bilingual spread introducing the developer."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">06</span
+                                ><span class="poster-title"
+                                    >Perla Properties</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                        <button
+                            type="button"
+                            class="poster"
+                            data-artwork-id="brochure-07"
+                            aria-label="View brochure image 7, The Cover"
+                        >
+                            <picture class="poster-image">
+                                <img
+                                    src="assets/perla-gardens/brochure-07-wide.webp"
+                                    srcset="
+                                        assets/perla-gardens/brochure-07-preview.webp  640w,
+                                        assets/perla-gardens/brochure-07-wide.webp    1120w,
+                                        assets/perla-gardens/brochure-07.webp         1254w
+                                    "
+                                    sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                    data-full="assets/perla-gardens/brochure-07.webp"
+                                    width="1254"
+                                    height="1254"
+                                    alt="Perla Gardens front cover set upright against an emerald armchair."
+                                    decoding="async"
+                                    loading="lazy"
+                                />
+                            </picture>
+                            <span class="poster-caption">
+                                <span class="poster-number">07</span
+                                ><span class="poster-title">The Cover</span
+                                ><span class="poster-arrow" aria-hidden="true"
+                                    >&#8599;</span
+                                >
+                            </span>
+                        </button>
+                    </div>
+                    <section
+                        class="billboard-gallery"
+                        id="billboards"
+                        aria-labelledby="billboards-title"
+                    >
+                        <header class="billboard-header">
+                            <h2 id="billboards-title">Billboards</h2>
+                        </header>
+                        <div
+                            class="image-grid billboard-grid"
+                            data-gallery-id="billboards"
+                            aria-labelledby="billboards-title"
+                        >
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="every-legacy-mockup"
+                                aria-label="View Every Legacy Has a Perla — Billboard mockup"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/billboards/every-legacy-mockup-wide.webp"
+                                        srcset="
+                                            assets/perla-gardens/billboards/every-legacy-mockup-preview.webp  768w,
+                                            assets/perla-gardens/billboards/every-legacy-mockup-wide.webp    1600w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/billboards/every-legacy-mockup.webp"
+                                        width="5120"
+                                        height="3584"
+                                        alt="Gold Perla campaign design shown on a rooftop billboard in the late afternoon."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Every Legacy Has a Perla — Mockup</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="sunset-mockup"
+                                aria-label="View Calm Living — Mockup"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/billboards/sunset-mockup-preview.webp"
+                                        srcset="
+                                            assets/perla-gardens/billboards/sunset-mockup-preview.webp  768w,
+                                            assets/perla-gardens/billboards/sunset-mockup-wide.webp    1600w,
+                                            assets/perla-gardens/billboards/sunset-mockup.webp         5120w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/billboards/sunset-mockup.webp"
+                                        width="5120"
+                                        height="3584"
+                                        alt="Sunset artwork on a rooftop billboard."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Calm Living — Mockup</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="every-legacy-artwork"
+                                aria-label="View Every Legacy Has a Perla — Billboard artwork"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/billboards/every-legacy-artwork-wide.webp"
+                                        srcset="
+                                            assets/perla-gardens/billboards/every-legacy-artwork-preview.webp  768w,
+                                            assets/perla-gardens/billboards/every-legacy-artwork-wide.webp    1600w,
+                                            assets/perla-gardens/billboards/every-legacy-artwork.webp         2520w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/billboards/every-legacy-artwork.webp"
+                                        width="2520"
+                                        height="1260"
+                                        alt="Flat gold billboard artwork with red serif typography, a shell motif and embossed pearl textures."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Every Legacy Has a Perla —
+                                        Artwork</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="sunset-artwork"
+                                aria-label="View Calm Living — Artwork"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/billboards/sunset-artwork-preview.webp"
+                                        srcset="
+                                            assets/perla-gardens/billboards/sunset-artwork-preview.webp  768w,
+                                            assets/perla-gardens/billboards/sunset-artwork-wide.webp    1600w,
+                                            assets/perla-gardens/billboards/sunset-artwork.webp         4342w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/billboards/sunset-artwork.webp"
+                                        width="4342"
+                                        height="1805"
+                                        alt="A girl in a sunlit meadow under an orange sky."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Calm Living — Artwork</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="where-hearts-feel-home-roses"
+                                aria-label="View Where Hearts Feel Home — Billboard artwork"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/billboards/where-hearts-feel-home-roses-wide.webp"
+                                        srcset="
+                                            assets/perla-gardens/billboards/where-hearts-feel-home-roses-preview.webp  768w,
+                                            assets/perla-gardens/billboards/where-hearts-feel-home-roses-wide.webp    1600w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/billboards/where-hearts-feel-home-roses.webp"
+                                        width="2520"
+                                        height="1260"
+                                        alt="Perla Gardens billboard artwork with a bouquet of roses passed between two hands and yellow Arabic lettering."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Where Hearts Feel Home — Roses</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="where-hearts-feel-home-family"
+                                aria-label="View Where Hearts Feel Home — Billboard artwork"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/billboards/where-hearts-feel-home-family-wide.webp"
+                                        srcset="
+                                            assets/perla-gardens/billboards/where-hearts-feel-home-family-preview.webp  768w,
+                                            assets/perla-gardens/billboards/where-hearts-feel-home-family-wide.webp    1600w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/billboards/where-hearts-feel-home-family.webp"
+                                        width="2520"
+                                        height="1260"
+                                        alt="Perla Gardens billboard artwork with a baby holding an adult hand beneath yellow Arabic lettering."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Where Hearts Feel Home — Family</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                        </div>
+                    </section>
+                    <section
+                        class="campaign-gallery"
+                        id="gardens-campaign"
+                        aria-labelledby="campaign-title"
+                    >
+                        <header class="billboard-header">
+                            <h2 id="campaign-title">Campaign</h2>
+                        </header>
+                        <div
+                            class="image-grid campaign-grid"
+                            data-gallery-id="gardens-campaign"
+                            aria-labelledby="campaign-title"
+                        >
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="confidence"
+                                aria-label="View Confidence"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/campaign/confidence-preview.webp"
+                                        srcset="
+                                            assets/perla-gardens/campaign/confidence-preview.webp  768w,
+                                            assets/perla-gardens/campaign/confidence.webp         1080w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/campaign/confidence.webp"
+                                        width="1080"
+                                        height="1440"
+                                        alt="A car at the Perla Gardens entrance."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title">Confidence</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="belonging"
+                                aria-label="View Belonging"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/campaign/belonging-preview.webp"
+                                        srcset="
+                                            assets/perla-gardens/campaign/belonging-preview.webp  768w,
+                                            assets/perla-gardens/campaign/belonging.webp         1080w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/campaign/belonging.webp"
+                                        width="1080"
+                                        height="1440"
+                                        alt="A family sharing a meal in the garden."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title">Belonging</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="fulfillment"
+                                aria-label="View Fulfillment"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/campaign/fulfillment-preview.webp"
+                                        srcset="
+                                            assets/perla-gardens/campaign/fulfillment-preview.webp  768w,
+                                            assets/perla-gardens/campaign/fulfillment.webp         1080w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/campaign/fulfillment.webp"
+                                        width="1080"
+                                        height="1440"
+                                        alt="Two players on the tennis court."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title"
+                                        >Fulfillment</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                            <button
+                                type="button"
+                                class="poster"
+                                data-artwork-id="calm"
+                                aria-label="View Calm"
+                            >
+                                <picture class="poster-image">
+                                    <img
+                                        src="assets/perla-gardens/campaign/calm-preview.webp"
+                                        srcset="
+                                            assets/perla-gardens/campaign/calm-preview.webp  768w,
+                                            assets/perla-gardens/campaign/calm.webp         1080w
+                                        "
+                                        sizes="auto, (max-width: 700px) 95vw, 47vw"
+                                        data-full="assets/perla-gardens/campaign/calm.webp"
+                                        width="1080"
+                                        height="1440"
+                                        alt="A pool surrounded by gardens and apartments."
+                                        decoding="async"
+                                        loading="lazy"
+                                    />
+                                </picture>
+                                <span class="poster-caption"
+                                    ><span class="poster-title">Calm</span
+                                    ><span
+                                        class="poster-arrow"
+                                        aria-hidden="true"
+                                        >&#8599;</span
+                                    ></span
+                                >
+                            </button>
+                        </div>
+                    </section>
+                </section>
+            </section>
 
-    <section class="project" id="abu-se3da" role="tabpanel" aria-labelledby="abu-se3da-tab" tabindex="0" hidden>
-      <div class="project-header">
-        <h1>Abu Se3da</h1>
-        <span class="project-meta">4 artworks</span>
-      </div>
-      <div class="image-grid imported-grid">
-        <button type="button" class="poster" data-artwork-id="abu-se3da-01" aria-label="View Knee Pain">
-          <picture class="poster-image">
-            <img src="assets/abu-se3da/abu-se3da-01-480.webp" srcset="assets/abu-se3da/abu-se3da-01-480.webp 480w, assets/abu-se3da/abu-se3da-01-960.webp 960w, assets/abu-se3da/abu-se3da-01.webp 1080w" sizes="auto, (max-width: 640px) 48vw, 32vw"
-              data-full="assets/abu-se3da/abu-se3da-01.webp" width="1080" height="1350" alt="Woman holding her knee against a blue background." decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Knee Pain</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-        </button>
-        <button type="button" class="poster" data-artwork-id="abu-se3da-02" aria-label="View Knee Care">
-          <picture class="poster-image">
-            <img src="assets/abu-se3da/abu-se3da-02-480.webp" srcset="assets/abu-se3da/abu-se3da-02-480.webp 480w, assets/abu-se3da/abu-se3da-02-960.webp 960w, assets/abu-se3da/abu-se3da-02.webp 1080w" sizes="auto, (max-width: 640px) 48vw, 32vw"
-              data-full="assets/abu-se3da/abu-se3da-02.webp" width="1080" height="1350" alt="A seated man holding his knee beside a portrait of him standing." decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Knee Care</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-        </button>
-        <button type="button" class="poster" data-artwork-id="abu-se3da-03" aria-label="View Back and Spine">
-          <picture class="poster-image">
-            <img src="assets/abu-se3da/abu-se3da-03-480.webp" srcset="assets/abu-se3da/abu-se3da-03-480.webp 480w, assets/abu-se3da/abu-se3da-03-960.webp 960w, assets/abu-se3da/abu-se3da-03.webp 1080w" sizes="auto, (max-width: 640px) 48vw, 32vw"
-              data-full="assets/abu-se3da/abu-se3da-03.webp" width="1080" height="1350" alt="Father lifting his son with an illustration of the spine." decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Back and Spine</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-        </button>
-        <button type="button" class="poster" data-artwork-id="abu-se3da-04" aria-label="View Heel Pain">
-          <picture class="poster-image">
-            <img src="assets/abu-se3da/abu-se3da-04-480.webp" srcset="assets/abu-se3da/abu-se3da-04-480.webp 480w, assets/abu-se3da/abu-se3da-04-960.webp 960w, assets/abu-se3da/abu-se3da-04.webp 1080w" sizes="auto, (max-width: 640px) 48vw, 32vw"
-              data-full="assets/abu-se3da/abu-se3da-04.webp" width="1080" height="1350" alt="Seated woman holding her heel with an illustration of the foot." decoding="async" loading="lazy">
-          </picture>
-          <span class="poster-caption"><span class="poster-title">Heel Pain</span><span class="poster-arrow" aria-hidden="true">&#8599;</span></span>
-        </button>
-      </div>
-    </section>
+            <section
+                class="project"
+                id="forsan-gallery"
+                role="tabpanel"
+                aria-labelledby="forsan-tab"
+                tabindex="0"
+                hidden
+            >
+                <div class="project-header">
+                    <h1>AL FORSAN</h1>
+                    <span class="project-meta">9 artworks</span>
+                </div>
+                <div class="image-grid">
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View New Form, Same Force"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/new-form-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/new-form-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/new-form.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/new-form-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/new-form-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/new-form.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/new-form.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="Red-lit close-up of a horse’s eye with the Forsan Developments wordmark"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >New Form, Same Force</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Zero-Risk Execution"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/zero-risk-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/zero-risk-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/zero-risk.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/zero-risk-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/zero-risk-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/zero-risk.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/zero-risk.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="A hand holding a horse-head cane beside a red hard hat"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Zero-Risk Execution</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Field Mastery"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/field-mastery-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/field-mastery-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/field-mastery.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/field-mastery-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/field-mastery-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/field-mastery.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/field-mastery.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="People casting long shadows across a grid above a red block of typography"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title">Field Mastery</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Laguna Mall, Endless Connection"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/laguna-architecture-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/laguna-architecture-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/laguna-architecture.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/laguna-architecture-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/laguna-architecture-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/laguna-architecture.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/laguna-architecture.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="Lit windows in a curved Laguna Mall facade with red light trails"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Laguna Mall — Endless Connection</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Laguna Mall, Sheikh Zaid"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/laguna-cafe-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/laguna-cafe-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/laguna-cafe.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/laguna-cafe-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/laguna-cafe-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/laguna-cafe.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/laguna-cafe.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="A person holding a cup in a café framed by soft red reflections"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Laguna Mall — Sheikh Zaid</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Laguna Mall, Flow and Discovery"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/laguna-stairs-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/laguna-stairs-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/laguna-stairs.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/laguna-stairs-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/laguna-stairs-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/laguna-stairs.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/laguna-stairs.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="Blurred shoppers in motion on a vivid red staircase"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Laguna Mall — Flow and Discovery</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Laguna Mall, Service Meets Lifestyle"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/laguna-lifestyle-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/laguna-lifestyle.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/laguna-lifestyle-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/laguna-lifestyle.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/laguna-lifestyle.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="A woman in red sitting in a shopping cart in a dark car park"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Laguna Mall — Service Meets Lifestyle</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Plot 14, The Arena of Dominance"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/plot-14-arena-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/plot-14-arena-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/plot-14-arena.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/plot-14-arena-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/plot-14-arena-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/plot-14-arena.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/plot-14-arena.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="A silhouetted figure on a stairway beside a sweeping red wall"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Plot 14 — The Arena of Dominance</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        aria-label="View Plot 14, On the Axis"
+                    >
+                        <picture class="poster-image">
+                            <source
+                                media="(max-width: 640px)"
+                                srcset="
+                                    assets/al-forsan/plot-14-courtyard-preview.webp?v=sharp  480w,
+                                    assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp     900w,
+                                    assets/al-forsan/plot-14-courtyard.webp?v=sharp         1080w
+                                "
+                                sizes="calc((100vw - 36px) / 2)"
+                            />
+                            <img
+                                src="assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp"
+                                srcset="
+                                    assets/al-forsan/plot-14-courtyard-wide.webp?v=sharp  900w,
+                                    assets/al-forsan/plot-14-courtyard.webp?v=sharp      1080w
+                                "
+                                sizes="32vw"
+                                data-full="assets/al-forsan/plot-14-courtyard.webp?v=sharp"
+                                width="1080"
+                                height="1440"
+                                alt="A landscaped retail courtyard with glass façades under a blue sky"
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title"
+                                >Plot 14 — On the Axis</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >↗</span
+                            ></span
+                        >
+                    </button>
+                </div>
+            </section>
 
-    <section class="project" id="medical-vol-2" role="tabpanel" aria-labelledby="medical-vol-2-tab" tabindex="0" hidden>
-      <div class="project-header">
-        <h1>Medical Volume 2</h1>
-      </div>
-      <div class="project-feature">
-        <a class="project-cover" href="https://www.behance.net/gallery/252891927/Medical-Social-Media-Designs-Vol-2" aria-label="View Medical Volume 2 on Behance">
-          <img src="assets/behance-covers/medical-vol-2-404.webp" srcset="assets/behance-covers/medical-vol-2-404.webp 404w, assets/behance-covers/medical-vol-2.webp 808w" sizes="(max-width: 700px) 95vw, 58vw" width="808" height="632" alt="" decoding="async" loading="lazy">
-        </a>
-        <div class="project-feature-copy">
-          <p class="project-summary">The second volume of medical social media designs brings together clinic and hospital campaign artwork and an animated carousel.</p>
-          <a class="behance-link" href="https://www.behance.net/gallery/252891927/Medical-Social-Media-Designs-Vol-2">View project on Behance <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
+            <section
+                class="project"
+                id="abu-se3da"
+                role="tabpanel"
+                aria-labelledby="abu-se3da-tab"
+                tabindex="0"
+                hidden
+            >
+                <div class="project-header">
+                    <h1>Abu Se3da</h1>
+                    <span class="project-meta">4 artworks</span>
+                </div>
+                <div class="image-grid imported-grid">
+                    <button
+                        type="button"
+                        class="poster"
+                        data-artwork-id="abu-se3da-01"
+                        aria-label="View Knee Pain"
+                    >
+                        <picture class="poster-image">
+                            <img
+                                src="assets/abu-se3da/abu-se3da-01-480.webp"
+                                srcset="
+                                    assets/abu-se3da/abu-se3da-01-480.webp  480w,
+                                    assets/abu-se3da/abu-se3da-01-960.webp  960w,
+                                    assets/abu-se3da/abu-se3da-01.webp     1080w
+                                "
+                                sizes="auto, (max-width: 640px) 48vw, 32vw"
+                                data-full="assets/abu-se3da/abu-se3da-01.webp"
+                                width="1080"
+                                height="1350"
+                                alt="Woman holding her knee against a blue background."
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title">Knee Pain</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >&#8599;</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        data-artwork-id="abu-se3da-02"
+                        aria-label="View Knee Care"
+                    >
+                        <picture class="poster-image">
+                            <img
+                                src="assets/abu-se3da/abu-se3da-02-480.webp"
+                                srcset="
+                                    assets/abu-se3da/abu-se3da-02-480.webp  480w,
+                                    assets/abu-se3da/abu-se3da-02-960.webp  960w,
+                                    assets/abu-se3da/abu-se3da-02.webp     1080w
+                                "
+                                sizes="auto, (max-width: 640px) 48vw, 32vw"
+                                data-full="assets/abu-se3da/abu-se3da-02.webp"
+                                width="1080"
+                                height="1350"
+                                alt="A seated man holding his knee beside a portrait of him standing."
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title">Knee Care</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >&#8599;</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        data-artwork-id="abu-se3da-03"
+                        aria-label="View Back and Spine"
+                    >
+                        <picture class="poster-image">
+                            <img
+                                src="assets/abu-se3da/abu-se3da-03-480.webp"
+                                srcset="
+                                    assets/abu-se3da/abu-se3da-03-480.webp  480w,
+                                    assets/abu-se3da/abu-se3da-03-960.webp  960w,
+                                    assets/abu-se3da/abu-se3da-03.webp     1080w
+                                "
+                                sizes="auto, (max-width: 640px) 48vw, 32vw"
+                                data-full="assets/abu-se3da/abu-se3da-03.webp"
+                                width="1080"
+                                height="1350"
+                                alt="Father lifting his son with an illustration of the spine."
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title">Back and Spine</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >&#8599;</span
+                            ></span
+                        >
+                    </button>
+                    <button
+                        type="button"
+                        class="poster"
+                        data-artwork-id="abu-se3da-04"
+                        aria-label="View Heel Pain"
+                    >
+                        <picture class="poster-image">
+                            <img
+                                src="assets/abu-se3da/abu-se3da-04-480.webp"
+                                srcset="
+                                    assets/abu-se3da/abu-se3da-04-480.webp  480w,
+                                    assets/abu-se3da/abu-se3da-04-960.webp  960w,
+                                    assets/abu-se3da/abu-se3da-04.webp     1080w
+                                "
+                                sizes="auto, (max-width: 640px) 48vw, 32vw"
+                                data-full="assets/abu-se3da/abu-se3da-04.webp"
+                                width="1080"
+                                height="1350"
+                                alt="Seated woman holding her heel with an illustration of the foot."
+                                decoding="async"
+                                loading="lazy"
+                            />
+                        </picture>
+                        <span class="poster-caption"
+                            ><span class="poster-title">Heel Pain</span
+                            ><span class="poster-arrow" aria-hidden="true"
+                                >&#8599;</span
+                            ></span
+                        >
+                    </button>
+                </div>
+            </section>
 
-    <section class="project" id="segment-development" role="tabpanel" aria-labelledby="segment-development-tab" tabindex="0" hidden>
-      <div class="project-header">
-        <h1>Segment Development</h1>
-      </div>
-      <div class="project-feature">
-        <a class="project-cover" href="https://www.behance.net/gallery/250629783/SEGMENT-DEVELOPMENT-Real-Estate-Campaigns" aria-label="View Segment Development on Behance">
-          <img src="assets/behance-covers/segment-development-404.webp" srcset="assets/behance-covers/segment-development-404.webp 404w, assets/behance-covers/segment-development.webp 808w" sizes="(max-width: 700px) 95vw, 58vw" width="808" height="632" alt="" decoding="async" loading="lazy">
-        </a>
-        <div class="project-feature-copy">
-          <p class="project-summary">Social media campaigns for Segments 4 Development, highlighting 9INTH HUB’s retail, healthcare, and work spaces alongside the brand’s hospitality investment and heritage campaigns.</p>
-          <a class="behance-link" href="https://www.behance.net/gallery/250629783/SEGMENT-DEVELOPMENT-Real-Estate-Campaigns">View project on Behance <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
+            <section
+                class="project"
+                id="medical-vol-2"
+                role="tabpanel"
+                aria-labelledby="medical-vol-2-tab"
+                tabindex="0"
+                hidden
+            >
+                <div class="project-header">
+                    <h1>Medical Volume 2</h1>
+                </div>
+                <div class="project-feature">
+                    <a
+                        class="project-cover"
+                        href="https://www.behance.net/gallery/252891927/Medical-Social-Media-Designs-Vol-2"
+                        aria-label="View Medical Volume 2 on Behance"
+                    >
+                        <img
+                            src="assets/behance-covers/medical-vol-2-404.webp"
+                            srcset="
+                                assets/behance-covers/medical-vol-2-404.webp 404w,
+                                assets/behance-covers/medical-vol-2.webp     808w
+                            "
+                            sizes="(max-width: 700px) 95vw, 58vw"
+                            width="808"
+                            height="632"
+                            alt=""
+                            decoding="async"
+                            loading="lazy"
+                        />
+                    </a>
+                    <div class="project-feature-copy">
+                        <p class="project-summary">
+                            The second volume of medical social media designs
+                            brings together clinic and hospital campaign artwork
+                            and an animated carousel.
+                        </p>
+                        <a
+                            class="behance-link"
+                            href="https://www.behance.net/gallery/252891927/Medical-Social-Media-Designs-Vol-2"
+                            >View project on Behance
+                            <span aria-hidden="true">↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
 
-    <section class="project" id="canton-development" role="tabpanel" aria-labelledby="canton-development-tab" tabindex="0" hidden>
-      <div class="project-header">
-        <h1>Canton Development</h1>
-      </div>
-      <div class="project-feature">
-        <a class="project-cover" href="https://www.behance.net/gallery/234584143/Canton-Development-Real-Estate-Social-Media" aria-label="View Canton Development on Behance">
-          <img src="assets/behance-covers/canton-development-404.webp" srcset="assets/behance-covers/canton-development-404.webp 404w, assets/behance-covers/canton-development.webp 808w" sizes="(max-width: 700px) 95vw, 58vw" width="808" height="632" alt="" decoding="async" loading="lazy">
-        </a>
-        <div class="project-feature-copy">
-          <p class="project-summary">A real estate social media campaign for Canton Development, with an Instagram grid, Facebook posts, Stories, and a series for the 6th of October Victory anniversary.</p>
-          <a class="behance-link" href="https://www.behance.net/gallery/234584143/Canton-Development-Real-Estate-Social-Media">View project on Behance <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
+            <section
+                class="project"
+                id="segment-development"
+                role="tabpanel"
+                aria-labelledby="segment-development-tab"
+                tabindex="0"
+                hidden
+            >
+                <div class="project-header">
+                    <h1>Segment Development</h1>
+                </div>
+                <div class="project-feature">
+                    <a
+                        class="project-cover"
+                        href="https://www.behance.net/gallery/250629783/SEGMENT-DEVELOPMENT-Real-Estate-Campaigns"
+                        aria-label="View Segment Development on Behance"
+                    >
+                        <img
+                            src="assets/behance-covers/segment-development-404.webp"
+                            srcset="
+                                assets/behance-covers/segment-development-404.webp 404w,
+                                assets/behance-covers/segment-development.webp     808w
+                            "
+                            sizes="(max-width: 700px) 95vw, 58vw"
+                            width="808"
+                            height="632"
+                            alt=""
+                            decoding="async"
+                            loading="lazy"
+                        />
+                    </a>
+                    <div class="project-feature-copy">
+                        <p class="project-summary">
+                            Social media campaigns for Segments 4 Development,
+                            highlighting 9INTH HUB’s retail, healthcare, and
+                            work spaces alongside the brand’s hospitality
+                            investment and heritage campaigns.
+                        </p>
+                        <a
+                            class="behance-link"
+                            href="https://www.behance.net/gallery/250629783/SEGMENT-DEVELOPMENT-Real-Estate-Campaigns"
+                            >View project on Behance
+                            <span aria-hidden="true">↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
 
-    <section class="project" id="automotive" role="tabpanel" aria-labelledby="automotive-tab" tabindex="0" hidden>
-      <div class="project-header">
-        <h1>Automotive</h1>
-      </div>
-      <div class="project-feature">
-        <a class="project-cover" href="https://www.behance.net/gallery/239573469/Automotive-Social-Media" aria-label="View Automotive on Behance">
-          <img src="assets/behance-covers/automotive-404.webp" srcset="assets/behance-covers/automotive-404.webp 404w, assets/behance-covers/automotive.webp 808w" sizes="(max-width: 700px) 95vw, 58vw" width="808" height="632" alt="" decoding="async" loading="lazy">
-        </a>
-        <div class="project-feature-copy">
-          <p class="project-summary">A collection of automotive social media ads featuring photo manipulation and vehicle-focused compositions.</p>
-          <a class="behance-link" href="https://www.behance.net/gallery/239573469/Automotive-Social-Media">View project on Behance <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
+            <section
+                class="project"
+                id="canton-development"
+                role="tabpanel"
+                aria-labelledby="canton-development-tab"
+                tabindex="0"
+                hidden
+            >
+                <div class="project-header">
+                    <h1>Canton Development</h1>
+                </div>
+                <div class="project-feature">
+                    <a
+                        class="project-cover"
+                        href="https://www.behance.net/gallery/234584143/Canton-Development-Real-Estate-Social-Media"
+                        aria-label="View Canton Development on Behance"
+                    >
+                        <img
+                            src="assets/behance-covers/canton-development-404.webp"
+                            srcset="
+                                assets/behance-covers/canton-development-404.webp 404w,
+                                assets/behance-covers/canton-development.webp     808w
+                            "
+                            sizes="(max-width: 700px) 95vw, 58vw"
+                            width="808"
+                            height="632"
+                            alt=""
+                            decoding="async"
+                            loading="lazy"
+                        />
+                    </a>
+                    <div class="project-feature-copy">
+                        <p class="project-summary">
+                            A real estate social media campaign for Canton
+                            Development, with an Instagram grid, Facebook posts,
+                            Stories, and a series for the 6th of October Victory
+                            anniversary.
+                        </p>
+                        <a
+                            class="behance-link"
+                            href="https://www.behance.net/gallery/234584143/Canton-Development-Real-Estate-Social-Media"
+                            >View project on Behance
+                            <span aria-hidden="true">↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
 
-  <template id="arrangement-controls">
-    <div class="arrangement-controls">
-      <div class="arrangement-toolbar">
-        <div class="arrangement-instructions">
-          <h2>Edit layout</h2>
-          <p>Hold and drag an image onto another to swap them, or select the two images in turn.</p>
-        </div>
-        <div class="arrangement-actions">
-          <button type="button" class="add-artwork">Add images</button>
-          <button type="button" class="copy-order">Copy changes for GitHub</button>
-          <a href="https://github.com/marawanmosta-cell/marawan-portfolio/edit/main/artwork-order.js" target="_blank" rel="noopener">Open order file ↗</a>
-        </div>
-      </div>
-      <details class="gallery-trash">
-        <summary>Trash <span class="trash-count">(0)</span></summary>
-        <p class="trash-empty">Trash is empty.</p>
-        <ul class="trash-list" hidden></ul>
-      </details>
-      <p class="arrangement-status" role="status"></p>
-      <textarea class="arrangement-copy" aria-label="Order to paste into GitHub" readonly hidden></textarea>
-    </div>
-  </template>
+            <section
+                class="project"
+                id="automotive"
+                role="tabpanel"
+                aria-labelledby="automotive-tab"
+                tabindex="0"
+                hidden
+            >
+                <div class="project-header">
+                    <h1>Automotive</h1>
+                </div>
+                <div class="project-feature">
+                    <a
+                        class="project-cover"
+                        href="https://www.behance.net/gallery/239573469/Automotive-Social-Media"
+                        aria-label="View Automotive on Behance"
+                    >
+                        <img
+                            src="assets/behance-covers/automotive-404.webp"
+                            srcset="
+                                assets/behance-covers/automotive-404.webp 404w,
+                                assets/behance-covers/automotive.webp     808w
+                            "
+                            sizes="(max-width: 700px) 95vw, 58vw"
+                            width="808"
+                            height="632"
+                            alt=""
+                            decoding="async"
+                            loading="lazy"
+                        />
+                    </a>
+                    <div class="project-feature-copy">
+                        <p class="project-summary">
+                            A collection of automotive social media ads
+                            featuring photo manipulation and vehicle-focused
+                            compositions.
+                        </p>
+                        <a
+                            class="behance-link"
+                            href="https://www.behance.net/gallery/239573469/Automotive-Social-Media"
+                            >View project on Behance
+                            <span aria-hidden="true">↗</span></a
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
 
-  <dialog class="editor-dialog" aria-labelledby="editor-title">
-    <form class="editor-form">
-      <h2 id="editor-title"></h2>
-      <label class="editor-name">Name <input name="name" type="text" maxlength="90"></label>
-      <label class="editor-project-summary" hidden>Project summary <textarea name="summary" maxlength="800" rows="4"></textarea></label>
-      <label class="editor-project-url" hidden>Behance project link <input name="projectUrl" type="url" maxlength="500"></label>
-      <label class="editor-file">
-        <span class="editor-file-label">Images</span>
-        <input name="files" type="file" accept="image/jpeg,image/png,image/webp">
-        <small class="editor-preview-help"></small>
-      </label>
-      <label class="editor-alt">Image description <input name="alt" type="text" maxlength="180"></label>
-      <p class="editor-message" role="status"></p>
-      <div class="editor-dialog-actions">
-        <button type="button" class="editor-cancel">Cancel</button>
-        <button type="submit" class="editor-save">Save draft</button>
-      </div>
-    </form>
-  </dialog>
-
-  <dialog class="viewer" aria-label="Project artwork">
-    <div class="viewer-bar">
-      <span class="viewer-position" aria-live="polite"></span>
-      <div class="viewer-actions">
-        <button type="button" data-step="-1" aria-label="Previous artwork">←</button>
-        <button type="button" data-step="1" aria-label="Next artwork">→</button>
-        <form method="dialog"><button type="submit" aria-label="Close artwork" autofocus>✕</button></form>
-      </div>
-    </div>
-    <figure>
-      <img class="viewer-image" alt="">
-      <figcaption class="viewer-caption"></figcaption>
-    </figure>
-  </dialog>
-</body>
+        <dialog class="viewer" aria-label="Project artwork">
+            <div class="viewer-bar">
+                <span class="viewer-position" aria-live="polite"></span>
+                <div class="viewer-actions">
+                    <button
+                        type="button"
+                        data-step="-1"
+                        aria-label="Previous artwork"
+                    >
+                        ←
+                    </button>
+                    <button
+                        type="button"
+                        data-step="1"
+                        aria-label="Next artwork"
+                    >
+                        →
+                    </button>
+                    <form method="dialog">
+                        <button
+                            type="submit"
+                            aria-label="Close artwork"
+                            autofocus
+                        >
+                            ✕
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <figure>
+                <img class="viewer-image" alt="" />
+                <figcaption class="viewer-caption"></figcaption>
+            </figure>
+        </dialog>
+    </body>
 </html>
