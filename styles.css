@@ -375,3 +375,5 @@ body[data-theme="green"] { --accent: #82dba6; --accent-rgb: 41 155 89; }
 @media (max-width: 700px) {
   .project-feature:has(.project-cover:not([hidden])) { grid-template-columns: minmax(0, 1fr); }
 }
+
+.perla-founder .poster-image img { object-fit: contain; }
