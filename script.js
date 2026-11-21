@@ -28,12 +28,31 @@ window.portfolioCatalogReady.then(() => {
     }
   }
 
+  const brandThemes = {
+    "forsan-gallery": "red", "abu-se3da": "blue", "medical-vol-2": "blue",
+    "segment-development": "orange", "canton-development": "green", automotive: "red"
+  };
+
+  function applyBrandTheme(tab) {
+    document.body.dataset.theme = brandThemes[tab.getAttribute("aria-controls")] || "beige";
+    const nav = tab.closest("nav");
+    const { left, right } = tab.getBoundingClientRect();
+    const bounds = nav.getBoundingClientRect();
+    if (left < bounds.left) nav.scrollLeft -= bounds.left - left;
+    else if (right > bounds.right) nav.scrollLeft += right - bounds.right;
+  }
+
   function setupTabs(tablist, isProjectList = false) {
     const tabs = [...tablist.children];
     const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
     let selected = tabs.find(tab => tab.getAttribute("aria-selected") === "true");
     tablist.style.setProperty("--tab-count", tabs.length);
     tablist.style.setProperty("--active-tab", tabs.indexOf(selected));
+    if (isProjectList) {
+      applyBrandTheme(selected);
+      const observer = new ResizeObserver(() => applyBrandTheme(selected));
+      observer.observe(tablist.closest("nav"));
+    }
     let transition;
     let appearance;
 
@@ -45,6 +64,7 @@ window.portfolioCatalogReady.then(() => {
         item.tabIndex = active ? 0 : -1;
         panels[i].hidden = !active;
       });
+      if (isProjectList) applyBrandTheme(tab);
       updateModeLink();
     }
 

@@ -28,7 +28,7 @@ window.portfolioCatalogReady.then(() => {
       grid,
       items,
       state: normalize(items, published[id]),
-      count: panel.querySelector(".project-meta"),
+      count: grid.parentElement === panel ? panel.querySelector(":scope > .project-header .project-meta") : null,
       empty
     };
   });

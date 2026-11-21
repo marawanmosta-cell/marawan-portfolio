@@ -29,6 +29,7 @@ window.portfolioCatalogReady = (async () => {
   catalog.brands ||= [];
   catalog.sections ||= [];
   catalog.images ||= {};
+  catalog.projectLinks ||= {};
 
   function element(tag, name, text) {
     const node = document.createElement(tag);
@@ -151,9 +152,13 @@ window.portfolioCatalogReady = (async () => {
   function imagePaths(value) {
     return value?.files ? [value.files.full, value.files.wide, value.files.small] : [];
   }
-  const publicImages = new Set(Object.values(published.images || {}).flatMap(gallery =>
-    Object.values(gallery).flatMap(imagePaths)
-  ));
+  function catalogImagePaths(data) {
+    return [
+      ...Object.values(data.images || {}).flatMap(gallery => Object.values(gallery).flatMap(imagePaths)),
+      ...Object.values(data.projectLinks || {}).flatMap(imagePaths)
+    ];
+  }
+  const publicImages = new Set(catalogImagePaths(published));
 
   async function artworkUrl(filename) {
     if (draft && !publicImages.has(filename)) {
@@ -161,6 +166,40 @@ window.portfolioCatalogReady = (async () => {
       if (image) return URL.createObjectURL(image);
     }
     return filename;
+  }
+
+  function behanceUrl(value) {
+    try {
+      const url = new URL(value);
+      if (url.protocol === "https:" && ["www.behance.net", "behance.net"].includes(url.host) &&
+          !url.username && !url.password && /^\/gallery\/\d+(?:\/|$)/.test(url.pathname)) return url.href;
+    } catch {}
+    return "";
+  }
+
+  for (const feature of main.querySelectorAll(".project-feature")) {
+    const project = feature.closest(".project");
+    const cover = feature.querySelector(".project-cover");
+    const link = feature.querySelector(".behance-link");
+    const summary = feature.querySelector(".project-summary");
+    cover.setAttribute("aria-label", "View " + project.querySelector("h1").textContent + " on Behance");
+    const details = catalog.projectLinks[project.id];
+    if (!details) continue;
+    summary.textContent = details.summary;
+    const url = behanceUrl(details.url);
+    if (url) cover.href = link.href = url;
+    if (details.files) {
+      const image = cover.querySelector("img");
+      const { full, wide, small, width, height } = details.files;
+      const [fullUrl, wideUrl, smallUrl] = await Promise.all([full, wide, small].map(artworkUrl));
+      image.srcset = smallUrl + " 480w, " + wideUrl + " 900w, " + fullUrl + " " + width + "w";
+      image.sizes = "(max-width: 700px) 95vw, 58vw";
+      if (width <= 900) image.removeAttribute("srcset");
+      image.src = fullUrl;
+      image.width = width;
+      image.height = height;
+      cover.hidden = false;
+    }
   }
 
   function createPoster(id) {
@@ -234,9 +273,7 @@ window.portfolioCatalogReady = (async () => {
   }
 
   function pendingPaths() {
-    return [...new Set(Object.values(catalog.images).flatMap(gallery =>
-      Object.values(gallery).flatMap(imagePaths)
-    ))].filter(filename => !publicImages.has(filename));
+    return [...new Set(catalogImagePaths(catalog))].filter(filename => !publicImages.has(filename));
   }
 
   window.portfolioEditor = { editing, previewing, usesDraft, artworkId, textFor, pendingImages: () => pendingPaths().length };
@@ -249,6 +286,8 @@ window.portfolioCatalogReady = (async () => {
   const nameInput = form.elements.namedItem("name");
   const fileInput = form.elements.namedItem("files");
   const altInput = form.elements.namedItem("alt");
+  const summaryInput = form.elements.namedItem("summary");
+  const projectUrlInput = form.elements.namedItem("projectUrl");
   const saveButton = form.querySelector(".editor-save");
   const message = form.querySelector(".editor-message");
   let job;
@@ -258,21 +297,27 @@ window.portfolioCatalogReady = (async () => {
     job = options;
     form.reset();
     form.querySelector("h2").textContent = options.title;
-    form.querySelector(".editor-name").hidden = options.multiple;
+    form.querySelector(".editor-name").hidden = options.multiple || options.feature;
     form.querySelector(".editor-file").hidden = !options.image;
     form.querySelector(".editor-alt").hidden = !options.poster;
-    form.querySelector(".editor-file-label").textContent = options.poster ? "Replace image (optional)" : "Images";
-    form.querySelector(".editor-preview-help").textContent = options.landscape
+    summaryInput.parentElement.hidden = projectUrlInput.parentElement.hidden = !options.feature;
+    summaryInput.required = projectUrlInput.required = Boolean(options.feature);
+    summaryInput.value = options.summary || "";
+    projectUrlInput.value = options.url || "";
+    form.querySelector(".editor-file-label").textContent = options.feature ? "Replace thumbnail (optional)" : options.poster ? "Replace image (optional)" : "Images";
+    form.querySelector(".editor-preview-help").textContent = options.feature
+      ? "The thumbnail keeps its original proportions."
+      : options.landscape
       ? "Gallery previews show the entire image. Open it in the portfolio for a larger view."
       : "Gallery previews fill a 3:4 frame. Open the image in the portfolio to see its full composition.";
     nameInput.value = options.name || "";
-    nameInput.required = !options.multiple;
+    nameInput.required = !options.multiple && !options.feature;
     fileInput.required = Boolean(options.multiple);
     fileInput.multiple = Boolean(options.multiple);
     altInput.value = options.alt || "";
     message.textContent = "";
     dialog.showModal();
-    (options.multiple ? fileInput : nameInput).focus();
+    (options.feature ? summaryInput : options.multiple ? fileInput : nameInput).focus();
   }
 
   function visit(brandId, sectionId, keepScroll = false) {
@@ -325,6 +370,27 @@ window.portfolioCatalogReady = (async () => {
         }
       }))
     );
+    const feature = brand.querySelector(".project-feature");
+    if (feature) controls.append(button("Edit Behance project", () => open({
+      title: "Edit Behance project",
+      feature: true,
+      image: true,
+      summary: feature.querySelector(".project-summary").textContent,
+      url: feature.querySelector(".behance-link").href,
+      async change(next, name, blobs) {
+        const url = behanceUrl(projectUrlInput.value.trim());
+        if (!url) throw new Error("Enter a link to a Behance project.");
+        const summary = summaryInput.value.trim();
+        if (!summary) throw new Error("Enter a project summary.");
+        const details = { ...next.projectLinks[brand.id], summary, url };
+        if (fileInput.files[0]) {
+          const prepared = await files.prepareImage(fileInput.files[0]);
+          details.files = prepared.paths;
+          for (const entry of prepared.blobs) blobs.set(...entry);
+        }
+        next.projectLinks[brand.id] = details;
+      }
+    })));
     brand.querySelector(".project-header").after(controls);
   }
 
@@ -386,7 +452,7 @@ window.portfolioCatalogReady = (async () => {
     event.preventDefault();
     if (busy) return;
     const name = nameInput.value.trim();
-    if (!name && !job.multiple) {
+    if (!name && !job.multiple && !job.feature) {
       message.textContent = "Enter a name before saving.";
       return;
     }
